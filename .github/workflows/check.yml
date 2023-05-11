@@ -1,0 +1,26 @@
+---
+
+name: Checks
+
+on:
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install ruff
+        run: pip install ruff
+        shell: bash
+
+      - name: Check code
+        uses: EnriqueSoria/annotate_pr_with_ruff@v0.1.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
