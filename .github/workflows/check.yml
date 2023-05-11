@@ -21,6 +21,6 @@ jobs:
         shell: bash
 
       - name: Check code
-        uses: EnriqueSoria/annotate_pr_with_ruff@v0.1.2
+        uses: EnriqueSoria/annotate_pr_with_ruff@v0.1.20
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
