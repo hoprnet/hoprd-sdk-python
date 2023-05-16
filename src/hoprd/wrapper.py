@@ -75,10 +75,14 @@ class HoprdAPI(object):
     async def get_all_channels(self, include_closed: bool):
         data = json.dumps({})
         return await self.call_api(f"/channels?includingClosed=${include_closed}", "GET", bytes(data, "utf-8"))
-    
-    async def get_channel_topology(self, full_topology: bool):
+
+    async def get_channel_topology(self, full_topology: str):
+        """
+        Retrieve the channel topology. Setting full_topology to "true" retrieves the full channel topology.
+        Setting full_topology to "false" (default) retrieves the local topology of the owner of the api_url.
+        """
         data = json.dumps({})
-        return await self.call_api(f"channels?fullTopology=${full_topology}", "GET", bytes(data, "utf-8"))
+        return await self.call_api(f"channels?fullTopology={full_topology}", "GET", bytes(data, "utf-8"))
 
     async def get_tickets_in_channel(self, include_closed: bool):
         data = json.dumps({})
