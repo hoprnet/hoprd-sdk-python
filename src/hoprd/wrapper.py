@@ -113,9 +113,14 @@ class HoprdAPI(object):
         )
         return await self.call_api("node/ping", "POST", bytes(data, "utf-8"))
 
-    async def peers(self):
+    async def peers(self, quality: float):
+        """
+        Fetches the peers' information from the node API based on the
+        minimum connectivity quality required for the peers, where
+        0 is the minimum and 1 the maximum quality.
+        """
         data = json.dumps({})
-        return await self.call_api("node/peers", "GET", bytes(data, "utf-8"))
+        return await self.call_api(f"node/peers?quality={str(quality)}", "GET", bytes(data, "utf-8"))
 
     async def get_address(self):
         data = json.dumps({})
