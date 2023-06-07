@@ -31,6 +31,7 @@ class HoprdAPI(object):
                 response.raise_for_status()
             except httpx.HTTPError as exc:
                 logging.error(f"HTTP Exception for {exc.request.url} - {exc}")
+                raise exc
             finally:
                 return response
 
