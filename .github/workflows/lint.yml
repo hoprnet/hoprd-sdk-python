@@ -1,6 +1,4 @@
----
-
-name: Checks
+name: Lint
 
 on:
   pull_request:
@@ -25,5 +23,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Run linter
-        uses: chartboost/ruff-action@v1
+      - name: Lint with ruff
+        run: |
+          ruff --ignore E501,F401 --format=github --target-version=py310 .
