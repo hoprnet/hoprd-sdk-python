@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**channel_id** | **str** | Channel ID that can be used in other calls, not to confuse with transaction hash. | [optional] 
+**channel_id** | [**ChannelId**](ChannelId.md) |  | [optional] 
 **source_peer_id** | [**HoprAddress**](HoprAddress.md) |  | [optional] 
 **destination_peer_id** | [**HoprAddress**](HoprAddress.md) |  | [optional] 
 **source_address** | [**NativeAddress**](NativeAddress.md) |  | [optional] 

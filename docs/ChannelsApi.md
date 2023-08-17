@@ -1,23 +1,22 @@
 # swagger_client.ChannelsApi
 
-All URIs are relative to */api/v2*
+All URIs are relative to */api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**channels_close_channel**](ChannelsApi.md#channels_close_channel) | **DELETE** /channels/{peerid}/{direction}/ | 
-[**channels_fund_channels**](ChannelsApi.md#channels_fund_channels) | **POST** /fundmulti/ | 
-[**channels_get_channel**](ChannelsApi.md#channels_get_channel) | **GET** /channels/{peerid}/{direction}/ | 
+[**channels_close_channel**](ChannelsApi.md#channels_close_channel) | **DELETE** /channels/{channelid}/ | 
+[**channels_get_channel**](ChannelsApi.md#channels_get_channel) | **GET** /channels/{channelid}/ | 
 [**channels_get_channels**](ChannelsApi.md#channels_get_channels) | **GET** /channels/ | 
-[**channels_get_tickets**](ChannelsApi.md#channels_get_tickets) | **GET** /channels/{peerid}/tickets | 
+[**channels_get_tickets**](ChannelsApi.md#channels_get_tickets) | **GET** /channels/{channelid}/tickets | 
 [**channels_open_channel**](ChannelsApi.md#channels_open_channel) | **POST** /channels/ | 
-[**channels_redeem_tickets**](ChannelsApi.md#channels_redeem_tickets) | **POST** /channels/{peerid}/tickets/redeem | 
+[**channels_redeem_tickets**](ChannelsApi.md#channels_redeem_tickets) | **POST** /channels/{channelid}/tickets/redeem | 
 
 # **channels_close_channel**
-> InlineResponse20011 channels_close_channel(peerid, direction)
+> InlineResponse20012 channels_close_channel(channelid)
 
 
 
-Close a opened channel between this node and other node. Once you've initiated channel closure, you have to wait for a specified closure time, it will show you a closure initiation message with cool-off time you need to wait.   Then you will need to send the same command again to finalize closure. This is a cool down period to give the other party in the channel sufficient time to redeem their tickets.
+Close an opened channel between this node and another node. Once you've initiated channel closure, you have to wait for a specified closure time, it will show you a closure initiation message with cool-off time you need to wait.   Then you will need to send the same command again to finalize closure. This is a cool down period to give the other party in the channel sufficient time to redeem their tickets.
 
 ### Example
 ```python
@@ -38,11 +37,10 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ChannelsApi(swagger_client.ApiClient(configuration))
-peerid = 'peerid_example' # str | 
-direction = 'direction_example' # str | Specify which channel should be fetched, incoming or outgoing.
+channelid = swagger_client.ChannelId() # ChannelId | 
 
 try:
-    api_response = api_instance.channels_close_channel(peerid, direction)
+    api_response = api_instance.channels_close_channel(channelid)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChannelsApi->channels_close_channel: %s\n" % e)
@@ -52,12 +50,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **peerid** | **str**|  | 
- **direction** | **str**| Specify which channel should be fetched, incoming or outgoing. | 
+ **channelid** | [**ChannelId**](.md)|  | 
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -70,68 +67,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **channels_fund_channels**
-> InlineResponse2011 channels_fund_channels(body=body)
-
-
-
-Fund one or two payment channels between this node and the counter party provided.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ChannelsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.FundmultiBody() # FundmultiBody |  (optional)
-
-try:
-    api_response = api_instance.channels_fund_channels(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ChannelsApi->channels_fund_channels: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**FundmultiBody**](FundmultiBody.md)|  | [optional] 
-
-### Return type
-
-[**InlineResponse2011**](InlineResponse2011.md)
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **channels_get_channel**
-> list[Channel] channels_get_channel(peerid, direction)
+> list[Channel] channels_get_channel(channelid)
 
 
 
-Returns information about the channel between this node and provided peerId.
+Returns information about the channel.
 
 ### Example
 ```python
@@ -152,11 +93,10 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ChannelsApi(swagger_client.ApiClient(configuration))
-peerid = swagger_client.HoprAddress() # HoprAddress | Counterparty peerId assigned to the channel you want to fetch.
-direction = 'direction_example' # str | Specify which channel should be fetched, incoming or outgoing.
+channelid = swagger_client.ChannelId() # ChannelId | 
 
 try:
-    api_response = api_instance.channels_get_channel(peerid, direction)
+    api_response = api_instance.channels_get_channel(channelid)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChannelsApi->channels_get_channel: %s\n" % e)
@@ -166,8 +106,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **peerid** | [**HoprAddress**](.md)| Counterparty peerId assigned to the channel you want to fetch. | 
- **direction** | **str**| Specify which channel should be fetched, incoming or outgoing. | 
+ **channelid** | [**ChannelId**](.md)|  | 
 
 ### Return type
 
@@ -243,7 +182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **channels_get_tickets**
-> list[Ticket] channels_get_tickets(peerid)
+> list[Ticket] channels_get_tickets(channelid)
 
 
 
@@ -268,10 +207,10 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ChannelsApi(swagger_client.ApiClient(configuration))
-peerid = 'peerid_example' # str | 
+channelid = swagger_client.ChannelId() # ChannelId | 
 
 try:
-    api_response = api_instance.channels_get_tickets(peerid)
+    api_response = api_instance.channels_get_tickets(channelid)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChannelsApi->channels_get_tickets: %s\n" % e)
@@ -281,7 +220,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **peerid** | **str**|  | 
+ **channelid** | [**ChannelId**](.md)|  | 
 
 ### Return type
 
@@ -299,7 +238,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **channels_open_channel**
-> InlineResponse2012 channels_open_channel(body=body)
+> InlineResponse2011 channels_open_channel(body=body)
 
 
 
@@ -341,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2012**](InlineResponse2012.md)
+[**InlineResponse2011**](InlineResponse2011.md)
 
 ### Authorization
 
@@ -355,11 +294,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **channels_redeem_tickets**
-> channels_redeem_tickets(peerid)
+> channels_redeem_tickets(channelid)
 
 
 
-Redeems your tickets for this channel. Redeeming will change your tickets into Hopr tokens if they are winning ones. You can check how much tickets given channel has by calling /channels/{peerid}/tickets endpoint. Do this before channel is closed as neglected tickets are no longer valid for redeeming.
+Redeems your tickets for this channel. Redeeming will change your tickets into Hopr tokens if they are winning ones. Do this before channel is closed as neglected tickets are no longer valid for redeeming.
 
 ### Example
 ```python
@@ -380,10 +319,10 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ChannelsApi(swagger_client.ApiClient(configuration))
-peerid = 'peerid_example' # str | 
+channelid = swagger_client.ChannelId() # ChannelId | 
 
 try:
-    api_instance.channels_redeem_tickets(peerid)
+    api_instance.channels_redeem_tickets(channelid)
 except ApiException as e:
     print("Exception when calling ChannelsApi->channels_redeem_tickets: %s\n" % e)
 ```
@@ -392,7 +331,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **peerid** | **str**|  | 
+ **channelid** | [**ChannelId**](.md)|  | 
 
 ### Return type
 

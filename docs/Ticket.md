@@ -3,9 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**counterparty** | [**HoprAddress**](HoprAddress.md) |  | [optional] 
+**channel_id** | [**ChannelId**](ChannelId.md) |  | [optional] 
 **challenge** | **str** | The ticket&#x27;s challenge which needs to be solved before being able to claim the embedded incentive. | [optional] 
-**epoch** | **str** | Ticket redemption relies on providing the value opening to a series of commitments that have previously been stored on-chain by the ticket recipient. | [optional] 
 **index** | **str** | Each ticket is labeled by an ongoing serial number named ticket index i and its current value is stored in the smart contract. | [optional] 
 **amount** | **str** | The ticket&#x27;s value in HOPR. | [optional] 
 **win_prob** | **str** | The ticket&#x27;s winning probability normalized with the common base of Ethereum which is 2^256-1. | [optional] 

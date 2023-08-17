@@ -3,8 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**native_address** | **AllOfinlineResponse2009NativeAddress** |  | [optional] 
-**hopr_address** | **AllOfinlineResponse2009HoprAddress** |  | [optional] 
 **native** | [**NativeAddress**](NativeAddress.md) |  | [optional] 
 **hopr** | [**HoprAddress**](HoprAddress.md) |  | [optional] 
 
