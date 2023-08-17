@@ -47,11 +47,15 @@ class ChannelsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.channels_close_channel_with_http_info(channelid, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.channels_close_channel_with_http_info(
+                channelid, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.channels_close_channel_with_http_info(channelid, **kwargs)  # noqa: E501
+            (data) = self.channels_close_channel_with_http_info(
+                channelid, **kwargs
+            )  # noqa: E501
             return data
 
     def channels_close_channel_with_http_info(self, channelid, **kwargs):  # noqa: E501
@@ -70,31 +74,32 @@ class ChannelsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['channelid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["channelid"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method channels_close_channel" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'channelid' is set
-        if ('channelid' not in params or
-                params['channelid'] is None):
-            raise ValueError("Missing the required parameter `channelid` when calling `channels_close_channel`")  # noqa: E501
+        if "channelid" not in params or params["channelid"] is None:
+            raise ValueError(
+                "Missing the required parameter `channelid` when calling `channels_close_channel`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'channelid' in params:
-            path_params['channelid'] = params['channelid']  # noqa: E501
+        if "channelid" in params:
+            path_params["channelid"] = params["channelid"]  # noqa: E501
 
         query_params = []
 
@@ -105,27 +110,30 @@ class ChannelsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
+        auth_settings = ["keyScheme", "passwordScheme"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/channels/{channelid}/', 'DELETE',
+            "/channels/{channelid}/",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse20012',  # noqa: E501
+            response_type="InlineResponse20012",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def channels_get_channel(self, channelid, **kwargs):  # noqa: E501
         """channels_get_channel  # noqa: E501
@@ -142,11 +150,15 @@ class ChannelsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.channels_get_channel_with_http_info(channelid, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.channels_get_channel_with_http_info(
+                channelid, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.channels_get_channel_with_http_info(channelid, **kwargs)  # noqa: E501
+            (data) = self.channels_get_channel_with_http_info(
+                channelid, **kwargs
+            )  # noqa: E501
             return data
 
     def channels_get_channel_with_http_info(self, channelid, **kwargs):  # noqa: E501
@@ -165,31 +177,32 @@ class ChannelsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['channelid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["channelid"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method channels_get_channel" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'channelid' is set
-        if ('channelid' not in params or
-                params['channelid'] is None):
-            raise ValueError("Missing the required parameter `channelid` when calling `channels_get_channel`")  # noqa: E501
+        if "channelid" not in params or params["channelid"] is None:
+            raise ValueError(
+                "Missing the required parameter `channelid` when calling `channels_get_channel`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'channelid' in params:
-            path_params['channelid'] = params['channelid']  # noqa: E501
+        if "channelid" in params:
+            path_params["channelid"] = params["channelid"]  # noqa: E501
 
         query_params = []
 
@@ -200,27 +213,30 @@ class ChannelsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
+        auth_settings = ["keyScheme", "passwordScheme"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/channels/{channelid}/', 'GET',
+            "/channels/{channelid}/",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Channel]',  # noqa: E501
+            response_type="list[Channel]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def channels_get_channels(self, **kwargs):  # noqa: E501
         """channels_get_channels  # noqa: E501
@@ -238,8 +254,8 @@ class ChannelsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.channels_get_channels_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.channels_get_channels_with_http_info(**kwargs)  # noqa: E501
@@ -262,31 +278,33 @@ class ChannelsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['including_closed', 'full_topology']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["including_closed", "full_topology"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method channels_get_channels" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'including_closed' in params:
-            query_params.append(('includingClosed', params['including_closed']))  # noqa: E501
-        if 'full_topology' in params:
-            query_params.append(('fullTopology', params['full_topology']))  # noqa: E501
+        if "including_closed" in params:
+            query_params.append(
+                ("includingClosed", params["including_closed"])
+            )  # noqa: E501
+        if "full_topology" in params:
+            query_params.append(("fullTopology", params["full_topology"]))  # noqa: E501
 
         header_params = {}
 
@@ -295,27 +313,30 @@ class ChannelsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
+        auth_settings = ["keyScheme", "passwordScheme"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/channels/', 'GET',
+            "/channels/",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2005',  # noqa: E501
+            response_type="InlineResponse2005",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def channels_get_tickets(self, channelid, **kwargs):  # noqa: E501
         """channels_get_tickets  # noqa: E501
@@ -332,11 +353,15 @@ class ChannelsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.channels_get_tickets_with_http_info(channelid, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.channels_get_tickets_with_http_info(
+                channelid, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.channels_get_tickets_with_http_info(channelid, **kwargs)  # noqa: E501
+            (data) = self.channels_get_tickets_with_http_info(
+                channelid, **kwargs
+            )  # noqa: E501
             return data
 
     def channels_get_tickets_with_http_info(self, channelid, **kwargs):  # noqa: E501
@@ -355,31 +380,32 @@ class ChannelsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['channelid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["channelid"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method channels_get_tickets" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'channelid' is set
-        if ('channelid' not in params or
-                params['channelid'] is None):
-            raise ValueError("Missing the required parameter `channelid` when calling `channels_get_tickets`")  # noqa: E501
+        if "channelid" not in params or params["channelid"] is None:
+            raise ValueError(
+                "Missing the required parameter `channelid` when calling `channels_get_tickets`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'channelid' in params:
-            path_params['channelid'] = params['channelid']  # noqa: E501
+        if "channelid" in params:
+            path_params["channelid"] = params["channelid"]  # noqa: E501
 
         query_params = []
 
@@ -390,27 +416,30 @@ class ChannelsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
+        auth_settings = ["keyScheme", "passwordScheme"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/channels/{channelid}/tickets', 'GET',
+            "/channels/{channelid}/tickets",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Ticket]',  # noqa: E501
+            response_type="list[Ticket]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def channels_open_channel(self, **kwargs):  # noqa: E501
         """channels_open_channel  # noqa: E501
@@ -427,8 +456,8 @@ class ChannelsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.channels_open_channel_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.channels_open_channel_with_http_info(**kwargs)  # noqa: E501
@@ -450,21 +479,21 @@ class ChannelsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["body"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method channels_open_channel" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -478,34 +507,40 @@ class ChannelsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
+        if "body" in params:
+            body_params = params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
+        auth_settings = ["keyScheme", "passwordScheme"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/channels/', 'POST',
+            "/channels/",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2011',  # noqa: E501
+            response_type="InlineResponse2011",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def channels_redeem_tickets(self, channelid, **kwargs):  # noqa: E501
         """channels_redeem_tickets  # noqa: E501
@@ -522,11 +557,15 @@ class ChannelsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.channels_redeem_tickets_with_http_info(channelid, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.channels_redeem_tickets_with_http_info(
+                channelid, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.channels_redeem_tickets_with_http_info(channelid, **kwargs)  # noqa: E501
+            (data) = self.channels_redeem_tickets_with_http_info(
+                channelid, **kwargs
+            )  # noqa: E501
             return data
 
     def channels_redeem_tickets_with_http_info(self, channelid, **kwargs):  # noqa: E501
@@ -545,31 +584,32 @@ class ChannelsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['channelid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["channelid"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method channels_redeem_tickets" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'channelid' is set
-        if ('channelid' not in params or
-                params['channelid'] is None):
-            raise ValueError("Missing the required parameter `channelid` when calling `channels_redeem_tickets`")  # noqa: E501
+        if "channelid" not in params or params["channelid"] is None:
+            raise ValueError(
+                "Missing the required parameter `channelid` when calling `channels_redeem_tickets`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'channelid' in params:
-            path_params['channelid'] = params['channelid']  # noqa: E501
+        if "channelid" in params:
+            path_params["channelid"] = params["channelid"]  # noqa: E501
 
         query_params = []
 
@@ -580,14 +620,16 @@ class ChannelsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
+        auth_settings = ["keyScheme", "passwordScheme"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/channels/{channelid}/tickets/redeem', 'POST',
+            "/channels/{channelid}/tickets/redeem",
+            "POST",
             path_params,
             query_params,
             header_params,
@@ -596,8 +638,9 @@ class ChannelsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

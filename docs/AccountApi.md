@@ -117,7 +117,7 @@ This endpoint does not need any parameter.
 
 
 
-Withdraw funds from this node to your ethereum wallet address. You can choose whitch currency you want to withdraw, NATIVE or HOPR.
+Withdraw funds from this node to your ethereum wallet address. You can choose which currency you want to withdraw, NATIVE or HOPR.
 
 ### Example
 ```python
