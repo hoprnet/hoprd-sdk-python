@@ -39,8 +39,7 @@ class MessagesPopBody(object):
         """MessagesPopBody - a model defined in Swagger"""  # noqa: E501
         self._tag = None
         self.discriminator = None
-        if tag is not None:
-            self.tag = tag
+        self.tag = tag
 
     @property
     def tag(self):
@@ -60,6 +59,8 @@ class MessagesPopBody(object):
         :param tag: The tag of this MessagesPopBody.  # noqa: E501
         :type: MessageTag
         """
+        if tag is None:
+            raise ValueError("Invalid value for `tag`, must not be `None`")  # noqa: E501
 
         self._tag = tag
 

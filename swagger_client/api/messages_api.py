@@ -32,39 +32,39 @@ class MessagesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def messages_delete_messages(self, **kwargs):  # noqa: E501
+    def messages_delete_messages(self, tag, **kwargs):  # noqa: E501
         """messages_delete_messages  # noqa: E501
 
         Delete messages from nodes message inbox. Does not return any data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.messages_delete_messages(async_req=True)
+        >>> thread = api.messages_delete_messages(tag, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageTag tag: Tag used to filter target messages.
+        :param MessageTag tag: Tag used to filter target messages. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.messages_delete_messages_with_http_info(**kwargs)  # noqa: E501
+            return self.messages_delete_messages_with_http_info(tag, **kwargs)  # noqa: E501
         else:
-            (data) = self.messages_delete_messages_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.messages_delete_messages_with_http_info(tag, **kwargs)  # noqa: E501
             return data
 
-    def messages_delete_messages_with_http_info(self, **kwargs):  # noqa: E501
+    def messages_delete_messages_with_http_info(self, tag, **kwargs):  # noqa: E501
         """messages_delete_messages  # noqa: E501
 
         Delete messages from nodes message inbox. Does not return any data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.messages_delete_messages_with_http_info(async_req=True)
+        >>> thread = api.messages_delete_messages_with_http_info(tag, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageTag tag: Tag used to filter target messages.
+        :param MessageTag tag: Tag used to filter target messages. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -85,6 +85,10 @@ class MessagesApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'tag' is set
+        if ('tag' not in params or
+                params['tag'] is None):
+            raise ValueError("Missing the required parameter `tag` when calling `messages_delete_messages`")  # noqa: E501
 
         collection_formats = {}
 
@@ -123,40 +127,40 @@ class MessagesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def messages_get_size(self, **kwargs):  # noqa: E501
+    def messages_get_size(self, tag, **kwargs):  # noqa: E501
         """messages_get_size  # noqa: E501
 
         Get size of filtered message inbox.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.messages_get_size(async_req=True)
+        >>> thread = api.messages_get_size(tag, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageTag tag: Tag used to filter target messages.
-        :return: InlineResponse2004
+        :param MessageTag tag: Tag used to filter target messages. (required)
+        :return: InlineResponse2003
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.messages_get_size_with_http_info(**kwargs)  # noqa: E501
+            return self.messages_get_size_with_http_info(tag, **kwargs)  # noqa: E501
         else:
-            (data) = self.messages_get_size_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.messages_get_size_with_http_info(tag, **kwargs)  # noqa: E501
             return data
 
-    def messages_get_size_with_http_info(self, **kwargs):  # noqa: E501
+    def messages_get_size_with_http_info(self, tag, **kwargs):  # noqa: E501
         """messages_get_size  # noqa: E501
 
         Get size of filtered message inbox.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.messages_get_size_with_http_info(async_req=True)
+        >>> thread = api.messages_get_size_with_http_info(tag, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageTag tag: Tag used to filter target messages.
-        :return: InlineResponse2004
+        :param MessageTag tag: Tag used to filter target messages. (required)
+        :return: InlineResponse2003
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -176,6 +180,10 @@ class MessagesApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'tag' is set
+        if ('tag' not in params or
+                params['tag'] is None):
+            raise ValueError("Missing the required parameter `tag` when calling `messages_get_size`")  # noqa: E501
 
         collection_formats = {}
 
@@ -206,97 +214,6 @@ class MessagesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2004',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def messages_list_messages(self, **kwargs):  # noqa: E501
-        """messages_list_messages  # noqa: E501
-
-        Get list of messages currently present in the nodes message inbox. The messages are not removed from the inbox.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.messages_list_messages(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param MessageTag tag: Tag used to filter target messages.
-        :return: InlineResponse2003
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.messages_list_messages_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.messages_list_messages_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def messages_list_messages_with_http_info(self, **kwargs):  # noqa: E501
-        """messages_list_messages  # noqa: E501
-
-        Get list of messages currently present in the nodes message inbox. The messages are not removed from the inbox.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.messages_list_messages_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param MessageTag tag: Tag used to filter target messages.
-        :return: InlineResponse2003
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['tag']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method messages_list_messages" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'tag' in params:
-            query_params.append(('tag', params['tag']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/messages/', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
             response_type='InlineResponse2003',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
@@ -305,40 +222,40 @@ class MessagesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def messages_pop_all_messages(self, **kwargs):  # noqa: E501
-        """messages_pop_all_messages  # noqa: E501
+    def messages_pop_all_message(self, **kwargs):  # noqa: E501
+        """messages_pop_all_message  # noqa: E501
 
         Get list of messages currently present in the nodes message inbox. The messages are removed from the inbox.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.messages_pop_all_messages(async_req=True)
+        >>> thread = api.messages_pop_all_message(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param MessagesPopallBody body:
-        :return: InlineResponse2003
+        :return: InlineResponse2004
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.messages_pop_all_messages_with_http_info(**kwargs)  # noqa: E501
+            return self.messages_pop_all_message_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.messages_pop_all_messages_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.messages_pop_all_message_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def messages_pop_all_messages_with_http_info(self, **kwargs):  # noqa: E501
-        """messages_pop_all_messages  # noqa: E501
+    def messages_pop_all_message_with_http_info(self, **kwargs):  # noqa: E501
+        """messages_pop_all_message  # noqa: E501
 
         Get list of messages currently present in the nodes message inbox. The messages are removed from the inbox.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.messages_pop_all_messages_with_http_info(async_req=True)
+        >>> thread = api.messages_pop_all_message_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param MessagesPopallBody body:
-        :return: InlineResponse2003
+        :return: InlineResponse2004
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -354,7 +271,7 @@ class MessagesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method messages_pop_all_messages" % key
+                    " to method messages_pop_all_message" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -392,7 +309,7 @@ class MessagesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2003',  # noqa: E501
+            response_type='InlineResponse2004',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -593,7 +510,7 @@ class MessagesApi(object):
     def messages_websocket(self, **kwargs):  # noqa: E501
         """messages_websocket  # noqa: E501
 
-        This is a websocket endpoint which exposes a subset of message functions. Incoming messages from other nodes are sent to the websocket client in stringified Uint8Array instance of rlp-encoded data. A client may also send message by sending the following data:   { cmd: \"sendmsg\", args: { recipient: \"SOME_PEER_ID\", path: [], hops: 1} } The command arguments follow the same semantics as in the dedicated API endpoint for sending messages.  Authentication (if enabled) is done via either passing an `apiToken` parameter in the url or cookie `X-Auth-Token`. Connect to the endpoint by using a WS client. No preview available. Example: `ws://127.0.0.1:3001/api/v2/messages/websocket/?apiToken=myApiToken`  # noqa: E501
+        This is a websocket endpoint which exposes a subset of message functions. Incoming messages from other nodes are sent to the websocket client. A client may also send message by sending the following data:   { cmd: \"sendmsg\", args: { peerAddress: \"SOME_PEER_ID\", path: [], hops: 1} } The command arguments follow the same semantics as in the dedicated API endpoint for sending messages.  Authentication (if enabled) is done via either passing an `apiToken` parameter in the url or cookie `X-Auth-Token`. Connect to the endpoint by using a WS client. No preview available. Example: `ws://127.0.0.1:3001/api/v2/messages/websocket/?apiToken=myApiToken`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.messages_websocket(async_req=True)
@@ -614,7 +531,7 @@ class MessagesApi(object):
     def messages_websocket_with_http_info(self, **kwargs):  # noqa: E501
         """messages_websocket  # noqa: E501
 
-        This is a websocket endpoint which exposes a subset of message functions. Incoming messages from other nodes are sent to the websocket client in stringified Uint8Array instance of rlp-encoded data. A client may also send message by sending the following data:   { cmd: \"sendmsg\", args: { recipient: \"SOME_PEER_ID\", path: [], hops: 1} } The command arguments follow the same semantics as in the dedicated API endpoint for sending messages.  Authentication (if enabled) is done via either passing an `apiToken` parameter in the url or cookie `X-Auth-Token`. Connect to the endpoint by using a WS client. No preview available. Example: `ws://127.0.0.1:3001/api/v2/messages/websocket/?apiToken=myApiToken`  # noqa: E501
+        This is a websocket endpoint which exposes a subset of message functions. Incoming messages from other nodes are sent to the websocket client. A client may also send message by sending the following data:   { cmd: \"sendmsg\", args: { peerAddress: \"SOME_PEER_ID\", path: [], hops: 1} } The command arguments follow the same semantics as in the dedicated API endpoint for sending messages.  Authentication (if enabled) is done via either passing an `apiToken` parameter in the url or cookie `X-Auth-Token`. Connect to the endpoint by using a WS client. No preview available. Example: `ws://127.0.0.1:3001/api/v2/messages/websocket/?apiToken=myApiToken`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.messages_websocket_with_http_info(async_req=True)

@@ -28,6 +28,12 @@ class TestAccountApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_account_get_address(self):
+        """Test case for account_get_address
+
+        """
+        pass
+
     def test_account_get_addresses(self):
         """Test case for account_get_addresses
 

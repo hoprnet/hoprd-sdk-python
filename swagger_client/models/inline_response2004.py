@@ -28,40 +28,41 @@ class InlineResponse2004(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'size': 'int'
+        'messages': 'list[ReceivedMessage]'
     }
 
     attribute_map = {
-        'size': 'size'
+        'messages': 'messages'
     }
 
-    def __init__(self, size=None):  # noqa: E501
+    def __init__(self, messages=None):  # noqa: E501
         """InlineResponse2004 - a model defined in Swagger"""  # noqa: E501
-        self._size = None
+        self._messages = None
         self.discriminator = None
-        if size is not None:
-            self.size = size
+        self.messages = messages
 
     @property
-    def size(self):
-        """Gets the size of this InlineResponse2004.  # noqa: E501
+    def messages(self):
+        """Gets the messages of this InlineResponse2004.  # noqa: E501
 
 
-        :return: The size of this InlineResponse2004.  # noqa: E501
-        :rtype: int
+        :return: The messages of this InlineResponse2004.  # noqa: E501
+        :rtype: list[ReceivedMessage]
         """
-        return self._size
+        return self._messages
 
-    @size.setter
-    def size(self, size):
-        """Sets the size of this InlineResponse2004.
+    @messages.setter
+    def messages(self, messages):
+        """Sets the messages of this InlineResponse2004.
 
 
-        :param size: The size of this InlineResponse2004.  # noqa: E501
-        :type: int
+        :param messages: The messages of this InlineResponse2004.  # noqa: E501
+        :type: list[ReceivedMessage]
         """
+        if messages is None:
+            raise ValueError("Invalid value for `messages`, must not be `None`")  # noqa: E501
 
-        self._size = size
+        self._messages = messages
 
     def to_dict(self):
         """Returns the model properties as a dict"""

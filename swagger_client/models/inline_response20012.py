@@ -28,53 +28,56 @@ class InlineResponse20012(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'transaction_receipt': 'TransactionReceipt',
-        'channel_status': 'ChannelStatus'
+        'receipt': 'str',
+        'channel_status': 'str'
     }
 
     attribute_map = {
-        'transaction_receipt': 'transactionReceipt',
+        'receipt': 'receipt',
         'channel_status': 'channelStatus'
     }
 
-    def __init__(self, transaction_receipt=None, channel_status=None):  # noqa: E501
+    def __init__(self, receipt=None, channel_status=None):  # noqa: E501
         """InlineResponse20012 - a model defined in Swagger"""  # noqa: E501
-        self._transaction_receipt = None
+        self._receipt = None
         self._channel_status = None
         self.discriminator = None
-        if transaction_receipt is not None:
-            self.transaction_receipt = transaction_receipt
+        if receipt is not None:
+            self.receipt = receipt
         if channel_status is not None:
             self.channel_status = channel_status
 
     @property
-    def transaction_receipt(self):
-        """Gets the transaction_receipt of this InlineResponse20012.  # noqa: E501
+    def receipt(self):
+        """Gets the receipt of this InlineResponse20012.  # noqa: E501
 
+        Receipt of the closing transaction  # noqa: E501
 
-        :return: The transaction_receipt of this InlineResponse20012.  # noqa: E501
-        :rtype: TransactionReceipt
+        :return: The receipt of this InlineResponse20012.  # noqa: E501
+        :rtype: str
         """
-        return self._transaction_receipt
+        return self._receipt
 
-    @transaction_receipt.setter
-    def transaction_receipt(self, transaction_receipt):
-        """Sets the transaction_receipt of this InlineResponse20012.
+    @receipt.setter
+    def receipt(self, receipt):
+        """Sets the receipt of this InlineResponse20012.
 
+        Receipt of the closing transaction  # noqa: E501
 
-        :param transaction_receipt: The transaction_receipt of this InlineResponse20012.  # noqa: E501
-        :type: TransactionReceipt
+        :param receipt: The receipt of this InlineResponse20012.  # noqa: E501
+        :type: str
         """
 
-        self._transaction_receipt = transaction_receipt
+        self._receipt = receipt
 
     @property
     def channel_status(self):
         """Gets the channel_status of this InlineResponse20012.  # noqa: E501
 
+        Current status of the channel  # noqa: E501
 
         :return: The channel_status of this InlineResponse20012.  # noqa: E501
-        :rtype: ChannelStatus
+        :rtype: str
         """
         return self._channel_status
 
@@ -82,9 +85,10 @@ class InlineResponse20012(object):
     def channel_status(self, channel_status):
         """Sets the channel_status of this InlineResponse20012.
 
+        Current status of the channel  # noqa: E501
 
         :param channel_status: The channel_status of this InlineResponse20012.  # noqa: E501
-        :type: ChannelStatus
+        :type: str
         """
 
         self._channel_status = channel_status

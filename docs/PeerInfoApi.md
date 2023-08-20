@@ -1,17 +1,17 @@
-# swagger_client.PeersApi
+# swagger_client.PeerInfoApi
 
 All URIs are relative to */api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**peers_ping_peer**](PeersApi.md#peers_ping_peer) | **POST** /peers/{peerid}/ping | 
+[**peer_info_get_peer_info**](PeerInfoApi.md#peer_info_get_peer_info) | **GET** /peers/{peerid}/ | 
 
-# **peers_ping_peer**
-> InlineResponse20010 peers_ping_peer(peerid)
+# **peer_info_get_peer_info**
+> InlineResponse20011 peer_info_get_peer_info(peerid)
 
 
 
-Pings another node to check its availability.
+Get information about this peer.
 
 ### Example
 ```python
@@ -31,25 +31,25 @@ configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.PeersApi(swagger_client.ApiClient(configuration))
-peerid = 'peerid_example' # str | Peer id that should be pinged
+api_instance = swagger_client.PeerInfoApi(swagger_client.ApiClient(configuration))
+peerid = 'peerid_example' # str | 
 
 try:
-    api_response = api_instance.peers_ping_peer(peerid)
+    api_response = api_instance.peer_info_get_peer_info(peerid)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PeersApi->peers_ping_peer: %s\n" % e)
+    print("Exception when calling PeerInfoApi->peer_info_get_peer_info: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **peerid** | **str**| Peer id that should be pinged | 
+ **peerid** | **str**|  | 
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 

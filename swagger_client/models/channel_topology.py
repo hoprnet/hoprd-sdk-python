@@ -35,8 +35,6 @@ class ChannelTopology(object):
         'destination_address': 'NativeAddress',
         'balance': 'HoprBalance',
         'status': 'ChannelStatus',
-        'commitment': 'str',
-        'ticket_epoch': 'str',
         'ticket_index': 'str',
         'channel_epoch': 'str',
         'closure_time': 'str'
@@ -50,14 +48,12 @@ class ChannelTopology(object):
         'destination_address': 'destinationAddress',
         'balance': 'balance',
         'status': 'status',
-        'commitment': 'commitment',
-        'ticket_epoch': 'ticketEpoch',
         'ticket_index': 'ticketIndex',
         'channel_epoch': 'channelEpoch',
         'closure_time': 'closureTime'
     }
 
-    def __init__(self, channel_id=None, source_peer_id=None, destination_peer_id=None, source_address=None, destination_address=None, balance=None, status=None, commitment=None, ticket_epoch=None, ticket_index=None, channel_epoch=None, closure_time=None):  # noqa: E501
+    def __init__(self, channel_id=None, source_peer_id=None, destination_peer_id=None, source_address=None, destination_address=None, balance=None, status=None, ticket_index=None, channel_epoch=None, closure_time=None):  # noqa: E501
         """ChannelTopology - a model defined in Swagger"""  # noqa: E501
         self._channel_id = None
         self._source_peer_id = None
@@ -66,8 +62,6 @@ class ChannelTopology(object):
         self._destination_address = None
         self._balance = None
         self._status = None
-        self._commitment = None
-        self._ticket_epoch = None
         self._ticket_index = None
         self._channel_epoch = None
         self._closure_time = None
@@ -86,10 +80,6 @@ class ChannelTopology(object):
             self.balance = balance
         if status is not None:
             self.status = status
-        if commitment is not None:
-            self.commitment = commitment
-        if ticket_epoch is not None:
-            self.ticket_epoch = ticket_epoch
         if ticket_index is not None:
             self.ticket_index = ticket_index
         if channel_epoch is not None:
@@ -243,52 +233,6 @@ class ChannelTopology(object):
         """
 
         self._status = status
-
-    @property
-    def commitment(self):
-        """Gets the commitment of this ChannelTopology.  # noqa: E501
-
-        Redeemed commitment  # noqa: E501
-
-        :return: The commitment of this ChannelTopology.  # noqa: E501
-        :rtype: str
-        """
-        return self._commitment
-
-    @commitment.setter
-    def commitment(self, commitment):
-        """Sets the commitment of this ChannelTopology.
-
-        Redeemed commitment  # noqa: E501
-
-        :param commitment: The commitment of this ChannelTopology.  # noqa: E501
-        :type: str
-        """
-
-        self._commitment = commitment
-
-    @property
-    def ticket_epoch(self):
-        """Gets the ticket_epoch of this ChannelTopology.  # noqa: E501
-
-        Ticket redemption relies on providing the value opening to a series of commitments that have previously been stored on-chain by the ticket recipient.  # noqa: E501
-
-        :return: The ticket_epoch of this ChannelTopology.  # noqa: E501
-        :rtype: str
-        """
-        return self._ticket_epoch
-
-    @ticket_epoch.setter
-    def ticket_epoch(self, ticket_epoch):
-        """Sets the ticket_epoch of this ChannelTopology.
-
-        Ticket redemption relies on providing the value opening to a series of commitments that have previously been stored on-chain by the ticket recipient.  # noqa: E501
-
-        :param ticket_epoch: The ticket_epoch of this ChannelTopology.  # noqa: E501
-        :type: str
-        """
-
-        self._ticket_epoch = ticket_epoch
 
     @property
     def ticket_index(self):

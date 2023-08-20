@@ -30,24 +30,24 @@ class AccountWithdrawBody(object):
     swagger_types = {
         'currency': 'Currency',
         'amount': 'str',
-        'recipient': 'NativeAddress'
+        'ethereum_address': 'NativeAddress'
     }
 
     attribute_map = {
         'currency': 'currency',
         'amount': 'amount',
-        'recipient': 'recipient'
+        'ethereum_address': 'ethereumAddress'
     }
 
-    def __init__(self, currency=None, amount=None, recipient=None):  # noqa: E501
+    def __init__(self, currency=None, amount=None, ethereum_address=None):  # noqa: E501
         """AccountWithdrawBody - a model defined in Swagger"""  # noqa: E501
         self._currency = None
         self._amount = None
-        self._recipient = None
+        self._ethereum_address = None
         self.discriminator = None
         self.currency = currency
         self.amount = amount
-        self.recipient = recipient
+        self.ethereum_address = ethereum_address
 
     @property
     def currency(self):
@@ -98,27 +98,27 @@ class AccountWithdrawBody(object):
         self._amount = amount
 
     @property
-    def recipient(self):
-        """Gets the recipient of this AccountWithdrawBody.  # noqa: E501
+    def ethereum_address(self):
+        """Gets the ethereum_address of this AccountWithdrawBody.  # noqa: E501
 
 
-        :return: The recipient of this AccountWithdrawBody.  # noqa: E501
+        :return: The ethereum_address of this AccountWithdrawBody.  # noqa: E501
         :rtype: NativeAddress
         """
-        return self._recipient
+        return self._ethereum_address
 
-    @recipient.setter
-    def recipient(self, recipient):
-        """Sets the recipient of this AccountWithdrawBody.
+    @ethereum_address.setter
+    def ethereum_address(self, ethereum_address):
+        """Sets the ethereum_address of this AccountWithdrawBody.
 
 
-        :param recipient: The recipient of this AccountWithdrawBody.  # noqa: E501
+        :param ethereum_address: The ethereum_address of this AccountWithdrawBody.  # noqa: E501
         :type: NativeAddress
         """
-        if recipient is None:
-            raise ValueError("Invalid value for `recipient`, must not be `None`")  # noqa: E501
+        if ethereum_address is None:
+            raise ValueError("Invalid value for `ethereum_address`, must not be `None`")  # noqa: E501
 
-        self._recipient = recipient
+        self._ethereum_address = ethereum_address
 
     def to_dict(self):
         """Returns the model properties as a dict"""

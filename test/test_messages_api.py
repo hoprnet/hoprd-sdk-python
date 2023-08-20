@@ -40,14 +40,8 @@ class TestMessagesApi(unittest.TestCase):
         """
         pass
 
-    def test_messages_list_messages(self):
-        """Test case for messages_list_messages
-
-        """
-        pass
-
-    def test_messages_pop_all_messages(self):
-        """Test case for messages_pop_all_messages
+    def test_messages_pop_all_message(self):
+        """Test case for messages_pop_all_message
 
         """
         pass

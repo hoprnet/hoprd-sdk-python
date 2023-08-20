@@ -28,47 +28,47 @@ class ChannelsBody(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'peer_id': 'str',
+        'peer_address': 'str',
         'amount': 'str'
     }
 
     attribute_map = {
-        'peer_id': 'peerId',
+        'peer_address': 'peerAddress',
         'amount': 'amount'
     }
 
-    def __init__(self, peer_id=None, amount=None):  # noqa: E501
+    def __init__(self, peer_address=None, amount=None):  # noqa: E501
         """ChannelsBody - a model defined in Swagger"""  # noqa: E501
-        self._peer_id = None
+        self._peer_address = None
         self._amount = None
         self.discriminator = None
-        self.peer_id = peer_id
+        self.peer_address = peer_address
         self.amount = amount
 
     @property
-    def peer_id(self):
-        """Gets the peer_id of this ChannelsBody.  # noqa: E501
+    def peer_address(self):
+        """Gets the peer_address of this ChannelsBody.  # noqa: E501
 
-        PeerId that we want to transact with using this channel.  # noqa: E501
+        Peer address that we want to transact with using this channel.  # noqa: E501
 
-        :return: The peer_id of this ChannelsBody.  # noqa: E501
+        :return: The peer_address of this ChannelsBody.  # noqa: E501
         :rtype: str
         """
-        return self._peer_id
+        return self._peer_address
 
-    @peer_id.setter
-    def peer_id(self, peer_id):
-        """Sets the peer_id of this ChannelsBody.
+    @peer_address.setter
+    def peer_address(self, peer_address):
+        """Sets the peer_address of this ChannelsBody.
 
-        PeerId that we want to transact with using this channel.  # noqa: E501
+        Peer address that we want to transact with using this channel.  # noqa: E501
 
-        :param peer_id: The peer_id of this ChannelsBody.  # noqa: E501
+        :param peer_address: The peer_address of this ChannelsBody.  # noqa: E501
         :type: str
         """
-        if peer_id is None:
-            raise ValueError("Invalid value for `peer_id`, must not be `None`")  # noqa: E501
+        if peer_address is None:
+            raise ValueError("Invalid value for `peer_address`, must not be `None`")  # noqa: E501
 
-        self._peer_id = peer_id
+        self._peer_address = peer_address
 
     @property
     def amount(self):

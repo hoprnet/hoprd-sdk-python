@@ -64,6 +64,24 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.AccountApi(swagger_client.ApiClient(configuration))
 
 try:
+    api_response = api_instance.account_get_address()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountApi->account_get_address: %s\n" % e)
+
+# Configure API key authorization: keyScheme
+configuration = swagger_client.Configuration()
+configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.AccountApi(swagger_client.ApiClient(configuration))
+
+try:
     api_response = api_instance.account_get_addresses()
     pprint(api_response)
 except ApiException as e:
@@ -113,6 +131,7 @@ All URIs are relative to */api/v3*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**account_get_address**](docs/AccountApi.md#account_get_address) | **GET** /account/address | 
 *AccountApi* | [**account_get_addresses**](docs/AccountApi.md#account_get_addresses) | **GET** /account/addresses | 
 *AccountApi* | [**account_get_balances**](docs/AccountApi.md#account_get_balances) | **GET** /account/balances | 
 *AccountApi* | [**account_withdraw**](docs/AccountApi.md#account_withdraw) | **POST** /account/withdraw | 
@@ -128,8 +147,7 @@ Class | Method | HTTP request | Description
 *ChannelsApi* | [**channels_redeem_tickets**](docs/ChannelsApi.md#channels_redeem_tickets) | **POST** /channels/{channelid}/tickets/redeem | 
 *MessagesApi* | [**messages_delete_messages**](docs/MessagesApi.md#messages_delete_messages) | **DELETE** /messages/ | 
 *MessagesApi* | [**messages_get_size**](docs/MessagesApi.md#messages_get_size) | **GET** /messages/size | 
-*MessagesApi* | [**messages_list_messages**](docs/MessagesApi.md#messages_list_messages) | **GET** /messages/ | 
-*MessagesApi* | [**messages_pop_all_messages**](docs/MessagesApi.md#messages_pop_all_messages) | **POST** /messages/pop-all | 
+*MessagesApi* | [**messages_pop_all_message**](docs/MessagesApi.md#messages_pop_all_message) | **POST** /messages/pop-all | 
 *MessagesApi* | [**messages_pop_message**](docs/MessagesApi.md#messages_pop_message) | **POST** /messages/pop | 
 *MessagesApi* | [**messages_send_message**](docs/MessagesApi.md#messages_send_message) | **POST** /messages/ | 
 *MessagesApi* | [**messages_websocket**](docs/MessagesApi.md#messages_websocket) | **GET** /messages/websocket | 
@@ -138,7 +156,7 @@ Class | Method | HTTP request | Description
 *NodeApi* | [**node_get_metrics**](docs/NodeApi.md#node_get_metrics) | **GET** /node/metrics | 
 *NodeApi* | [**node_get_peers**](docs/NodeApi.md#node_get_peers) | **GET** /node/peers | 
 *NodeApi* | [**node_get_version**](docs/NodeApi.md#node_get_version) | **GET** /node/version | 
-*PeersApi* | [**peers_get_peer_info**](docs/PeersApi.md#peers_get_peer_info) | **GET** /peers/{peerid} | 
+*PeerInfoApi* | [**peer_info_get_peer_info**](docs/PeerInfoApi.md#peer_info_get_peer_info) | **GET** /peers/{peerid}/ | 
 *PeersApi* | [**peers_ping_peer**](docs/PeersApi.md#peers_ping_peer) | **POST** /peers/{peerid}/ping | 
 *SettingsApi* | [**settings_get_settings**](docs/SettingsApi.md#settings_get_settings) | **GET** /settings/ | 
 *SettingsApi* | [**settings_set_setting**](docs/SettingsApi.md#settings_set_setting) | **PUT** /settings/{setting} | 

@@ -30,7 +30,7 @@ class MessagesBody(object):
     swagger_types = {
         'tag': 'MessageTag',
         'body': 'MessageBody',
-        'recipient': 'str',
+        'peer_address': 'str',
         'path': 'list[str]',
         'hops': 'int'
     }
@@ -38,22 +38,22 @@ class MessagesBody(object):
     attribute_map = {
         'tag': 'tag',
         'body': 'body',
-        'recipient': 'recipient',
+        'peer_address': 'peerAddress',
         'path': 'path',
         'hops': 'hops'
     }
 
-    def __init__(self, tag=None, body=None, recipient=None, path=None, hops=None):  # noqa: E501
+    def __init__(self, tag=None, body=None, peer_address=None, path=None, hops=None):  # noqa: E501
         """MessagesBody - a model defined in Swagger"""  # noqa: E501
         self._tag = None
         self._body = None
-        self._recipient = None
+        self._peer_address = None
         self._path = None
         self._hops = None
         self.discriminator = None
         self.tag = tag
         self.body = body
-        self.recipient = recipient
+        self.peer_address = peer_address
         if path is not None:
             self.path = path
         if hops is not None:
@@ -106,29 +106,29 @@ class MessagesBody(object):
         self._body = body
 
     @property
-    def recipient(self):
-        """Gets the recipient of this MessagesBody.  # noqa: E501
+    def peer_address(self):
+        """Gets the peer_address of this MessagesBody.  # noqa: E501
 
         The recipient HOPR peer id, to which the message is sent.  # noqa: E501
 
-        :return: The recipient of this MessagesBody.  # noqa: E501
+        :return: The peer_address of this MessagesBody.  # noqa: E501
         :rtype: str
         """
-        return self._recipient
+        return self._peer_address
 
-    @recipient.setter
-    def recipient(self, recipient):
-        """Sets the recipient of this MessagesBody.
+    @peer_address.setter
+    def peer_address(self, peer_address):
+        """Sets the peer_address of this MessagesBody.
 
         The recipient HOPR peer id, to which the message is sent.  # noqa: E501
 
-        :param recipient: The recipient of this MessagesBody.  # noqa: E501
+        :param peer_address: The peer_address of this MessagesBody.  # noqa: E501
         :type: str
         """
-        if recipient is None:
-            raise ValueError("Invalid value for `recipient`, must not be `None`")  # noqa: E501
+        if peer_address is None:
+            raise ValueError("Invalid value for `peer_address`, must not be `None`")  # noqa: E501
 
-        self._recipient = recipient
+        self._peer_address = peer_address
 
     @property
     def path(self):

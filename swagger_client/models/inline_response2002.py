@@ -35,6 +35,9 @@ class InlineResponse2002(object):
         'hopr_token': 'str',
         'hopr_channels': 'str',
         'hopr_network_registry_address': 'str',
+        'hopr_node_safe_registry_address': 'str',
+        'node_management_module': 'str',
+        'node_safe': 'str',
         'connectivity_status': 'str',
         'is_eligible': 'bool',
         'channel_closure_period': 'float'
@@ -48,12 +51,15 @@ class InlineResponse2002(object):
         'hopr_token': 'hoprToken',
         'hopr_channels': 'hoprChannels',
         'hopr_network_registry_address': 'hoprNetworkRegistryAddress',
+        'hopr_node_safe_registry_address': 'hoprNodeSafeRegistryAddress',
+        'node_management_module': 'nodeManagementModule',
+        'node_safe': 'nodeSafe',
         'connectivity_status': 'connectivityStatus',
         'is_eligible': 'isEligible',
         'channel_closure_period': 'channelClosurePeriod'
     }
 
-    def __init__(self, network=None, announced_address=None, listening_address=None, chain=None, hopr_token=None, hopr_channels=None, hopr_network_registry_address=None, connectivity_status=None, is_eligible=None, channel_closure_period=None):  # noqa: E501
+    def __init__(self, network=None, announced_address=None, listening_address=None, chain=None, hopr_token=None, hopr_channels=None, hopr_network_registry_address=None, hopr_node_safe_registry_address=None, node_management_module=None, node_safe=None, connectivity_status=None, is_eligible=None, channel_closure_period=None):  # noqa: E501
         """InlineResponse2002 - a model defined in Swagger"""  # noqa: E501
         self._network = None
         self._announced_address = None
@@ -62,6 +68,9 @@ class InlineResponse2002(object):
         self._hopr_token = None
         self._hopr_channels = None
         self._hopr_network_registry_address = None
+        self._hopr_node_safe_registry_address = None
+        self._node_management_module = None
+        self._node_safe = None
         self._connectivity_status = None
         self._is_eligible = None
         self._channel_closure_period = None
@@ -80,6 +89,12 @@ class InlineResponse2002(object):
             self.hopr_channels = hopr_channels
         if hopr_network_registry_address is not None:
             self.hopr_network_registry_address = hopr_network_registry_address
+        if hopr_node_safe_registry_address is not None:
+            self.hopr_node_safe_registry_address = hopr_node_safe_registry_address
+        if node_management_module is not None:
+            self.node_management_module = node_management_module
+        if node_safe is not None:
+            self.node_safe = node_safe
         if connectivity_status is not None:
             self.connectivity_status = connectivity_status
         if is_eligible is not None:
@@ -243,6 +258,75 @@ class InlineResponse2002(object):
         """
 
         self._hopr_network_registry_address = hopr_network_registry_address
+
+    @property
+    def hopr_node_safe_registry_address(self):
+        """Gets the hopr_node_safe_registry_address of this InlineResponse2002.  # noqa: E501
+
+        Contract address of the contract that register node and safe pairs  # noqa: E501
+
+        :return: The hopr_node_safe_registry_address of this InlineResponse2002.  # noqa: E501
+        :rtype: str
+        """
+        return self._hopr_node_safe_registry_address
+
+    @hopr_node_safe_registry_address.setter
+    def hopr_node_safe_registry_address(self, hopr_node_safe_registry_address):
+        """Sets the hopr_node_safe_registry_address of this InlineResponse2002.
+
+        Contract address of the contract that register node and safe pairs  # noqa: E501
+
+        :param hopr_node_safe_registry_address: The hopr_node_safe_registry_address of this InlineResponse2002.  # noqa: E501
+        :type: str
+        """
+
+        self._hopr_node_safe_registry_address = hopr_node_safe_registry_address
+
+    @property
+    def node_management_module(self):
+        """Gets the node_management_module of this InlineResponse2002.  # noqa: E501
+
+        Contract address of the Safe module for managing the current hopr node  # noqa: E501
+
+        :return: The node_management_module of this InlineResponse2002.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_management_module
+
+    @node_management_module.setter
+    def node_management_module(self, node_management_module):
+        """Sets the node_management_module of this InlineResponse2002.
+
+        Contract address of the Safe module for managing the current hopr node  # noqa: E501
+
+        :param node_management_module: The node_management_module of this InlineResponse2002.  # noqa: E501
+        :type: str
+        """
+
+        self._node_management_module = node_management_module
+
+    @property
+    def node_safe(self):
+        """Gets the node_safe of this InlineResponse2002.  # noqa: E501
+
+        Contract address of the safe that holds asset for the current node  # noqa: E501
+
+        :return: The node_safe of this InlineResponse2002.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_safe
+
+    @node_safe.setter
+    def node_safe(self, node_safe):
+        """Sets the node_safe of this InlineResponse2002.
+
+        Contract address of the safe that holds asset for the current node  # noqa: E501
+
+        :param node_safe: The node_safe of this InlineResponse2002.  # noqa: E501
+        :type: str
+        """
+
+        self._node_safe = node_safe
 
     @property
     def connectivity_status(self):

@@ -15,21 +15,21 @@ from __future__ import absolute_import
 import unittest
 
 import swagger_client
-from swagger_client.api.peers_api import PeersApi  # noqa: E501
+from swagger_client.api.peer_info_api import PeerInfoApi  # noqa: E501
 from swagger_client.rest import ApiException
 
 
-class TestPeersApi(unittest.TestCase):
-    """PeersApi unit test stubs"""
+class TestPeerInfoApi(unittest.TestCase):
+    """PeerInfoApi unit test stubs"""
 
     def setUp(self):
-        self.api = PeersApi()  # noqa: E501
+        self.api = PeerInfoApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def test_peers_ping_peer(self):
-        """Test case for peers_ping_peer
+    def test_peer_info_get_peer_info(self):
+        """Test case for peer_info_get_peer_info
 
         """
         pass

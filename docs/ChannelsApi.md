@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 
-Close an opened channel between this node and another node. Once you've initiated channel closure, you have to wait for a specified closure time, it will show you a closure initiation message with cool-off time you need to wait.   Then you will need to send the same command again to finalize closure. This is a cool down period to give the other party in the channel sufficient time to redeem their tickets.
+Close a opened channel between this node and other node. Once you've initiated channel closure, you have to wait for a specified closure time, it will show you a closure initiation message with cool-off time you need to wait.   Then you will need to send the same command again to finalize closure. This is a cool down period to give the other party in the channel sufficient time to redeem their tickets.
 
 ### Example
 ```python
@@ -37,7 +37,7 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ChannelsApi(swagger_client.ApiClient(configuration))
-channelid = swagger_client.ChannelId() # ChannelId | 
+channelid = 'channelid_example' # str | 
 
 try:
     api_response = api_instance.channels_close_channel(channelid)
@@ -50,7 +50,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channelid** | [**ChannelId**](.md)|  | 
+ **channelid** | **str**|  | 
 
 ### Return type
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **channels_get_channel**
-> list[Channel] channels_get_channel(channelid)
+> list[ChannelTopology] channels_get_channel(channelid)
 
 
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Channel]**](Channel.md)
+[**list[ChannelTopology]**](ChannelTopology.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ChannelsApi(swagger_client.ApiClient(configuration))
-channelid = swagger_client.ChannelId() # ChannelId | 
+channelid = 'channelid_example' # str | 
 
 try:
     api_response = api_instance.channels_get_tickets(channelid)
@@ -220,7 +220,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channelid** | [**ChannelId**](.md)|  | 
+ **channelid** | **str**|  | 
 
 ### Return type
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 
 
-Redeems your tickets for this channel. Redeeming will change your tickets into Hopr tokens if they are winning ones. Do this before channel is closed as neglected tickets are no longer valid for redeeming.
+Redeems your tickets for this channel. Redeeming will change your tickets into Hopr tokens if they are winning ones. You can check how much tickets given channel has by calling /channels/{channelid}/tickets endpoint. Do this before channel is closed as neglected tickets are no longer valid for redeeming.
 
 ### Example
 ```python
@@ -319,7 +319,7 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ChannelsApi(swagger_client.ApiClient(configuration))
-channelid = swagger_client.ChannelId() # ChannelId | 
+channelid = 'channelid_example' # str | 
 
 try:
     api_instance.channels_redeem_tickets(channelid)
@@ -331,7 +331,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channelid** | [**ChannelId**](.md)|  | 
+ **channelid** | **str**|  | 
 
 ### Return type
 
