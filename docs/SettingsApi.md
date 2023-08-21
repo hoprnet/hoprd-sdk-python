@@ -1,4 +1,4 @@
-# swagger_client.SettingsApi
+# hoprd_sdk.SettingsApi
 
 All URIs are relative to */api/v3*
 
@@ -18,21 +18,21 @@ Get all of the node's settings.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.SettingsApi(swagger_client.ApiClient(configuration))
+api_instance = hoprd_sdk.SettingsApi(hoprd_sdk.ApiClient(configuration))
 
 try:
     api_response = api_instance.settings_get_settings()
@@ -70,23 +70,23 @@ Change this node's setting value. Check Settings schema to learn more about each
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.SettingsApi(swagger_client.ApiClient(configuration))
+api_instance = hoprd_sdk.SettingsApi(hoprd_sdk.ApiClient(configuration))
 setting = 'setting_example' # str | 
-body = swagger_client.SettingsSettingBody() # SettingsSettingBody |  (optional)
+body = hoprd_sdk.SettingsSettingBody() # SettingsSettingBody |  (optional)
 
 try:
     api_instance.settings_set_setting(setting, body=body)

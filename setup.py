@@ -12,8 +12,8 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "swagger-client"
-VERSION = "1.0.0"
+NAME = "hoprd-sdk"
+VERSION = "2.0.0-rc.1"
 # To install the library, run the following
 #
 # python setup.py install
@@ -28,7 +28,7 @@ setup(
     version=VERSION,
     description="HOPRd Rest API v3",
     author_email="tech@hoprnet.org",
-    url="",
+    url="https://github.com/hoprnet/hoprd-sdk-python",
     keywords=["Swagger", "HOPRd Rest API v3"],
     install_requires=REQUIRES,
     packages=find_packages(),

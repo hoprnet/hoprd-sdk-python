@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.inline_response2006 import InlineResponse2006  # noqa: E501
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.models.inline_response2006 import InlineResponse2006  # noqa: E501
+from hoprd_sdk.rest import ApiException
 
 
 class TestInlineResponse2006(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestInlineResponse2006(unittest.TestCase):
     def testInlineResponse2006(self):
         """Test InlineResponse2006"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.inline_response2006.InlineResponse2006()  # noqa: E501
+        # model = hoprd_sdk.models.inline_response2006.InlineResponse2006()  # noqa: E501
         pass
 
 

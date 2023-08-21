@@ -1,4 +1,4 @@
-# swagger_client.MessagesApi
+# hoprd_sdk.MessagesApi
 
 All URIs are relative to */api/v3*
 
@@ -22,22 +22,22 @@ Delete messages from nodes message inbox. Does not return any data.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.MessagesApi(swagger_client.ApiClient(configuration))
-tag = swagger_client.MessageTag() # MessageTag | Tag used to filter target messages.
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+tag = hoprd_sdk.MessageTag() # MessageTag | Tag used to filter target messages.
 
 try:
     api_instance.messages_delete_messages(tag)
@@ -77,22 +77,22 @@ Get size of filtered message inbox.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.MessagesApi(swagger_client.ApiClient(configuration))
-tag = swagger_client.MessageTag() # MessageTag | Tag used to filter target messages.
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+tag = hoprd_sdk.MessageTag() # MessageTag | Tag used to filter target messages.
 
 try:
     api_response = api_instance.messages_get_size(tag)
@@ -133,22 +133,22 @@ Get list of messages currently present in the nodes message inbox. The messages 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.MessagesApi(swagger_client.ApiClient(configuration))
-body = swagger_client.MessagesPopallBody() # MessagesPopallBody |  (optional)
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.MessagesPopallBody() # MessagesPopallBody |  (optional)
 
 try:
     api_response = api_instance.messages_pop_all_message(body=body)
@@ -189,22 +189,22 @@ Get oldest message currently present in the nodes message inbox. The message is 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.MessagesApi(swagger_client.ApiClient(configuration))
-body = swagger_client.MessagesPopBody() # MessagesPopBody |  (optional)
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.MessagesPopBody() # MessagesPopBody |  (optional)
 
 try:
     api_response = api_instance.messages_pop_message(body=body)
@@ -245,22 +245,22 @@ Send a message to another peer using a given path (list of node addresses that s
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.MessagesApi(swagger_client.ApiClient(configuration))
-body = swagger_client.MessagesBody() # MessagesBody |  (optional)
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.MessagesBody() # MessagesBody |  (optional)
 
 try:
     api_response = api_instance.messages_send_message(body=body)
@@ -301,21 +301,21 @@ This is a websocket endpoint which exposes a subset of message functions. Incomi
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.MessagesApi(swagger_client.ApiClient(configuration))
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
 
 try:
     api_response = api_instance.messages_websocket()

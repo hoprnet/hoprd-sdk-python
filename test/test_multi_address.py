@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.multi_address import MultiAddress  # noqa: E501
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.models.multi_address import MultiAddress  # noqa: E501
+from hoprd_sdk.rest import ApiException
 
 
 class TestMultiAddress(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestMultiAddress(unittest.TestCase):
     def testMultiAddress(self):
         """Test MultiAddress"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.multi_address.MultiAddress()  # noqa: E501
+        # model = hoprd_sdk.models.multi_address.MultiAddress()  # noqa: E501
         pass
 
 

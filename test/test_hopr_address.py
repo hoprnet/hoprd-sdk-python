@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.hopr_address import HoprAddress  # noqa: E501
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.models.hopr_address import HoprAddress  # noqa: E501
+from hoprd_sdk.rest import ApiException
 
 
 class TestHoprAddress(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestHoprAddress(unittest.TestCase):
     def testHoprAddress(self):
         """Test HoprAddress"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.hopr_address.HoprAddress()  # noqa: E501
+        # model = hoprd_sdk.models.hopr_address.HoprAddress()  # noqa: E501
         pass
 
 

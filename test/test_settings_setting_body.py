@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.settings_setting_body import SettingsSettingBody  # noqa: E501
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.models.settings_setting_body import SettingsSettingBody  # noqa: E501
+from hoprd_sdk.rest import ApiException
 
 
 class TestSettingsSettingBody(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestSettingsSettingBody(unittest.TestCase):
     def testSettingsSettingBody(self):
         """Test SettingsSettingBody"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.settings_setting_body.SettingsSettingBody()  # noqa: E501
+        # model = hoprd_sdk.models.settings_setting_body.SettingsSettingBody()  # noqa: E501
         pass
 
 

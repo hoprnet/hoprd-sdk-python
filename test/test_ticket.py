@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.ticket import Ticket  # noqa: E501
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.models.ticket import Ticket  # noqa: E501
+from hoprd_sdk.rest import ApiException
 
 
 class TestTicket(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestTicket(unittest.TestCase):
     def testTicket(self):
         """Test Ticket"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.ticket.Ticket()  # noqa: E501
+        # model = hoprd_sdk.models.ticket.Ticket()  # noqa: E501
         pass
 
 

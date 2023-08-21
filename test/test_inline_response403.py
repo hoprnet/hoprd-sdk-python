@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.inline_response403 import InlineResponse403  # noqa: E501
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.models.inline_response403 import InlineResponse403  # noqa: E501
+from hoprd_sdk.rest import ApiException
 
 
 class TestInlineResponse403(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestInlineResponse403(unittest.TestCase):
     def testInlineResponse403(self):
         """Test InlineResponse403"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.inline_response403.InlineResponse403()  # noqa: E501
+        # model = hoprd_sdk.models.inline_response403.InlineResponse403()  # noqa: E501
         pass
 
 

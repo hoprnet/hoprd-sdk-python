@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.transaction_receipt import TransactionReceipt  # noqa: E501
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.models.transaction_receipt import TransactionReceipt  # noqa: E501
+from hoprd_sdk.rest import ApiException
 
 
 class TestTransactionReceipt(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestTransactionReceipt(unittest.TestCase):
     def testTransactionReceipt(self):
         """Test TransactionReceipt"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.transaction_receipt.TransactionReceipt()  # noqa: E501
+        # model = hoprd_sdk.models.transaction_receipt.TransactionReceipt()  # noqa: E501
         pass
 
 

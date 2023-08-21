@@ -63,7 +63,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         self.password = ""
         # Logging Settings
         self.logger = {}
-        self.logger["package_logger"] = logging.getLogger("swagger_client")
+        self.logger["package_logger"] = logging.getLogger("hoprd_sdk")
         self.logger["urllib3_logger"] = logging.getLogger("urllib3")
         # Log format
         self.logger_format = '%(asctime)s %(levelname)s %(message)s'
@@ -254,5 +254,5 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 3.0.0\n"\
-               "SDK Package Version: 1.0.0".\
+               "SDK Package Version: 2.0.0-rc.1".\
                format(env=sys.platform, pyversion=sys.version)

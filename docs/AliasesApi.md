@@ -1,4 +1,4 @@
-# swagger_client.AliasesApi
+# hoprd_sdk.AliasesApi
 
 All URIs are relative to */api/v3*
 
@@ -20,21 +20,21 @@ Get the PeerId (Hopr address) that have this alias assigned to it.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.AliasesApi(swagger_client.ApiClient(configuration))
+api_instance = hoprd_sdk.AliasesApi(hoprd_sdk.ApiClient(configuration))
 alias = 'alias_example' # str | Alias that we previously assigned to some PeerId.
 
 try:
@@ -76,21 +76,21 @@ Get all aliases you set previously and thier corresponding peer IDs.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.AliasesApi(swagger_client.ApiClient(configuration))
+api_instance = hoprd_sdk.AliasesApi(hoprd_sdk.ApiClient(configuration))
 
 try:
     api_response = api_instance.aliases_get_aliases()
@@ -128,21 +128,21 @@ Unassign an alias from a PeerId. You can always assign back alias to that PeerId
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.AliasesApi(swagger_client.ApiClient(configuration))
+api_instance = hoprd_sdk.AliasesApi(hoprd_sdk.ApiClient(configuration))
 alias = 'alias_example' # str | Alias that we want to remove.
 
 try:
@@ -183,22 +183,22 @@ Instead of using HOPR address, we can assign HOPR address to a specific name cal
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.AliasesApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AliasesBody() # AliasesBody |  (optional)
+api_instance = hoprd_sdk.AliasesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.AliasesBody() # AliasesBody |  (optional)
 
 try:
     api_instance.aliases_set_alias(body=body)

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.message_tag import MessageTag  # noqa: E501
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.models.message_tag import MessageTag  # noqa: E501
+from hoprd_sdk.rest import ApiException
 
 
 class TestMessageTag(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestMessageTag(unittest.TestCase):
     def testMessageTag(self):
         """Test MessageTag"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.message_tag.MessageTag()  # noqa: E501
+        # model = hoprd_sdk.models.message_tag.MessageTag()  # noqa: E501
         pass
 
 

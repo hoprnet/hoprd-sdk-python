@@ -1,4 +1,4 @@
-# swagger_client.PeerInfoApi
+# hoprd_sdk.PeerInfoApi
 
 All URIs are relative to */api/v3*
 
@@ -17,21 +17,21 @@ Get information about this peer.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.PeerInfoApi(swagger_client.ApiClient(configuration))
+api_instance = hoprd_sdk.PeerInfoApi(hoprd_sdk.ApiClient(configuration))
 peerid = 'peerid_example' # str | 
 
 try:

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.tokens_api import TokensApi  # noqa: E501
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.api.tokens_api import TokensApi  # noqa: E501
+from hoprd_sdk.rest import ApiException
 
 
 class TestTokensApi(unittest.TestCase):
