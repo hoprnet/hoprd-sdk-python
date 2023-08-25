@@ -103,10 +103,6 @@ class ApiClient(object):
 
         return self._pool
 
-    def __del__(self):
-        self.pool.close()
-        self.pool.join()
-
     @property
     def user_agent(self):
         """User agent for this API client"""
