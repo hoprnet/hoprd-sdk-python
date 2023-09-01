@@ -1,13 +1,13 @@
-# swagger_client.PeerInfoApi
+# hoprd_sdk.PeerInfoApi
 
-All URIs are relative to */api/v2*
+All URIs are relative to */api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**peer_info_get_peer_info**](PeerInfoApi.md#peer_info_get_peer_info) | **GET** /peerInfo/{peerid} | 
+[**peer_info_get_peer_info**](PeerInfoApi.md#peer_info_get_peer_info) | **GET** /peers/{peerid}/ | 
 
 # **peer_info_get_peer_info**
-> InlineResponse20010 peer_info_get_peer_info(peerid)
+> InlineResponse20011 peer_info_get_peer_info(peerid)
 
 
 
@@ -17,22 +17,22 @@ Get information about this peer.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: keyScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = swagger_client.Configuration()
+configuration = hoprd_sdk.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = swagger_client.PeerInfoApi(swagger_client.ApiClient(configuration))
-peerid = swagger_client.HoprAddress() # HoprAddress | 
+api_instance = hoprd_sdk.PeerInfoApi(hoprd_sdk.ApiClient(configuration))
+peerid = 'peerid_example' # str | 
 
 try:
     api_response = api_instance.peer_info_get_peer_info(peerid)
@@ -45,11 +45,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **peerid** | [**HoprAddress**](.md)|  | 
+ **peerid** | **str**|  | 
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 

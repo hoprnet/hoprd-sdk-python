@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**receipt** | **str** | Receipt for fund multi channels transaction. Can be used to check status of the smart contract call on blockchain. | [optional] 
+**channel_id** | [**ChannelId**](ChannelId.md) |  | [optional] 
+**transaction_receipt** | [**TransactionReceipt**](TransactionReceipt.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
