@@ -29,46 +29,46 @@ class Ticket(object):
     """
     swagger_types = {
         'channel_id': 'ChannelId',
-        'challenge': 'str',
-        'index': 'str',
         'amount': 'str',
-        'win_prob': 'str',
+        'index': 'str',
+        'index_offset': 'str',
         'channel_epoch': 'str',
+        'win_prob': 'str',
         'signature': 'Signature'
     }
 
     attribute_map = {
         'channel_id': 'channelId',
-        'challenge': 'challenge',
-        'index': 'index',
         'amount': 'amount',
-        'win_prob': 'winProb',
+        'index': 'index',
+        'index_offset': 'indexOffset',
         'channel_epoch': 'channelEpoch',
+        'win_prob': 'winProb',
         'signature': 'signature'
     }
 
-    def __init__(self, channel_id=None, challenge=None, index=None, amount=None, win_prob=None, channel_epoch=None, signature=None):  # noqa: E501
+    def __init__(self, channel_id=None, amount=None, index=None, index_offset=None, channel_epoch=None, win_prob=None, signature=None):  # noqa: E501
         """Ticket - a model defined in Swagger"""  # noqa: E501
         self._channel_id = None
-        self._challenge = None
-        self._index = None
         self._amount = None
-        self._win_prob = None
+        self._index = None
+        self._index_offset = None
         self._channel_epoch = None
+        self._win_prob = None
         self._signature = None
         self.discriminator = None
         if channel_id is not None:
             self.channel_id = channel_id
-        if challenge is not None:
-            self.challenge = challenge
-        if index is not None:
-            self.index = index
         if amount is not None:
             self.amount = amount
-        if win_prob is not None:
-            self.win_prob = win_prob
+        if index is not None:
+            self.index = index
+        if index_offset is not None:
+            self.index_offset = index_offset
         if channel_epoch is not None:
             self.channel_epoch = channel_epoch
+        if win_prob is not None:
+            self.win_prob = win_prob
         if signature is not None:
             self.signature = signature
 
@@ -94,27 +94,27 @@ class Ticket(object):
         self._channel_id = channel_id
 
     @property
-    def challenge(self):
-        """Gets the challenge of this Ticket.  # noqa: E501
+    def amount(self):
+        """Gets the amount of this Ticket.  # noqa: E501
 
-        The ticket's challenge which needs to be solved before being able to claim the embedded incentive.  # noqa: E501
+        The ticket's value in HOPR. Only relevant if ticket is a win.  # noqa: E501
 
-        :return: The challenge of this Ticket.  # noqa: E501
+        :return: The amount of this Ticket.  # noqa: E501
         :rtype: str
         """
-        return self._challenge
+        return self._amount
 
-    @challenge.setter
-    def challenge(self, challenge):
-        """Sets the challenge of this Ticket.
+    @amount.setter
+    def amount(self, amount):
+        """Sets the amount of this Ticket.
 
-        The ticket's challenge which needs to be solved before being able to claim the embedded incentive.  # noqa: E501
+        The ticket's value in HOPR. Only relevant if ticket is a win.  # noqa: E501
 
-        :param challenge: The challenge of this Ticket.  # noqa: E501
+        :param amount: The amount of this Ticket.  # noqa: E501
         :type: str
         """
 
-        self._challenge = challenge
+        self._amount = amount
 
     @property
     def index(self):
@@ -140,50 +140,27 @@ class Ticket(object):
         self._index = index
 
     @property
-    def amount(self):
-        """Gets the amount of this Ticket.  # noqa: E501
+    def index_offset(self):
+        """Gets the index_offset of this Ticket.  # noqa: E501
 
-        The ticket's value in HOPR.  # noqa: E501
+        Offset by which the on-chain stored ticket index gets increased when redeeming the ticket. Used to aggregate tickets.  # noqa: E501
 
-        :return: The amount of this Ticket.  # noqa: E501
+        :return: The index_offset of this Ticket.  # noqa: E501
         :rtype: str
         """
-        return self._amount
+        return self._index_offset
 
-    @amount.setter
-    def amount(self, amount):
-        """Sets the amount of this Ticket.
+    @index_offset.setter
+    def index_offset(self, index_offset):
+        """Sets the index_offset of this Ticket.
 
-        The ticket's value in HOPR.  # noqa: E501
+        Offset by which the on-chain stored ticket index gets increased when redeeming the ticket. Used to aggregate tickets.  # noqa: E501
 
-        :param amount: The amount of this Ticket.  # noqa: E501
+        :param index_offset: The index_offset of this Ticket.  # noqa: E501
         :type: str
         """
 
-        self._amount = amount
-
-    @property
-    def win_prob(self):
-        """Gets the win_prob of this Ticket.  # noqa: E501
-
-        The ticket's winning probability normalized with the common base of Ethereum which is 2^256-1.  # noqa: E501
-
-        :return: The win_prob of this Ticket.  # noqa: E501
-        :rtype: str
-        """
-        return self._win_prob
-
-    @win_prob.setter
-    def win_prob(self, win_prob):
-        """Sets the win_prob of this Ticket.
-
-        The ticket's winning probability normalized with the common base of Ethereum which is 2^256-1.  # noqa: E501
-
-        :param win_prob: The win_prob of this Ticket.  # noqa: E501
-        :type: str
-        """
-
-        self._win_prob = win_prob
+        self._index_offset = index_offset
 
     @property
     def channel_epoch(self):
@@ -207,6 +184,29 @@ class Ticket(object):
         """
 
         self._channel_epoch = channel_epoch
+
+    @property
+    def win_prob(self):
+        """Gets the win_prob of this Ticket.  # noqa: E501
+
+        The ticket's winning probability, going from 0.0 to 1.0 where 0.0 ~= 0% winning probability and 1.0 equals 100% winning probability.  # noqa: E501
+
+        :return: The win_prob of this Ticket.  # noqa: E501
+        :rtype: str
+        """
+        return self._win_prob
+
+    @win_prob.setter
+    def win_prob(self, win_prob):
+        """Sets the win_prob of this Ticket.
+
+        The ticket's winning probability, going from 0.0 to 1.0 where 0.0 ~= 0% winning probability and 1.0 equals 100% winning probability.  # noqa: E501
+
+        :param win_prob: The win_prob of this Ticket.  # noqa: E501
+        :type: str
+        """
+
+        self._win_prob = win_prob
 
     @property
     def signature(self):

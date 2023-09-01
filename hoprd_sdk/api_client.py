@@ -10,7 +10,6 @@
 """
 from __future__ import absolute_import
 
-import atexit
 import datetime
 import json
 import mimetypes
@@ -18,6 +17,7 @@ from multiprocessing.pool import ThreadPool
 import os
 import re
 import tempfile
+import atexit
 
 # python 2 and python 3 compatibility library
 import six
@@ -59,7 +59,6 @@ class ApiClient(object):
         "datetime": datetime.datetime,
         "object": object,
     }
-
     _pool = None
 
     def __init__(
