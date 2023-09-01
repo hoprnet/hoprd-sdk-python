@@ -30,7 +30,7 @@ class MessagesBody(object):
     swagger_types = {
         'tag': 'MessageTag',
         'body': 'MessageBody',
-        'peer_address': 'str',
+        'peer_id': 'str',
         'path': 'list[str]',
         'hops': 'int'
     }
@@ -38,22 +38,22 @@ class MessagesBody(object):
     attribute_map = {
         'tag': 'tag',
         'body': 'body',
-        'peer_address': 'peerAddress',
+        'peer_id': 'peerId',
         'path': 'path',
         'hops': 'hops'
     }
 
-    def __init__(self, tag=None, body=None, peer_address=None, path=None, hops=None):  # noqa: E501
+    def __init__(self, tag=None, body=None, peer_id=None, path=None, hops=None):  # noqa: E501
         """MessagesBody - a model defined in Swagger"""  # noqa: E501
         self._tag = None
         self._body = None
-        self._peer_address = None
+        self._peer_id = None
         self._path = None
         self._hops = None
         self.discriminator = None
         self.tag = tag
         self.body = body
-        self.peer_address = peer_address
+        self.peer_id = peer_id
         if path is not None:
             self.path = path
         if hops is not None:
@@ -106,29 +106,29 @@ class MessagesBody(object):
         self._body = body
 
     @property
-    def peer_address(self):
-        """Gets the peer_address of this MessagesBody.  # noqa: E501
+    def peer_id(self):
+        """Gets the peer_id of this MessagesBody.  # noqa: E501
 
         The recipient HOPR peer id, to which the message is sent.  # noqa: E501
 
-        :return: The peer_address of this MessagesBody.  # noqa: E501
+        :return: The peer_id of this MessagesBody.  # noqa: E501
         :rtype: str
         """
-        return self._peer_address
+        return self._peer_id
 
-    @peer_address.setter
-    def peer_address(self, peer_address):
-        """Sets the peer_address of this MessagesBody.
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """Sets the peer_id of this MessagesBody.
 
         The recipient HOPR peer id, to which the message is sent.  # noqa: E501
 
-        :param peer_address: The peer_address of this MessagesBody.  # noqa: E501
+        :param peer_id: The peer_id of this MessagesBody.  # noqa: E501
         :type: str
         """
-        if peer_address is None:
-            raise ValueError("Invalid value for `peer_address`, must not be `None`")  # noqa: E501
+        if peer_id is None:
+            raise ValueError("Invalid value for `peer_id`, must not be `None`")  # noqa: E501
 
-        self._peer_address = peer_address
+        self._peer_id = peer_id
 
     @property
     def path(self):

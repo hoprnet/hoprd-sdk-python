@@ -510,7 +510,7 @@ class MessagesApi(object):
     def messages_websocket(self, **kwargs):  # noqa: E501
         """messages_websocket  # noqa: E501
 
-        This is a websocket endpoint which exposes a subset of message functions. Incoming messages from other nodes are sent to the websocket client. A client may also send message by sending the following data:   { cmd: \"sendmsg\", args: { peerAddress: \"SOME_PEER_ID\", path: [], hops: 1} } The command arguments follow the same semantics as in the dedicated API endpoint for sending messages.  Authentication (if enabled) is done via either passing an `apiToken` parameter in the url or cookie `X-Auth-Token`. Connect to the endpoint by using a WS client. No preview available. Example: `ws://127.0.0.1:3001/api/v2/messages/websocket/?apiToken=myApiToken`  # noqa: E501
+        This is a websocket endpoint which exposes a subset of message functions. Incoming messages from other nodes are sent to the websocket client. A client may also send message by sending the following data:   { cmd: \"sendmsg\", args: { peerId: \"SOME_PEER_ID\", path: [], hops: 1} } The command arguments follow the same semantics as in the dedicated API endpoint for sending messages.  Authentication (if enabled) is done via either passing an `apiToken` parameter in the url or cookie `X-Auth-Token`. Connect to the endpoint by using a WS client. No preview available. Example: `ws://127.0.0.1:3001/api/v2/messages/websocket/?apiToken=myApiToken`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.messages_websocket(async_req=True)
@@ -531,7 +531,7 @@ class MessagesApi(object):
     def messages_websocket_with_http_info(self, **kwargs):  # noqa: E501
         """messages_websocket  # noqa: E501
 
-        This is a websocket endpoint which exposes a subset of message functions. Incoming messages from other nodes are sent to the websocket client. A client may also send message by sending the following data:   { cmd: \"sendmsg\", args: { peerAddress: \"SOME_PEER_ID\", path: [], hops: 1} } The command arguments follow the same semantics as in the dedicated API endpoint for sending messages.  Authentication (if enabled) is done via either passing an `apiToken` parameter in the url or cookie `X-Auth-Token`. Connect to the endpoint by using a WS client. No preview available. Example: `ws://127.0.0.1:3001/api/v2/messages/websocket/?apiToken=myApiToken`  # noqa: E501
+        This is a websocket endpoint which exposes a subset of message functions. Incoming messages from other nodes are sent to the websocket client. A client may also send message by sending the following data:   { cmd: \"sendmsg\", args: { peerId: \"SOME_PEER_ID\", path: [], hops: 1} } The command arguments follow the same semantics as in the dedicated API endpoint for sending messages.  Authentication (if enabled) is done via either passing an `apiToken` parameter in the url or cookie `X-Auth-Token`. Connect to the endpoint by using a WS client. No preview available. Example: `ws://127.0.0.1:3001/api/v2/messages/websocket/?apiToken=myApiToken`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.messages_websocket_with_http_info(async_req=True)

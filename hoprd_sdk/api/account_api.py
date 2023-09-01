@@ -209,7 +209,7 @@ class AccountApi(object):
     def account_get_balances(self, **kwargs):  # noqa: E501
         """account_get_balances  # noqa: E501
 
-        Get node's HOPR and native balances. HOPR tokens from this balance is used to fund payment channels between this node and other nodes on the network. NATIVE balance is used to pay for the gas fees for the blockchain.  # noqa: E501
+        Get node's and associated Safe's HOPR and native balances. HOPR tokens from the Safe balance is used to fund payment channels between this node and other nodes on the network. NATIVE balance of the Node is used to pay for the gas fees for the blockchain.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.account_get_balances(async_req=True)
@@ -230,7 +230,7 @@ class AccountApi(object):
     def account_get_balances_with_http_info(self, **kwargs):  # noqa: E501
         """account_get_balances  # noqa: E501
 
-        Get node's HOPR and native balances. HOPR tokens from this balance is used to fund payment channels between this node and other nodes on the network. NATIVE balance is used to pay for the gas fees for the blockchain.  # noqa: E501
+        Get node's and associated Safe's HOPR and native balances. HOPR tokens from the Safe balance is used to fund payment channels between this node and other nodes on the network. NATIVE balance of the Node is used to pay for the gas fees for the blockchain.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.account_get_balances_with_http_info(async_req=True)
