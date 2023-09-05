@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **peer_id** | [**HoprAddress**](HoprAddress.md) |  | [optional] 
+**peer_address** | [**NativeAddress**](NativeAddress.md) |  | [optional] 
 **multi_addr** | [**MultiAddress**](MultiAddress.md) |  | [optional] 
 **heartbeats** | [**InlineResponse2001Heartbeats**](InlineResponse2001Heartbeats.md) |  | [optional] 
 **last_seen** | **float** | Timestamp on when the node was last seen (in milliseconds) | [optional] 
