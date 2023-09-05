@@ -29,6 +29,7 @@ class InlineResponse2001Connected(object):
     """
     swagger_types = {
         'peer_id': 'HoprAddress',
+        'peer_address': 'NativeAddress',
         'multi_addr': 'MultiAddress',
         'heartbeats': 'InlineResponse2001Heartbeats',
         'last_seen': 'float',
@@ -40,6 +41,7 @@ class InlineResponse2001Connected(object):
 
     attribute_map = {
         'peer_id': 'peerId',
+        'peer_address': 'peerAddress',
         'multi_addr': 'multiAddr',
         'heartbeats': 'heartbeats',
         'last_seen': 'lastSeen',
@@ -49,9 +51,10 @@ class InlineResponse2001Connected(object):
         'reported_version': 'reportedVersion'
     }
 
-    def __init__(self, peer_id=None, multi_addr=None, heartbeats=None, last_seen=None, quality=None, backoff=None, is_new=None, reported_version=None):  # noqa: E501
+    def __init__(self, peer_id=None, peer_address=None, multi_addr=None, heartbeats=None, last_seen=None, quality=None, backoff=None, is_new=None, reported_version=None):  # noqa: E501
         """InlineResponse2001Connected - a model defined in Swagger"""  # noqa: E501
         self._peer_id = None
+        self._peer_address = None
         self._multi_addr = None
         self._heartbeats = None
         self._last_seen = None
@@ -62,6 +65,8 @@ class InlineResponse2001Connected(object):
         self.discriminator = None
         if peer_id is not None:
             self.peer_id = peer_id
+        if peer_address is not None:
+            self.peer_address = peer_address
         if multi_addr is not None:
             self.multi_addr = multi_addr
         if heartbeats is not None:
@@ -97,6 +102,27 @@ class InlineResponse2001Connected(object):
         """
 
         self._peer_id = peer_id
+
+    @property
+    def peer_address(self):
+        """Gets the peer_address of this InlineResponse2001Connected.  # noqa: E501
+
+
+        :return: The peer_address of this InlineResponse2001Connected.  # noqa: E501
+        :rtype: NativeAddress
+        """
+        return self._peer_address
+
+    @peer_address.setter
+    def peer_address(self, peer_address):
+        """Sets the peer_address of this InlineResponse2001Connected.
+
+
+        :param peer_address: The peer_address of this InlineResponse2001Connected.  # noqa: E501
+        :type: NativeAddress
+        """
+
+        self._peer_address = peer_address
 
     @property
     def multi_addr(self):
