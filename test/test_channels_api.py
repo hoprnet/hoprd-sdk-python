@@ -28,8 +28,20 @@ class TestChannelsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_channels_aggregate_tickets(self):
+        """Test case for channels_aggregate_tickets
+
+        """
+        pass
+
     def test_channels_close_channel(self):
         """Test case for channels_close_channel
+
+        """
+        pass
+
+    def test_channels_fund_channel(self):
+        """Test case for channels_fund_channel
 
         """
         pass

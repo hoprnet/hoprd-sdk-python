@@ -118,7 +118,7 @@ This endpoint does not need any parameter.
 
 
 
-Get node's and associated Safe's HOPR and native balances. HOPR tokens from the Safe balance is used to fund payment channels between this node and other nodes on the network. NATIVE balance of the Node is used to pay for the gas fees for the blockchain.
+Get node's and associated Safe's HOPR and native balances as well as the allowance for HOPR tokens to be drawn by HoprChannels from Safe. HOPR tokens from the Safe balance is used to fund payment channels between this node and other nodes on the network. NATIVE balance of the Node is used to pay for the gas fees for the blockchain.
 
 ### Example
 ```python

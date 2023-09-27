@@ -139,7 +139,9 @@ Class | Method | HTTP request | Description
 *AliasesApi* | [**aliases_get_aliases**](docs/AliasesApi.md#aliases_get_aliases) | **GET** /aliases/ | 
 *AliasesApi* | [**aliases_remove_alias**](docs/AliasesApi.md#aliases_remove_alias) | **DELETE** /aliases/{alias} | 
 *AliasesApi* | [**aliases_set_alias**](docs/AliasesApi.md#aliases_set_alias) | **POST** /aliases/ | 
+*ChannelsApi* | [**channels_aggregate_tickets**](docs/ChannelsApi.md#channels_aggregate_tickets) | **POST** /channels/{channelid}/tickets/aggregate | 
 *ChannelsApi* | [**channels_close_channel**](docs/ChannelsApi.md#channels_close_channel) | **DELETE** /channels/{channelid}/ | 
+*ChannelsApi* | [**channels_fund_channel**](docs/ChannelsApi.md#channels_fund_channel) | **POST** /channels/{channelid}/fund | 
 *ChannelsApi* | [**channels_get_channel**](docs/ChannelsApi.md#channels_get_channel) | **GET** /channels/{channelid}/ | 
 *ChannelsApi* | [**channels_get_channels**](docs/ChannelsApi.md#channels_get_channels) | **GET** /channels/ | 
 *ChannelsApi* | [**channels_get_tickets**](docs/ChannelsApi.md#channels_get_tickets) | **GET** /channels/{channelid}/tickets | 
@@ -175,6 +177,7 @@ Class | Method | HTTP request | Description
  - [ChannelId](docs/ChannelId.md)
  - [ChannelStatus](docs/ChannelStatus.md)
  - [ChannelTopology](docs/ChannelTopology.md)
+ - [ChannelidFundBody](docs/ChannelidFundBody.md)
  - [ChannelsBody](docs/ChannelsBody.md)
  - [Currency](docs/Currency.md)
  - [Error](docs/Error.md)
@@ -186,6 +189,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse20011](docs/InlineResponse20011.md)
  - [InlineResponse20012](docs/InlineResponse20012.md)
  - [InlineResponse20013](docs/InlineResponse20013.md)
+ - [InlineResponse20014](docs/InlineResponse20014.md)
  - [InlineResponse2001Connected](docs/InlineResponse2001Connected.md)
  - [InlineResponse2001Heartbeats](docs/InlineResponse2001Heartbeats.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)

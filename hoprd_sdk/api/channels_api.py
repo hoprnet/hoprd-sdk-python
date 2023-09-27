@@ -32,6 +32,101 @@ class ChannelsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def channels_aggregate_tickets(self, channelid, **kwargs):  # noqa: E501
+        """channels_aggregate_tickets  # noqa: E501
+
+        Takes all acknowledged and winning tickets (if any) from the given channel and aggregates them into a single ticket. Requires cooperation of the ticket issuer.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.channels_aggregate_tickets(channelid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str channelid: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.channels_aggregate_tickets_with_http_info(channelid, **kwargs)  # noqa: E501
+        else:
+            (data) = self.channels_aggregate_tickets_with_http_info(channelid, **kwargs)  # noqa: E501
+            return data
+
+    def channels_aggregate_tickets_with_http_info(self, channelid, **kwargs):  # noqa: E501
+        """channels_aggregate_tickets  # noqa: E501
+
+        Takes all acknowledged and winning tickets (if any) from the given channel and aggregates them into a single ticket. Requires cooperation of the ticket issuer.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.channels_aggregate_tickets_with_http_info(channelid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str channelid: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['channelid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method channels_aggregate_tickets" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'channelid' is set
+        if ('channelid' not in params or
+                params['channelid'] is None):
+            raise ValueError("Missing the required parameter `channelid` when calling `channels_aggregate_tickets`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'channelid' in params:
+            path_params['channelid'] = params['channelid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/channels/{channelid}/tickets/aggregate', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def channels_close_channel(self, channelid, **kwargs):  # noqa: E501
         """channels_close_channel  # noqa: E501
 
@@ -43,7 +138,7 @@ class ChannelsApi(object):
 
         :param async_req bool
         :param str channelid: (required)
-        :return: InlineResponse20012
+        :return: InlineResponse20013
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -65,7 +160,7 @@ class ChannelsApi(object):
 
         :param async_req bool
         :param str channelid: (required)
-        :return: InlineResponse20012
+        :return: InlineResponse20013
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -113,6 +208,109 @@ class ChannelsApi(object):
 
         return self.api_client.call_api(
             '/channels/{channelid}/', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse20013',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def channels_fund_channel(self, channelid, **kwargs):  # noqa: E501
+        """channels_fund_channel  # noqa: E501
+
+        Funds an existing channel with the given amount. The channel must be in state OPEN  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.channels_fund_channel(channelid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str channelid: (required)
+        :param ChannelidFundBody body:
+        :return: InlineResponse20012
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.channels_fund_channel_with_http_info(channelid, **kwargs)  # noqa: E501
+        else:
+            (data) = self.channels_fund_channel_with_http_info(channelid, **kwargs)  # noqa: E501
+            return data
+
+    def channels_fund_channel_with_http_info(self, channelid, **kwargs):  # noqa: E501
+        """channels_fund_channel  # noqa: E501
+
+        Funds an existing channel with the given amount. The channel must be in state OPEN  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.channels_fund_channel_with_http_info(channelid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str channelid: (required)
+        :param ChannelidFundBody body:
+        :return: InlineResponse20012
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['channelid', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method channels_fund_channel" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'channelid' is set
+        if ('channelid' not in params or
+                params['channelid'] is None):
+            raise ValueError("Missing the required parameter `channelid` when calling `channels_fund_channel`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'channelid' in params:
+            path_params['channelid'] = params['channelid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/channels/{channelid}/fund', 'POST',
             path_params,
             query_params,
             header_params,

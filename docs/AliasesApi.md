@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**aliases_set_alias**](AliasesApi.md#aliases_set_alias) | **POST** /aliases/ | 
 
 # **aliases_get_alias**
-> InlineResponse20013 aliases_get_alias(alias)
+> InlineResponse20014 aliases_get_alias(alias)
 
 
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 
