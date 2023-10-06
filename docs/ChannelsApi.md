@@ -4,15 +4,72 @@ All URIs are relative to */api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**channels_aggregate_tickets**](ChannelsApi.md#channels_aggregate_tickets) | **POST** /channels/{channelid}/tickets/aggregate | 
 [**channels_close_channel**](ChannelsApi.md#channels_close_channel) | **DELETE** /channels/{channelid}/ | 
+[**channels_fund_channel**](ChannelsApi.md#channels_fund_channel) | **POST** /channels/{channelid}/fund | 
 [**channels_get_channel**](ChannelsApi.md#channels_get_channel) | **GET** /channels/{channelid}/ | 
 [**channels_get_channels**](ChannelsApi.md#channels_get_channels) | **GET** /channels/ | 
 [**channels_get_tickets**](ChannelsApi.md#channels_get_tickets) | **GET** /channels/{channelid}/tickets | 
 [**channels_open_channel**](ChannelsApi.md#channels_open_channel) | **POST** /channels/ | 
 [**channels_redeem_tickets**](ChannelsApi.md#channels_redeem_tickets) | **POST** /channels/{channelid}/tickets/redeem | 
 
+# **channels_aggregate_tickets**
+> channels_aggregate_tickets(channelid)
+
+
+
+Takes all acknowledged and winning tickets (if any) from the given channel and aggregates them into a single ticket. Requires cooperation of the ticket issuer.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: keyScheme
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
+configuration = hoprd_sdk.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
+channelid = 'channelid_example' # str | 
+
+try:
+    api_instance.channels_aggregate_tickets(channelid)
+except ApiException as e:
+    print("Exception when calling ChannelsApi->channels_aggregate_tickets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channelid** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **channels_close_channel**
-> InlineResponse20012 channels_close_channel(channelid)
+> InlineResponse20013 channels_close_channel(channelid)
 
 
 
@@ -54,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -63,6 +120,64 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **channels_fund_channel**
+> InlineResponse20012 channels_fund_channel(channelid, body=body)
+
+
+
+Funds an existing channel with the given amount. The channel must be in state OPEN
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: keyScheme
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
+configuration = hoprd_sdk.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
+channelid = 'channelid_example' # str | 
+body = hoprd_sdk.ChannelidFundBody() # ChannelidFundBody |  (optional)
+
+try:
+    api_response = api_instance.channels_fund_channel(channelid, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ChannelsApi->channels_fund_channel: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channelid** | **str**|  | 
+ **body** | [**ChannelidFundBody**](ChannelidFundBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse20012**](InlineResponse20012.md)
+
+### Authorization
+
+[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

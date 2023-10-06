@@ -1,10 +1,9 @@
-# InlineResponse20013
+# ChannelidFundBody
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**receipt** | **str** | Receipt of the closing transaction | [optional] 
-**channel_status** | **str** | Current status of the channel | [optional] 
+**amount** | **str** | Amount of weiHOPR tokens to fund the channel. It will be used to pay for sending messages through channel | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

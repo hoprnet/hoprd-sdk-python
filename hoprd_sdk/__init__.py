@@ -35,6 +35,7 @@ from hoprd_sdk.models.channel import Channel
 from hoprd_sdk.models.channel_id import ChannelId
 from hoprd_sdk.models.channel_status import ChannelStatus
 from hoprd_sdk.models.channel_topology import ChannelTopology
+from hoprd_sdk.models.channelid_fund_body import ChannelidFundBody
 from hoprd_sdk.models.channels_body import ChannelsBody
 from hoprd_sdk.models.currency import Currency
 from hoprd_sdk.models.error import Error
@@ -46,6 +47,7 @@ from hoprd_sdk.models.inline_response20010 import InlineResponse20010
 from hoprd_sdk.models.inline_response20011 import InlineResponse20011
 from hoprd_sdk.models.inline_response20012 import InlineResponse20012
 from hoprd_sdk.models.inline_response20013 import InlineResponse20013
+from hoprd_sdk.models.inline_response20014 import InlineResponse20014
 from hoprd_sdk.models.inline_response2001_connected import InlineResponse2001Connected
 from hoprd_sdk.models.inline_response2001_heartbeats import InlineResponse2001Heartbeats
 from hoprd_sdk.models.inline_response2002 import InlineResponse2002

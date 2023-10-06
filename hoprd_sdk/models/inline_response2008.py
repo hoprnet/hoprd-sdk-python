@@ -31,22 +31,25 @@ class InlineResponse2008(object):
         'native': 'NativeBalance',
         'hopr': 'HoprBalance',
         'safe_native': 'NativeBalance',
-        'safe_hopr': 'HoprBalance'
+        'safe_hopr': 'HoprBalance',
+        'safe_hopr_allowance': 'HoprBalance'
     }
 
     attribute_map = {
         'native': 'native',
         'hopr': 'hopr',
         'safe_native': 'safeNative',
-        'safe_hopr': 'safeHopr'
+        'safe_hopr': 'safeHopr',
+        'safe_hopr_allowance': 'safeHoprAllowance'
     }
 
-    def __init__(self, native=None, hopr=None, safe_native=None, safe_hopr=None):  # noqa: E501
+    def __init__(self, native=None, hopr=None, safe_native=None, safe_hopr=None, safe_hopr_allowance=None):  # noqa: E501
         """InlineResponse2008 - a model defined in Swagger"""  # noqa: E501
         self._native = None
         self._hopr = None
         self._safe_native = None
         self._safe_hopr = None
+        self._safe_hopr_allowance = None
         self.discriminator = None
         if native is not None:
             self.native = native
@@ -56,6 +59,8 @@ class InlineResponse2008(object):
             self.safe_native = safe_native
         if safe_hopr is not None:
             self.safe_hopr = safe_hopr
+        if safe_hopr_allowance is not None:
+            self.safe_hopr_allowance = safe_hopr_allowance
 
     @property
     def native(self):
@@ -140,6 +145,27 @@ class InlineResponse2008(object):
         """
 
         self._safe_hopr = safe_hopr
+
+    @property
+    def safe_hopr_allowance(self):
+        """Gets the safe_hopr_allowance of this InlineResponse2008.  # noqa: E501
+
+
+        :return: The safe_hopr_allowance of this InlineResponse2008.  # noqa: E501
+        :rtype: HoprBalance
+        """
+        return self._safe_hopr_allowance
+
+    @safe_hopr_allowance.setter
+    def safe_hopr_allowance(self, safe_hopr_allowance):
+        """Sets the safe_hopr_allowance of this InlineResponse2008.
+
+
+        :param safe_hopr_allowance: The safe_hopr_allowance of this InlineResponse2008.  # noqa: E501
+        :type: HoprBalance
+        """
+
+        self._safe_hopr_allowance = safe_hopr_allowance
 
     def to_dict(self):
         """Returns the model properties as a dict"""

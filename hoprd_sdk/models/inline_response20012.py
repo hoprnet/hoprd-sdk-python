@@ -28,30 +28,24 @@ class InlineResponse20012(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'receipt': 'str',
-        'channel_status': 'str'
+        'receipt': 'str'
     }
 
     attribute_map = {
-        'receipt': 'receipt',
-        'channel_status': 'channelStatus'
+        'receipt': 'receipt'
     }
 
-    def __init__(self, receipt=None, channel_status=None):  # noqa: E501
+    def __init__(self, receipt=None):  # noqa: E501
         """InlineResponse20012 - a model defined in Swagger"""  # noqa: E501
         self._receipt = None
-        self._channel_status = None
         self.discriminator = None
-        if receipt is not None:
-            self.receipt = receipt
-        if channel_status is not None:
-            self.channel_status = channel_status
+        self.receipt = receipt
 
     @property
     def receipt(self):
         """Gets the receipt of this InlineResponse20012.  # noqa: E501
 
-        Receipt of the closing transaction  # noqa: E501
+        Receipt of the funding transaction  # noqa: E501
 
         :return: The receipt of this InlineResponse20012.  # noqa: E501
         :rtype: str
@@ -62,36 +56,15 @@ class InlineResponse20012(object):
     def receipt(self, receipt):
         """Sets the receipt of this InlineResponse20012.
 
-        Receipt of the closing transaction  # noqa: E501
+        Receipt of the funding transaction  # noqa: E501
 
         :param receipt: The receipt of this InlineResponse20012.  # noqa: E501
         :type: str
         """
+        if receipt is None:
+            raise ValueError("Invalid value for `receipt`, must not be `None`")  # noqa: E501
 
         self._receipt = receipt
-
-    @property
-    def channel_status(self):
-        """Gets the channel_status of this InlineResponse20012.  # noqa: E501
-
-        Current status of the channel  # noqa: E501
-
-        :return: The channel_status of this InlineResponse20012.  # noqa: E501
-        :rtype: str
-        """
-        return self._channel_status
-
-    @channel_status.setter
-    def channel_status(self, channel_status):
-        """Sets the channel_status of this InlineResponse20012.
-
-        Current status of the channel  # noqa: E501
-
-        :param channel_status: The channel_status of this InlineResponse20012.  # noqa: E501
-        :type: str
-        """
-
-        self._channel_status = channel_status
 
     def to_dict(self):
         """Returns the model properties as a dict"""
