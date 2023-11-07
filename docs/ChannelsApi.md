@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **channels_get_channel**
-> list[ChannelTopology] channels_get_channel(channelid)
+> ChannelTopology channels_get_channel(channelid)
 
 
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ChannelTopology]**](ChannelTopology.md)
+[**ChannelTopology**](ChannelTopology.md)
 
 ### Authorization
 
