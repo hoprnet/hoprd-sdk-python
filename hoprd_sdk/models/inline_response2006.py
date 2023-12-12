@@ -28,66 +28,98 @@ class InlineResponse2006(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'alice': 'HoprAddress',
-        'bob': 'HoprAddress'
+        'incoming': 'list[Channel]',
+        'outgoing': 'list[Channel]',
+        'all': 'list[ChannelTopology]'
     }
 
     attribute_map = {
-        'alice': 'alice',
-        'bob': 'bob'
+        'incoming': 'incoming',
+        'outgoing': 'outgoing',
+        'all': 'all'
     }
 
-    def __init__(self, alice=None, bob=None):  # noqa: E501
+    def __init__(self, incoming=None, outgoing=None, all=None):  # noqa: E501
         """InlineResponse2006 - a model defined in Swagger"""  # noqa: E501
-        self._alice = None
-        self._bob = None
+        self._incoming = None
+        self._outgoing = None
+        self._all = None
         self.discriminator = None
-        if alice is not None:
-            self.alice = alice
-        if bob is not None:
-            self.bob = bob
+        if incoming is not None:
+            self.incoming = incoming
+        if outgoing is not None:
+            self.outgoing = outgoing
+        if all is not None:
+            self.all = all
 
     @property
-    def alice(self):
-        """Gets the alice of this InlineResponse2006.  # noqa: E501
+    def incoming(self):
+        """Gets the incoming of this InlineResponse2006.  # noqa: E501
 
+        Incomming channels are the ones that were opened by a different node and this node acts as relay.  # noqa: E501
 
-        :return: The alice of this InlineResponse2006.  # noqa: E501
-        :rtype: HoprAddress
+        :return: The incoming of this InlineResponse2006.  # noqa: E501
+        :rtype: list[Channel]
         """
-        return self._alice
+        return self._incoming
 
-    @alice.setter
-    def alice(self, alice):
-        """Sets the alice of this InlineResponse2006.
+    @incoming.setter
+    def incoming(self, incoming):
+        """Sets the incoming of this InlineResponse2006.
 
+        Incomming channels are the ones that were opened by a different node and this node acts as relay.  # noqa: E501
 
-        :param alice: The alice of this InlineResponse2006.  # noqa: E501
-        :type: HoprAddress
+        :param incoming: The incoming of this InlineResponse2006.  # noqa: E501
+        :type: list[Channel]
         """
 
-        self._alice = alice
+        self._incoming = incoming
 
     @property
-    def bob(self):
-        """Gets the bob of this InlineResponse2006.  # noqa: E501
+    def outgoing(self):
+        """Gets the outgoing of this InlineResponse2006.  # noqa: E501
 
+        Outgoing channels are the ones that were opened by this node and is using other node as relay.  # noqa: E501
 
-        :return: The bob of this InlineResponse2006.  # noqa: E501
-        :rtype: HoprAddress
+        :return: The outgoing of this InlineResponse2006.  # noqa: E501
+        :rtype: list[Channel]
         """
-        return self._bob
+        return self._outgoing
 
-    @bob.setter
-    def bob(self, bob):
-        """Sets the bob of this InlineResponse2006.
+    @outgoing.setter
+    def outgoing(self, outgoing):
+        """Sets the outgoing of this InlineResponse2006.
 
+        Outgoing channels are the ones that were opened by this node and is using other node as relay.  # noqa: E501
 
-        :param bob: The bob of this InlineResponse2006.  # noqa: E501
-        :type: HoprAddress
+        :param outgoing: The outgoing of this InlineResponse2006.  # noqa: E501
+        :type: list[Channel]
         """
 
-        self._bob = bob
+        self._outgoing = outgoing
+
+    @property
+    def all(self):
+        """Gets the all of this InlineResponse2006.  # noqa: E501
+
+        All the channels indexed by the node in the current network.  # noqa: E501
+
+        :return: The all of this InlineResponse2006.  # noqa: E501
+        :rtype: list[ChannelTopology]
+        """
+        return self._all
+
+    @all.setter
+    def all(self, all):
+        """Sets the all of this InlineResponse2006.
+
+        All the channels indexed by the node in the current network.  # noqa: E501
+
+        :param all: The all of this InlineResponse2006.  # noqa: E501
+        :type: list[ChannelTopology]
+        """
+
+        self._all = all
 
     def to_dict(self):
         """Returns the model properties as a dict"""

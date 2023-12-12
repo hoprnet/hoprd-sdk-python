@@ -28,66 +28,70 @@ class InlineResponse20011(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'announced': 'list[MultiAddress]',
-        'observed': 'list[MultiAddress]'
+        'latency': 'float',
+        'reported_version': 'str'
     }
 
     attribute_map = {
-        'announced': 'announced',
-        'observed': 'observed'
+        'latency': 'latency',
+        'reported_version': 'reportedVersion'
     }
 
-    def __init__(self, announced=None, observed=None):  # noqa: E501
+    def __init__(self, latency=None, reported_version=None):  # noqa: E501
         """InlineResponse20011 - a model defined in Swagger"""  # noqa: E501
-        self._announced = None
-        self._observed = None
+        self._latency = None
+        self._reported_version = None
         self.discriminator = None
-        if announced is not None:
-            self.announced = announced
-        if observed is not None:
-            self.observed = observed
+        if latency is not None:
+            self.latency = latency
+        if reported_version is not None:
+            self.reported_version = reported_version
 
     @property
-    def announced(self):
-        """Gets the announced of this InlineResponse20011.  # noqa: E501
+    def latency(self):
+        """Gets the latency of this InlineResponse20011.  # noqa: E501
 
+        Number of milliseconds it took to get the response from the pinged node.  # noqa: E501
 
-        :return: The announced of this InlineResponse20011.  # noqa: E501
-        :rtype: list[MultiAddress]
+        :return: The latency of this InlineResponse20011.  # noqa: E501
+        :rtype: float
         """
-        return self._announced
+        return self._latency
 
-    @announced.setter
-    def announced(self, announced):
-        """Sets the announced of this InlineResponse20011.
+    @latency.setter
+    def latency(self, latency):
+        """Sets the latency of this InlineResponse20011.
 
+        Number of milliseconds it took to get the response from the pinged node.  # noqa: E501
 
-        :param announced: The announced of this InlineResponse20011.  # noqa: E501
-        :type: list[MultiAddress]
+        :param latency: The latency of this InlineResponse20011.  # noqa: E501
+        :type: float
         """
 
-        self._announced = announced
+        self._latency = latency
 
     @property
-    def observed(self):
-        """Gets the observed of this InlineResponse20011.  # noqa: E501
+    def reported_version(self):
+        """Gets the reported_version of this InlineResponse20011.  # noqa: E501
 
+        HOPR protocol version as determined from the successful ping in the Major.Minor.Patch format or \"unknown\"  # noqa: E501
 
-        :return: The observed of this InlineResponse20011.  # noqa: E501
-        :rtype: list[MultiAddress]
+        :return: The reported_version of this InlineResponse20011.  # noqa: E501
+        :rtype: str
         """
-        return self._observed
+        return self._reported_version
 
-    @observed.setter
-    def observed(self, observed):
-        """Sets the observed of this InlineResponse20011.
+    @reported_version.setter
+    def reported_version(self, reported_version):
+        """Sets the reported_version of this InlineResponse20011.
 
+        HOPR protocol version as determined from the successful ping in the Major.Minor.Patch format or \"unknown\"  # noqa: E501
 
-        :param observed: The observed of this InlineResponse20011.  # noqa: E501
-        :type: list[MultiAddress]
+        :param reported_version: The reported_version of this InlineResponse20011.  # noqa: E501
+        :type: str
         """
 
-        self._observed = observed
+        self._reported_version = reported_version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

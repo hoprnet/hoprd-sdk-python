@@ -15,23 +15,23 @@ from __future__ import absolute_import
 import unittest
 
 import hoprd_sdk
-from hoprd_sdk.models.inline_response2001_connected import InlineResponse2001Connected  # noqa: E501
+from hoprd_sdk.api.check_healthiness_api import CheckHealthinessApi  # noqa: E501
 from hoprd_sdk.rest import ApiException
 
 
-class TestInlineResponse2001Connected(unittest.TestCase):
-    """InlineResponse2001Connected unit test stubs"""
+class TestCheckHealthinessApi(unittest.TestCase):
+    """CheckHealthinessApi unit test stubs"""
 
     def setUp(self):
-        pass
+        self.api = CheckHealthinessApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def testInlineResponse2001Connected(self):
-        """Test InlineResponse2001Connected"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = hoprd_sdk.models.inline_response2001_connected.InlineResponse2001Connected()  # noqa: E501
+    def test_check_node_healthy(self):
+        """Test case for check_node_healthy
+
+        """
         pass
 
 

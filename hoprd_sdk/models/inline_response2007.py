@@ -28,42 +28,66 @@ class InlineResponse2007(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'receipt': 'str'
+        'alice': 'HoprAddress',
+        'bob': 'HoprAddress'
     }
 
     attribute_map = {
-        'receipt': 'receipt'
+        'alice': 'alice',
+        'bob': 'bob'
     }
 
-    def __init__(self, receipt=None):  # noqa: E501
+    def __init__(self, alice=None, bob=None):  # noqa: E501
         """InlineResponse2007 - a model defined in Swagger"""  # noqa: E501
-        self._receipt = None
+        self._alice = None
+        self._bob = None
         self.discriminator = None
-        if receipt is not None:
-            self.receipt = receipt
+        if alice is not None:
+            self.alice = alice
+        if bob is not None:
+            self.bob = bob
 
     @property
-    def receipt(self):
-        """Gets the receipt of this InlineResponse2007.  # noqa: E501
+    def alice(self):
+        """Gets the alice of this InlineResponse2007.  # noqa: E501
 
-        Withdraw txn hash that can be used to check details of the transaction on ethereum chain.  # noqa: E501
 
-        :return: The receipt of this InlineResponse2007.  # noqa: E501
-        :rtype: str
+        :return: The alice of this InlineResponse2007.  # noqa: E501
+        :rtype: HoprAddress
         """
-        return self._receipt
+        return self._alice
 
-    @receipt.setter
-    def receipt(self, receipt):
-        """Sets the receipt of this InlineResponse2007.
+    @alice.setter
+    def alice(self, alice):
+        """Sets the alice of this InlineResponse2007.
 
-        Withdraw txn hash that can be used to check details of the transaction on ethereum chain.  # noqa: E501
 
-        :param receipt: The receipt of this InlineResponse2007.  # noqa: E501
-        :type: str
+        :param alice: The alice of this InlineResponse2007.  # noqa: E501
+        :type: HoprAddress
         """
 
-        self._receipt = receipt
+        self._alice = alice
+
+    @property
+    def bob(self):
+        """Gets the bob of this InlineResponse2007.  # noqa: E501
+
+
+        :return: The bob of this InlineResponse2007.  # noqa: E501
+        :rtype: HoprAddress
+        """
+        return self._bob
+
+    @bob.setter
+    def bob(self, bob):
+        """Sets the bob of this InlineResponse2007.
+
+
+        :param bob: The bob of this InlineResponse2007.  # noqa: E501
+        :type: HoprAddress
+        """
+
+        self._bob = bob
 
     def to_dict(self):
         """Returns the model properties as a dict"""

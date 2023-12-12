@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import hoprd_sdk
-from hoprd_sdk.models.inline_response2001_heartbeats import InlineResponse2001Heartbeats  # noqa: E501
+from hoprd_sdk.models.inline_response20015 import InlineResponse20015  # noqa: E501
 from hoprd_sdk.rest import ApiException
 
 
-class TestInlineResponse2001Heartbeats(unittest.TestCase):
-    """InlineResponse2001Heartbeats unit test stubs"""
+class TestInlineResponse20015(unittest.TestCase):
+    """InlineResponse20015 unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestInlineResponse2001Heartbeats(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineResponse2001Heartbeats(self):
-        """Test InlineResponse2001Heartbeats"""
+    def testInlineResponse20015(self):
+        """Test InlineResponse20015"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = hoprd_sdk.models.inline_response2001_heartbeats.InlineResponse2001Heartbeats()  # noqa: E501
+        # model = hoprd_sdk.models.inline_response20015.InlineResponse20015()  # noqa: E501
         pass
 
 

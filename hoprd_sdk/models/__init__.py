@@ -33,9 +33,10 @@ from hoprd_sdk.models.inline_response20011 import InlineResponse20011
 from hoprd_sdk.models.inline_response20012 import InlineResponse20012
 from hoprd_sdk.models.inline_response20013 import InlineResponse20013
 from hoprd_sdk.models.inline_response20014 import InlineResponse20014
-from hoprd_sdk.models.inline_response2001_connected import InlineResponse2001Connected
-from hoprd_sdk.models.inline_response2001_heartbeats import InlineResponse2001Heartbeats
+from hoprd_sdk.models.inline_response20015 import InlineResponse20015
 from hoprd_sdk.models.inline_response2002 import InlineResponse2002
+from hoprd_sdk.models.inline_response2002_connected import InlineResponse2002Connected
+from hoprd_sdk.models.inline_response2002_heartbeats import InlineResponse2002Heartbeats
 from hoprd_sdk.models.inline_response2003 import InlineResponse2003
 from hoprd_sdk.models.inline_response2004 import InlineResponse2004
 from hoprd_sdk.models.inline_response2005 import InlineResponse2005
@@ -53,6 +54,8 @@ from hoprd_sdk.models.inline_response_map200 import InlineResponseMap200
 from hoprd_sdk.models.message_body import MessageBody
 from hoprd_sdk.models.message_tag import MessageTag
 from hoprd_sdk.models.messages_body import MessagesBody
+from hoprd_sdk.models.messages_peek_body import MessagesPeekBody
+from hoprd_sdk.models.messages_peekall_body import MessagesPeekallBody
 from hoprd_sdk.models.messages_pop_body import MessagesPopBody
 from hoprd_sdk.models.messages_popall_body import MessagesPopallBody
 from hoprd_sdk.models.multi_address import MultiAddress

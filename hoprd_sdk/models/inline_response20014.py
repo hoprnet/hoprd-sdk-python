@@ -28,40 +28,70 @@ class InlineResponse20014(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'peer_id': 'HoprAddress'
+        'receipt': 'str',
+        'channel_status': 'str'
     }
 
     attribute_map = {
-        'peer_id': 'peerId'
+        'receipt': 'receipt',
+        'channel_status': 'channelStatus'
     }
 
-    def __init__(self, peer_id=None):  # noqa: E501
+    def __init__(self, receipt=None, channel_status=None):  # noqa: E501
         """InlineResponse20014 - a model defined in Swagger"""  # noqa: E501
-        self._peer_id = None
+        self._receipt = None
+        self._channel_status = None
         self.discriminator = None
-        if peer_id is not None:
-            self.peer_id = peer_id
+        if receipt is not None:
+            self.receipt = receipt
+        if channel_status is not None:
+            self.channel_status = channel_status
 
     @property
-    def peer_id(self):
-        """Gets the peer_id of this InlineResponse20014.  # noqa: E501
+    def receipt(self):
+        """Gets the receipt of this InlineResponse20014.  # noqa: E501
 
+        Receipt of the closing transaction  # noqa: E501
 
-        :return: The peer_id of this InlineResponse20014.  # noqa: E501
-        :rtype: HoprAddress
+        :return: The receipt of this InlineResponse20014.  # noqa: E501
+        :rtype: str
         """
-        return self._peer_id
+        return self._receipt
 
-    @peer_id.setter
-    def peer_id(self, peer_id):
-        """Sets the peer_id of this InlineResponse20014.
+    @receipt.setter
+    def receipt(self, receipt):
+        """Sets the receipt of this InlineResponse20014.
 
+        Receipt of the closing transaction  # noqa: E501
 
-        :param peer_id: The peer_id of this InlineResponse20014.  # noqa: E501
-        :type: HoprAddress
+        :param receipt: The receipt of this InlineResponse20014.  # noqa: E501
+        :type: str
         """
 
-        self._peer_id = peer_id
+        self._receipt = receipt
+
+    @property
+    def channel_status(self):
+        """Gets the channel_status of this InlineResponse20014.  # noqa: E501
+
+        Current status of the channel  # noqa: E501
+
+        :return: The channel_status of this InlineResponse20014.  # noqa: E501
+        :rtype: str
+        """
+        return self._channel_status
+
+    @channel_status.setter
+    def channel_status(self, channel_status):
+        """Sets the channel_status of this InlineResponse20014.
+
+        Current status of the channel  # noqa: E501
+
+        :param channel_status: The channel_status of this InlineResponse20014.  # noqa: E501
+        :type: str
+        """
+
+        self._channel_status = channel_status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

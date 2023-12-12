@@ -40,6 +40,18 @@ class TestMessagesApi(unittest.TestCase):
         """
         pass
 
+    def test_messages_peek_all_message(self):
+        """Test case for messages_peek_all_message
+
+        """
+        pass
+
+    def test_messages_peek_message(self):
+        """Test case for messages_peek_message
+
+        """
+        pass
+
     def test_messages_pop_all_message(self):
         """Test case for messages_pop_all_message
 

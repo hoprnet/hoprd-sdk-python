@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**messages_delete_messages**](MessagesApi.md#messages_delete_messages) | **DELETE** /messages/ | 
 [**messages_get_size**](MessagesApi.md#messages_get_size) | **GET** /messages/size | 
+[**messages_peek_all_message**](MessagesApi.md#messages_peek_all_message) | **GET** /messages/peek-all | 
+[**messages_peek_message**](MessagesApi.md#messages_peek_message) | **GET** /messages/peek | 
 [**messages_pop_all_message**](MessagesApi.md#messages_pop_all_message) | **POST** /messages/pop-all | 
 [**messages_pop_message**](MessagesApi.md#messages_pop_message) | **POST** /messages/pop | 
 [**messages_send_message**](MessagesApi.md#messages_send_message) | **POST** /messages/ | 
@@ -67,7 +69,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **messages_get_size**
-> InlineResponse2003 messages_get_size(tag)
+> InlineResponse2004 messages_get_size(tag)
 
 
 
@@ -109,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -122,8 +124,120 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **messages_peek_all_message**
+> InlineResponse2005 messages_peek_all_message(body=body)
+
+
+
+Get list of messages currently present in the nodes message inbox.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: keyScheme
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
+configuration = hoprd_sdk.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.MessagesPeekallBody() # MessagesPeekallBody |  (optional)
+
+try:
+    api_response = api_instance.messages_peek_all_message(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessagesApi->messages_peek_all_message: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MessagesPeekallBody**](MessagesPeekallBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse2005**](InlineResponse2005.md)
+
+### Authorization
+
+[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **messages_peek_message**
+> ReceivedMessage messages_peek_message(body=body)
+
+
+
+Get oldest message currently present in the nodes message inbox.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: keyScheme
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
+configuration = hoprd_sdk.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.MessagesPeekBody() # MessagesPeekBody |  (optional)
+
+try:
+    api_response = api_instance.messages_peek_message(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessagesApi->messages_peek_message: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MessagesPeekBody**](MessagesPeekBody.md)|  | [optional] 
+
+### Return type
+
+[**ReceivedMessage**](ReceivedMessage.md)
+
+### Authorization
+
+[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **messages_pop_all_message**
-> InlineResponse2004 messages_pop_all_message(body=body)
+> InlineResponse2005 messages_pop_all_message(body=body)
 
 
 
@@ -165,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 

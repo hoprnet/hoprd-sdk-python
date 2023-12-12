@@ -34,6 +34,12 @@ class TestTicketsApi(unittest.TestCase):
         """
         pass
 
+    def test_tickets_get_ticket_price(self):
+        """Test case for tickets_get_ticket_price
+
+        """
+        pass
+
     def test_tickets_get_tickets(self):
         """Test case for tickets_get_tickets
 

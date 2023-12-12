@@ -138,7 +138,7 @@ class ChannelsApi(object):
 
         :param async_req bool
         :param str channelid: (required)
-        :return: InlineResponse20013
+        :return: InlineResponse20014
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -160,7 +160,7 @@ class ChannelsApi(object):
 
         :param async_req bool
         :param str channelid: (required)
-        :return: InlineResponse20013
+        :return: InlineResponse20014
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -214,7 +214,7 @@ class ChannelsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse20013',  # noqa: E501
+            response_type='InlineResponse20014',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -234,7 +234,7 @@ class ChannelsApi(object):
         :param async_req bool
         :param str channelid: (required)
         :param ChannelidFundBody body:
-        :return: InlineResponse20012
+        :return: InlineResponse20013
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -257,7 +257,7 @@ class ChannelsApi(object):
         :param async_req bool
         :param str channelid: (required)
         :param ChannelidFundBody body:
-        :return: InlineResponse20012
+        :return: InlineResponse20013
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -317,7 +317,7 @@ class ChannelsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse20012',  # noqa: E501
+            response_type='InlineResponse20013',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -336,7 +336,7 @@ class ChannelsApi(object):
 
         :param async_req bool
         :param ChannelId channelid: (required)
-        :return: list[ChannelTopology]
+        :return: ChannelTopology
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -358,7 +358,7 @@ class ChannelsApi(object):
 
         :param async_req bool
         :param ChannelId channelid: (required)
-        :return: list[ChannelTopology]
+        :return: ChannelTopology
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -412,7 +412,7 @@ class ChannelsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ChannelTopology]',  # noqa: E501
+            response_type='ChannelTopology',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -432,7 +432,7 @@ class ChannelsApi(object):
         :param async_req bool
         :param str including_closed: When includingClosed is passed the response will include closed channels which are ommited by default.
         :param str full_topology: Get the full payment channel graph indexed by the node.
-        :return: InlineResponse2005
+        :return: InlineResponse2006
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -455,7 +455,7 @@ class ChannelsApi(object):
         :param async_req bool
         :param str including_closed: When includingClosed is passed the response will include closed channels which are ommited by default.
         :param str full_topology: Get the full payment channel graph indexed by the node.
-        :return: InlineResponse2005
+        :return: InlineResponse2006
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -507,7 +507,7 @@ class ChannelsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2005',  # noqa: E501
+            response_type='InlineResponse2006',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

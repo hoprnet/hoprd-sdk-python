@@ -18,6 +18,9 @@ from __future__ import absolute_import
 from hoprd_sdk.api.account_api import AccountApi
 from hoprd_sdk.api.aliases_api import AliasesApi
 from hoprd_sdk.api.channels_api import ChannelsApi
+from hoprd_sdk.api.check_healthiness_api import CheckHealthinessApi
+from hoprd_sdk.api.check_ready_api import CheckReadyApi
+from hoprd_sdk.api.check_started_api import CheckStartedApi
 from hoprd_sdk.api.messages_api import MessagesApi
 from hoprd_sdk.api.node_api import NodeApi
 from hoprd_sdk.api.peer_info_api import PeerInfoApi
@@ -48,9 +51,10 @@ from hoprd_sdk.models.inline_response20011 import InlineResponse20011
 from hoprd_sdk.models.inline_response20012 import InlineResponse20012
 from hoprd_sdk.models.inline_response20013 import InlineResponse20013
 from hoprd_sdk.models.inline_response20014 import InlineResponse20014
-from hoprd_sdk.models.inline_response2001_connected import InlineResponse2001Connected
-from hoprd_sdk.models.inline_response2001_heartbeats import InlineResponse2001Heartbeats
+from hoprd_sdk.models.inline_response20015 import InlineResponse20015
 from hoprd_sdk.models.inline_response2002 import InlineResponse2002
+from hoprd_sdk.models.inline_response2002_connected import InlineResponse2002Connected
+from hoprd_sdk.models.inline_response2002_heartbeats import InlineResponse2002Heartbeats
 from hoprd_sdk.models.inline_response2003 import InlineResponse2003
 from hoprd_sdk.models.inline_response2004 import InlineResponse2004
 from hoprd_sdk.models.inline_response2005 import InlineResponse2005
@@ -68,6 +72,8 @@ from hoprd_sdk.models.inline_response_map200 import InlineResponseMap200
 from hoprd_sdk.models.message_body import MessageBody
 from hoprd_sdk.models.message_tag import MessageTag
 from hoprd_sdk.models.messages_body import MessagesBody
+from hoprd_sdk.models.messages_peek_body import MessagesPeekBody
+from hoprd_sdk.models.messages_peekall_body import MessagesPeekallBody
 from hoprd_sdk.models.messages_pop_body import MessagesPopBody
 from hoprd_sdk.models.messages_popall_body import MessagesPopallBody
 from hoprd_sdk.models.multi_address import MultiAddress

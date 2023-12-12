@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**aliases_set_alias**](AliasesApi.md#aliases_set_alias) | **POST** /aliases/ | 
 
 # **aliases_get_alias**
-> InlineResponse20014 aliases_get_alias(alias)
+> InlineResponse20015 aliases_get_alias(alias)
 
 
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aliases_get_aliases**
-> InlineResponse2006 aliases_get_aliases()
+> InlineResponse2007 aliases_get_aliases()
 
 
 
@@ -104,7 +104,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
