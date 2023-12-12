@@ -28,24 +28,39 @@ class InlineResponse2009(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'native': 'NativeAddress',
-        'hopr': 'HoprAddress'
+        'native': 'NativeBalance',
+        'hopr': 'HoprBalance',
+        'safe_native': 'NativeBalance',
+        'safe_hopr': 'HoprBalance',
+        'safe_hopr_allowance': 'HoprBalance'
     }
 
     attribute_map = {
         'native': 'native',
-        'hopr': 'hopr'
+        'hopr': 'hopr',
+        'safe_native': 'safeNative',
+        'safe_hopr': 'safeHopr',
+        'safe_hopr_allowance': 'safeHoprAllowance'
     }
 
-    def __init__(self, native=None, hopr=None):  # noqa: E501
+    def __init__(self, native=None, hopr=None, safe_native=None, safe_hopr=None, safe_hopr_allowance=None):  # noqa: E501
         """InlineResponse2009 - a model defined in Swagger"""  # noqa: E501
         self._native = None
         self._hopr = None
+        self._safe_native = None
+        self._safe_hopr = None
+        self._safe_hopr_allowance = None
         self.discriminator = None
         if native is not None:
             self.native = native
         if hopr is not None:
             self.hopr = hopr
+        if safe_native is not None:
+            self.safe_native = safe_native
+        if safe_hopr is not None:
+            self.safe_hopr = safe_hopr
+        if safe_hopr_allowance is not None:
+            self.safe_hopr_allowance = safe_hopr_allowance
 
     @property
     def native(self):
@@ -53,7 +68,7 @@ class InlineResponse2009(object):
 
 
         :return: The native of this InlineResponse2009.  # noqa: E501
-        :rtype: NativeAddress
+        :rtype: NativeBalance
         """
         return self._native
 
@@ -63,7 +78,7 @@ class InlineResponse2009(object):
 
 
         :param native: The native of this InlineResponse2009.  # noqa: E501
-        :type: NativeAddress
+        :type: NativeBalance
         """
 
         self._native = native
@@ -74,7 +89,7 @@ class InlineResponse2009(object):
 
 
         :return: The hopr of this InlineResponse2009.  # noqa: E501
-        :rtype: HoprAddress
+        :rtype: HoprBalance
         """
         return self._hopr
 
@@ -84,10 +99,73 @@ class InlineResponse2009(object):
 
 
         :param hopr: The hopr of this InlineResponse2009.  # noqa: E501
-        :type: HoprAddress
+        :type: HoprBalance
         """
 
         self._hopr = hopr
+
+    @property
+    def safe_native(self):
+        """Gets the safe_native of this InlineResponse2009.  # noqa: E501
+
+
+        :return: The safe_native of this InlineResponse2009.  # noqa: E501
+        :rtype: NativeBalance
+        """
+        return self._safe_native
+
+    @safe_native.setter
+    def safe_native(self, safe_native):
+        """Sets the safe_native of this InlineResponse2009.
+
+
+        :param safe_native: The safe_native of this InlineResponse2009.  # noqa: E501
+        :type: NativeBalance
+        """
+
+        self._safe_native = safe_native
+
+    @property
+    def safe_hopr(self):
+        """Gets the safe_hopr of this InlineResponse2009.  # noqa: E501
+
+
+        :return: The safe_hopr of this InlineResponse2009.  # noqa: E501
+        :rtype: HoprBalance
+        """
+        return self._safe_hopr
+
+    @safe_hopr.setter
+    def safe_hopr(self, safe_hopr):
+        """Sets the safe_hopr of this InlineResponse2009.
+
+
+        :param safe_hopr: The safe_hopr of this InlineResponse2009.  # noqa: E501
+        :type: HoprBalance
+        """
+
+        self._safe_hopr = safe_hopr
+
+    @property
+    def safe_hopr_allowance(self):
+        """Gets the safe_hopr_allowance of this InlineResponse2009.  # noqa: E501
+
+
+        :return: The safe_hopr_allowance of this InlineResponse2009.  # noqa: E501
+        :rtype: HoprBalance
+        """
+        return self._safe_hopr_allowance
+
+    @safe_hopr_allowance.setter
+    def safe_hopr_allowance(self, safe_hopr_allowance):
+        """Sets the safe_hopr_allowance of this InlineResponse2009.
+
+
+        :param safe_hopr_allowance: The safe_hopr_allowance of this InlineResponse2009.  # noqa: E501
+        :type: HoprBalance
+        """
+
+        self._safe_hopr_allowance = safe_hopr_allowance
 
     def to_dict(self):
         """Returns the model properties as a dict"""

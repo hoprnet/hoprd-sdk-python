@@ -10,22 +10,22 @@
 """
 from __future__ import absolute_import
 
+import atexit
 import datetime
 import json
 import mimetypes
-from multiprocessing.pool import ThreadPool
 import os
 import re
 import tempfile
-import atexit
+from multiprocessing.pool import ThreadPool
 
 # python 2 and python 3 compatibility library
 import six
 from six.moves.urllib.parse import quote
 
-from hoprd_sdk.configuration import Configuration
 import hoprd_sdk.models
 from hoprd_sdk import rest
+from hoprd_sdk.configuration import Configuration
 
 
 class ApiClient(object):

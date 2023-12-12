@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**peers_ping_peer**](PeersApi.md#peers_ping_peer) | **POST** /peers/{peerid}/ping | 
 
 # **peers_ping_peer**
-> InlineResponse20010 peers_ping_peer(peerid)
+> InlineResponse20011 peers_ping_peer(peerid)
 
 
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 

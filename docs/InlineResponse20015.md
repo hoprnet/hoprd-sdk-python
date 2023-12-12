@@ -1,10 +1,9 @@
-# InlineResponse2001Heartbeats
+# InlineResponse20015
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sent** | **float** | Heartbeats sent to the node | [optional] 
-**success** | **float** | Successful heartbeats sent to the node | [optional] 
+**peer_id** | [**HoprAddress**](HoprAddress.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

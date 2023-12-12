@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**peer_info_get_peer_info**](PeerInfoApi.md#peer_info_get_peer_info) | **GET** /peers/{peerid}/ | 
 
 # **peer_info_get_peer_info**
-> InlineResponse20011 peer_info_get_peer_info(peerid)
+> InlineResponse20012 peer_info_get_peer_info(peerid)
 
 
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 

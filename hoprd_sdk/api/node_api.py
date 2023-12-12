@@ -129,7 +129,7 @@ class NodeApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: InlineResponse2002
+        :return: InlineResponse2003
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -150,7 +150,7 @@ class NodeApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: InlineResponse2002
+        :return: InlineResponse2003
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -198,7 +198,7 @@ class NodeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2002',  # noqa: E501
+            response_type='InlineResponse2003',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -304,7 +304,7 @@ class NodeApi(object):
 
         :param async_req bool
         :param float quality: When quality is passed, the response will only include peers with higher or equal quality to the one specified.
-        :return: InlineResponse2001
+        :return: InlineResponse2002
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -326,7 +326,7 @@ class NodeApi(object):
 
         :param async_req bool
         :param float quality: When quality is passed, the response will only include peers with higher or equal quality to the one specified.
-        :return: InlineResponse2001
+        :return: InlineResponse2002
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -376,7 +376,7 @@ class NodeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2001',  # noqa: E501
+            response_type='InlineResponse2002',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

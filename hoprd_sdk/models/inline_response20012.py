@@ -28,43 +28,66 @@ class InlineResponse20012(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'receipt': 'str'
+        'announced': 'list[MultiAddress]',
+        'observed': 'list[MultiAddress]'
     }
 
     attribute_map = {
-        'receipt': 'receipt'
+        'announced': 'announced',
+        'observed': 'observed'
     }
 
-    def __init__(self, receipt=None):  # noqa: E501
+    def __init__(self, announced=None, observed=None):  # noqa: E501
         """InlineResponse20012 - a model defined in Swagger"""  # noqa: E501
-        self._receipt = None
+        self._announced = None
+        self._observed = None
         self.discriminator = None
-        self.receipt = receipt
+        if announced is not None:
+            self.announced = announced
+        if observed is not None:
+            self.observed = observed
 
     @property
-    def receipt(self):
-        """Gets the receipt of this InlineResponse20012.  # noqa: E501
+    def announced(self):
+        """Gets the announced of this InlineResponse20012.  # noqa: E501
 
-        Receipt of the funding transaction  # noqa: E501
 
-        :return: The receipt of this InlineResponse20012.  # noqa: E501
-        :rtype: str
+        :return: The announced of this InlineResponse20012.  # noqa: E501
+        :rtype: list[MultiAddress]
         """
-        return self._receipt
+        return self._announced
 
-    @receipt.setter
-    def receipt(self, receipt):
-        """Sets the receipt of this InlineResponse20012.
+    @announced.setter
+    def announced(self, announced):
+        """Sets the announced of this InlineResponse20012.
 
-        Receipt of the funding transaction  # noqa: E501
 
-        :param receipt: The receipt of this InlineResponse20012.  # noqa: E501
-        :type: str
+        :param announced: The announced of this InlineResponse20012.  # noqa: E501
+        :type: list[MultiAddress]
         """
-        if receipt is None:
-            raise ValueError("Invalid value for `receipt`, must not be `None`")  # noqa: E501
 
-        self._receipt = receipt
+        self._announced = announced
+
+    @property
+    def observed(self):
+        """Gets the observed of this InlineResponse20012.  # noqa: E501
+
+
+        :return: The observed of this InlineResponse20012.  # noqa: E501
+        :rtype: list[MultiAddress]
+        """
+        return self._observed
+
+    @observed.setter
+    def observed(self, observed):
+        """Sets the observed of this InlineResponse20012.
+
+
+        :param observed: The observed of this InlineResponse20012.  # noqa: E501
+        :type: list[MultiAddress]
+        """
+
+        self._observed = observed
 
     def to_dict(self):
         """Returns the model properties as a dict"""

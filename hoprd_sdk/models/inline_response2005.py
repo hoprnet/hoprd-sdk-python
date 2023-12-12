@@ -28,98 +28,41 @@ class InlineResponse2005(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'incoming': 'list[Channel]',
-        'outgoing': 'list[Channel]',
-        'all': 'list[ChannelTopology]'
+        'messages': 'list[ReceivedMessage]'
     }
 
     attribute_map = {
-        'incoming': 'incoming',
-        'outgoing': 'outgoing',
-        'all': 'all'
+        'messages': 'messages'
     }
 
-    def __init__(self, incoming=None, outgoing=None, all=None):  # noqa: E501
+    def __init__(self, messages=None):  # noqa: E501
         """InlineResponse2005 - a model defined in Swagger"""  # noqa: E501
-        self._incoming = None
-        self._outgoing = None
-        self._all = None
+        self._messages = None
         self.discriminator = None
-        if incoming is not None:
-            self.incoming = incoming
-        if outgoing is not None:
-            self.outgoing = outgoing
-        if all is not None:
-            self.all = all
+        self.messages = messages
 
     @property
-    def incoming(self):
-        """Gets the incoming of this InlineResponse2005.  # noqa: E501
+    def messages(self):
+        """Gets the messages of this InlineResponse2005.  # noqa: E501
 
-        Incomming channels are the ones that were opened by a different node and this node acts as relay.  # noqa: E501
 
-        :return: The incoming of this InlineResponse2005.  # noqa: E501
-        :rtype: list[Channel]
+        :return: The messages of this InlineResponse2005.  # noqa: E501
+        :rtype: list[ReceivedMessage]
         """
-        return self._incoming
+        return self._messages
 
-    @incoming.setter
-    def incoming(self, incoming):
-        """Sets the incoming of this InlineResponse2005.
+    @messages.setter
+    def messages(self, messages):
+        """Sets the messages of this InlineResponse2005.
 
-        Incomming channels are the ones that were opened by a different node and this node acts as relay.  # noqa: E501
 
-        :param incoming: The incoming of this InlineResponse2005.  # noqa: E501
-        :type: list[Channel]
+        :param messages: The messages of this InlineResponse2005.  # noqa: E501
+        :type: list[ReceivedMessage]
         """
+        if messages is None:
+            raise ValueError("Invalid value for `messages`, must not be `None`")  # noqa: E501
 
-        self._incoming = incoming
-
-    @property
-    def outgoing(self):
-        """Gets the outgoing of this InlineResponse2005.  # noqa: E501
-
-        Outgoing channels are the ones that were opened by this node and is using other node as relay.  # noqa: E501
-
-        :return: The outgoing of this InlineResponse2005.  # noqa: E501
-        :rtype: list[Channel]
-        """
-        return self._outgoing
-
-    @outgoing.setter
-    def outgoing(self, outgoing):
-        """Sets the outgoing of this InlineResponse2005.
-
-        Outgoing channels are the ones that were opened by this node and is using other node as relay.  # noqa: E501
-
-        :param outgoing: The outgoing of this InlineResponse2005.  # noqa: E501
-        :type: list[Channel]
-        """
-
-        self._outgoing = outgoing
-
-    @property
-    def all(self):
-        """Gets the all of this InlineResponse2005.  # noqa: E501
-
-        All the channels indexed by the node in the current network.  # noqa: E501
-
-        :return: The all of this InlineResponse2005.  # noqa: E501
-        :rtype: list[ChannelTopology]
-        """
-        return self._all
-
-    @all.setter
-    def all(self, all):
-        """Sets the all of this InlineResponse2005.
-
-        All the channels indexed by the node in the current network.  # noqa: E501
-
-        :param all: The all of this InlineResponse2005.  # noqa: E501
-        :type: list[ChannelTopology]
-        """
-
-        self._all = all
+        self._messages = messages
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,70 +28,66 @@ class InlineResponse20010(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'latency': 'float',
-        'reported_version': 'str'
+        'native': 'NativeAddress',
+        'hopr': 'HoprAddress'
     }
 
     attribute_map = {
-        'latency': 'latency',
-        'reported_version': 'reportedVersion'
+        'native': 'native',
+        'hopr': 'hopr'
     }
 
-    def __init__(self, latency=None, reported_version=None):  # noqa: E501
+    def __init__(self, native=None, hopr=None):  # noqa: E501
         """InlineResponse20010 - a model defined in Swagger"""  # noqa: E501
-        self._latency = None
-        self._reported_version = None
+        self._native = None
+        self._hopr = None
         self.discriminator = None
-        if latency is not None:
-            self.latency = latency
-        if reported_version is not None:
-            self.reported_version = reported_version
+        if native is not None:
+            self.native = native
+        if hopr is not None:
+            self.hopr = hopr
 
     @property
-    def latency(self):
-        """Gets the latency of this InlineResponse20010.  # noqa: E501
+    def native(self):
+        """Gets the native of this InlineResponse20010.  # noqa: E501
 
-        Number of milliseconds it took to get the response from the pinged node.  # noqa: E501
 
-        :return: The latency of this InlineResponse20010.  # noqa: E501
-        :rtype: float
+        :return: The native of this InlineResponse20010.  # noqa: E501
+        :rtype: NativeAddress
         """
-        return self._latency
+        return self._native
 
-    @latency.setter
-    def latency(self, latency):
-        """Sets the latency of this InlineResponse20010.
+    @native.setter
+    def native(self, native):
+        """Sets the native of this InlineResponse20010.
 
-        Number of milliseconds it took to get the response from the pinged node.  # noqa: E501
 
-        :param latency: The latency of this InlineResponse20010.  # noqa: E501
-        :type: float
+        :param native: The native of this InlineResponse20010.  # noqa: E501
+        :type: NativeAddress
         """
 
-        self._latency = latency
+        self._native = native
 
     @property
-    def reported_version(self):
-        """Gets the reported_version of this InlineResponse20010.  # noqa: E501
+    def hopr(self):
+        """Gets the hopr of this InlineResponse20010.  # noqa: E501
 
-        HOPR protocol version as determined from the successful ping in the Major.Minor.Patch format or \"unknown\"  # noqa: E501
 
-        :return: The reported_version of this InlineResponse20010.  # noqa: E501
-        :rtype: str
+        :return: The hopr of this InlineResponse20010.  # noqa: E501
+        :rtype: HoprAddress
         """
-        return self._reported_version
+        return self._hopr
 
-    @reported_version.setter
-    def reported_version(self, reported_version):
-        """Sets the reported_version of this InlineResponse20010.
+    @hopr.setter
+    def hopr(self, hopr):
+        """Sets the hopr of this InlineResponse20010.
 
-        HOPR protocol version as determined from the successful ping in the Major.Minor.Patch format or \"unknown\"  # noqa: E501
 
-        :param reported_version: The reported_version of this InlineResponse20010.  # noqa: E501
-        :type: str
+        :param hopr: The hopr of this InlineResponse20010.  # noqa: E501
+        :type: HoprAddress
         """
 
-        self._reported_version = reported_version
+        self._hopr = hopr
 
     def to_dict(self):
         """Returns the model properties as a dict"""

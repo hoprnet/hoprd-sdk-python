@@ -28,66 +28,42 @@ class InlineResponse2001(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'connected': 'list[InlineResponse2001Connected]',
-        'announced': 'list[InlineResponse2001Connected]'
+        'price': 'float'
     }
 
     attribute_map = {
-        'connected': 'connected',
-        'announced': 'announced'
+        'price': 'price'
     }
 
-    def __init__(self, connected=None, announced=None):  # noqa: E501
+    def __init__(self, price=None):  # noqa: E501
         """InlineResponse2001 - a model defined in Swagger"""  # noqa: E501
-        self._connected = None
-        self._announced = None
+        self._price = None
         self.discriminator = None
-        if connected is not None:
-            self.connected = connected
-        if announced is not None:
-            self.announced = announced
+        if price is not None:
+            self.price = price
 
     @property
-    def connected(self):
-        """Gets the connected of this InlineResponse2001.  # noqa: E501
+    def price(self):
+        """Gets the price of this InlineResponse2001.  # noqa: E501
 
+        Latest ticket price update.  # noqa: E501
 
-        :return: The connected of this InlineResponse2001.  # noqa: E501
-        :rtype: list[InlineResponse2001Connected]
+        :return: The price of this InlineResponse2001.  # noqa: E501
+        :rtype: float
         """
-        return self._connected
+        return self._price
 
-    @connected.setter
-    def connected(self, connected):
-        """Sets the connected of this InlineResponse2001.
+    @price.setter
+    def price(self, price):
+        """Sets the price of this InlineResponse2001.
 
+        Latest ticket price update.  # noqa: E501
 
-        :param connected: The connected of this InlineResponse2001.  # noqa: E501
-        :type: list[InlineResponse2001Connected]
-        """
-
-        self._connected = connected
-
-    @property
-    def announced(self):
-        """Gets the announced of this InlineResponse2001.  # noqa: E501
-
-
-        :return: The announced of this InlineResponse2001.  # noqa: E501
-        :rtype: list[InlineResponse2001Connected]
-        """
-        return self._announced
-
-    @announced.setter
-    def announced(self, announced):
-        """Sets the announced of this InlineResponse2001.
-
-
-        :param announced: The announced of this InlineResponse2001.  # noqa: E501
-        :type: list[InlineResponse2001Connected]
+        :param price: The price of this InlineResponse2001.  # noqa: E501
+        :type: float
         """
 
-        self._announced = announced
+        self._price = price
 
     def to_dict(self):
         """Returns the model properties as a dict"""
