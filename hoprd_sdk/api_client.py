@@ -59,6 +59,7 @@ class ApiClient(object):
         "datetime": datetime.datetime,
         "object": object,
     }
+
     _pool = None
 
     def __init__(
@@ -68,7 +69,6 @@ class ApiClient(object):
             configuration = Configuration()
         self.configuration = configuration
 
-        # self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
         if header_name is not None:
