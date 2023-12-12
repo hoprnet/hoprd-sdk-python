@@ -28,7 +28,6 @@ class InlineResponse200(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'pending': 'float',
         'unredeemed': 'float',
         'unredeemed_value': 'str',
         'redeemed': 'float',
@@ -36,12 +35,12 @@ class InlineResponse200(object):
         'losing_tickets': 'float',
         'win_proportion': 'float',
         'neglected': 'float',
+        'neglected_value': 'str',
         'rejected': 'float',
         'rejected_value': 'str'
     }
 
     attribute_map = {
-        'pending': 'pending',
         'unredeemed': 'unredeemed',
         'unredeemed_value': 'unredeemedValue',
         'redeemed': 'redeemed',
@@ -49,13 +48,13 @@ class InlineResponse200(object):
         'losing_tickets': 'losingTickets',
         'win_proportion': 'winProportion',
         'neglected': 'neglected',
+        'neglected_value': 'neglectedValue',
         'rejected': 'rejected',
         'rejected_value': 'rejectedValue'
     }
 
-    def __init__(self, pending=None, unredeemed=None, unredeemed_value=None, redeemed=None, redeemed_value=None, losing_tickets=None, win_proportion=None, neglected=None, rejected=None, rejected_value=None):  # noqa: E501
+    def __init__(self, unredeemed=None, unredeemed_value=None, redeemed=None, redeemed_value=None, losing_tickets=None, win_proportion=None, neglected=None, neglected_value=None, rejected=None, rejected_value=None):  # noqa: E501
         """InlineResponse200 - a model defined in Swagger"""  # noqa: E501
-        self._pending = None
         self._unredeemed = None
         self._unredeemed_value = None
         self._redeemed = None
@@ -63,11 +62,10 @@ class InlineResponse200(object):
         self._losing_tickets = None
         self._win_proportion = None
         self._neglected = None
+        self._neglected_value = None
         self._rejected = None
         self._rejected_value = None
         self.discriminator = None
-        if pending is not None:
-            self.pending = pending
         if unredeemed is not None:
             self.unredeemed = unredeemed
         if unredeemed_value is not None:
@@ -82,33 +80,12 @@ class InlineResponse200(object):
             self.win_proportion = win_proportion
         if neglected is not None:
             self.neglected = neglected
+        if neglected_value is not None:
+            self.neglected_value = neglected_value
         if rejected is not None:
             self.rejected = rejected
         if rejected_value is not None:
             self.rejected_value = rejected_value
-
-    @property
-    def pending(self):
-        """Gets the pending of this InlineResponse200.  # noqa: E501
-
-        Number of tickets that other node in the channel earned and didn't redeem yet.  # noqa: E501
-
-        :return: The pending of this InlineResponse200.  # noqa: E501
-        :rtype: float
-        """
-        return self._pending
-
-    @pending.setter
-    def pending(self, pending):
-        """Sets the pending of this InlineResponse200.
-
-        Number of tickets that other node in the channel earned and didn't redeem yet.  # noqa: E501
-
-        :param pending: The pending of this InlineResponse200.  # noqa: E501
-        :type: float
-        """
-
-        self._pending = pending
 
     @property
     def unredeemed(self):
@@ -270,6 +247,29 @@ class InlineResponse200(object):
         """
 
         self._neglected = neglected
+
+    @property
+    def neglected_value(self):
+        """Gets the neglected_value of this InlineResponse200.  # noqa: E501
+
+        Total value of all neglected tickets in Hopr tokens.  # noqa: E501
+
+        :return: The neglected_value of this InlineResponse200.  # noqa: E501
+        :rtype: str
+        """
+        return self._neglected_value
+
+    @neglected_value.setter
+    def neglected_value(self, neglected_value):
+        """Sets the neglected_value of this InlineResponse200.
+
+        Total value of all neglected tickets in Hopr tokens.  # noqa: E501
+
+        :param neglected_value: The neglected_value of this InlineResponse200.  # noqa: E501
+        :type: str
+        """
+
+        self._neglected_value = neglected_value
 
     @property
     def rejected(self):

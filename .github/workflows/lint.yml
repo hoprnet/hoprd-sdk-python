@@ -25,4 +25,4 @@ jobs:
 
       - name: Lint with ruff
         run: |
-          ruff --ignore E501,F401 --format=github --target-version=py310 .
+          ruff --ignore E501,F401 --output-format=github --target-version=py310 .
