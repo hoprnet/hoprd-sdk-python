@@ -10,22 +10,22 @@
 """
 from __future__ import absolute_import
 
+import atexit
 import datetime
 import json
 import mimetypes
-from multiprocessing.pool import ThreadPool
 import os
 import re
 import tempfile
-import atexit
+from multiprocessing.pool import ThreadPool
 
 # python 2 and python 3 compatibility library
 import six
 from six.moves.urllib.parse import quote
 
-from hoprd_sdk.configuration import Configuration
 import hoprd_sdk.models
 from hoprd_sdk import rest
+from hoprd_sdk.configuration import Configuration
 
 
 class ApiClient(object):
@@ -279,7 +279,7 @@ class ApiClient(object):
         if data is None:
             return None
 
-        if type(klass) == str:
+        if isinstance(klass, str):
             if klass.startswith("list["):
                 sub_kls = re.match(r"list\[(.*)\]", klass).group(1)
                 return [self.__deserialize(sub_data, sub_kls) for sub_data in data]
@@ -530,7 +530,7 @@ class ApiClient(object):
             for k, v in six.iteritems(files):
                 if not v:
                     continue
-                file_names = v if type(v) is list else [v]
+                file_names = v if isinstance(v, list) else [v]
                 for n in file_names:
                     with open(n, "rb") as f:
                         filename = os.path.basename(f.name)
