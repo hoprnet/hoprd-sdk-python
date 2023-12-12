@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**messages_delete_messages**](MessagesApi.md#messages_delete_messages) | **DELETE** /messages/ | 
 [**messages_get_size**](MessagesApi.md#messages_get_size) | **GET** /messages/size | 
-[**messages_peek_all_message**](MessagesApi.md#messages_peek_all_message) | **GET** /messages/peek-all | 
-[**messages_peek_message**](MessagesApi.md#messages_peek_message) | **GET** /messages/peek | 
+[**messages_peek_all_message**](MessagesApi.md#messages_peek_all_message) | **POST** /messages/peek-all | 
+[**messages_peek_message**](MessagesApi.md#messages_peek_message) | **POST** /messages/peek | 
 [**messages_pop_all_message**](MessagesApi.md#messages_pop_all_message) | **POST** /messages/pop-all | 
 [**messages_pop_message**](MessagesApi.md#messages_pop_message) | **POST** /messages/pop | 
 [**messages_send_message**](MessagesApi.md#messages_send_message) | **POST** /messages/ | 

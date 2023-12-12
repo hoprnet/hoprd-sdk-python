@@ -302,7 +302,7 @@ class MessagesApi(object):
         auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
 
         return self.api_client.call_api(
-            '/messages/peek-all', 'GET',
+            '/messages/peek-all', 'POST',
             path_params,
             query_params,
             header_params,
@@ -397,7 +397,7 @@ class MessagesApi(object):
         auth_settings = ['keyScheme', 'passwordScheme']  # noqa: E501
 
         return self.api_client.call_api(
-            '/messages/peek', 'GET',
+            '/messages/peek', 'POST',
             path_params,
             query_params,
             header_params,

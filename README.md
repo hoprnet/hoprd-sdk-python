@@ -152,8 +152,8 @@ Class | Method | HTTP request | Description
 *CheckStartedApi* | [**check_node_started**](docs/CheckStartedApi.md#check_node_started) | **GET** /startedz/ | 
 *MessagesApi* | [**messages_delete_messages**](docs/MessagesApi.md#messages_delete_messages) | **DELETE** /messages/ | 
 *MessagesApi* | [**messages_get_size**](docs/MessagesApi.md#messages_get_size) | **GET** /messages/size | 
-*MessagesApi* | [**messages_peek_all_message**](docs/MessagesApi.md#messages_peek_all_message) | **GET** /messages/peek-all | 
-*MessagesApi* | [**messages_peek_message**](docs/MessagesApi.md#messages_peek_message) | **GET** /messages/peek | 
+*MessagesApi* | [**messages_peek_all_message**](docs/MessagesApi.md#messages_peek_all_message) | **POST** /messages/peek-all | 
+*MessagesApi* | [**messages_peek_message**](docs/MessagesApi.md#messages_peek_message) | **POST** /messages/peek | 
 *MessagesApi* | [**messages_pop_all_message**](docs/MessagesApi.md#messages_pop_all_message) | **POST** /messages/pop-all | 
 *MessagesApi* | [**messages_pop_message**](docs/MessagesApi.md#messages_pop_message) | **POST** /messages/pop | 
 *MessagesApi* | [**messages_send_message**](docs/MessagesApi.md#messages_send_message) | **POST** /messages/ | 
