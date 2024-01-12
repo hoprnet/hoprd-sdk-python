@@ -1,9 +1,10 @@
-# SendMessageRes
+# InlineResponse2007
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**challenge** | **str** |  | 
+**alice** | [**HoprAddress**](HoprAddress.md) |  | [optional] 
+**bob** | [**HoprAddress**](HoprAddress.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

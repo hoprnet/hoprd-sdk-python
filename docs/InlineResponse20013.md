@@ -1,9 +1,9 @@
-# SendMessageRes
+# InlineResponse20013
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**challenge** | **str** |  | 
+**receipt** | **str** | Receipt of the funding transaction | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

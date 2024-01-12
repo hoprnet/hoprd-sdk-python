@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_messages**](MessagesApi.md#delete_messages) | **DELETE** /api/v3/messages | Delete messages from nodes message inbox.
 [**peek**](MessagesApi.md#peek) | **POST** /api/v3/messages/peek | Peek the oldest message currently present in the nodes message inbox.
-[**peek_all**](MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox, filtered by tag,
+[**peek_all**](MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox.
 [**pop**](MessagesApi.md#pop) | **POST** /api/v3/messages/pop | Get the oldest message currently present in the nodes message inbox.
 [**pop_all**](MessagesApi.md#pop_all) | **POST** /api/v3/messages/pop-all | Get the list of messages currently present in the nodes message inbox.
 [**send_message**](MessagesApi.md#send_message) | **POST** /api/v3/messages | Send a message to another peer using a given path.
@@ -120,11 +120,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **peek_all**
-> InboxMessagesRes peek_all()
+> InboxMessagesRes peek_all(body)
 
-Peek the list of messages currently present in the nodes message inbox, filtered by tag,
+Peek the list of messages currently present in the nodes message inbox.
 
-Peek the list of messages currently present in the nodes message inbox, filtered by tag, and optionally by timestamp (epoch in milliseconds). The messages are not removed from the inbox.
+Peek the list of messages currently present in the nodes message inbox.  The messages are not removed from the inbox.
 
 ### Example
 ```python
@@ -142,17 +142,21 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.TagQuery() # TagQuery | Tag of message queue to peek from
 
 try:
-    # Peek the list of messages currently present in the nodes message inbox, filtered by tag,
-    api_response = api_instance.peek_all()
+    # Peek the list of messages currently present in the nodes message inbox.
+    api_response = api_instance.peek_all(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessagesApi->peek_all: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TagQuery**](TagQuery.md)| Tag of message queue to peek from | 
 
 ### Return type
 

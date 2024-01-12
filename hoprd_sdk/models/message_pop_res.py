@@ -29,7 +29,7 @@ class MessagePopRes(object):
     """
     swagger_types = {
         'body': 'str',
-        'received_at': 'StdTimeDuration',
+        'received_at': 'int',
         'tag': 'int'
     }
 
@@ -78,7 +78,7 @@ class MessagePopRes(object):
 
 
         :return: The received_at of this MessagePopRes.  # noqa: E501
-        :rtype: StdTimeDuration
+        :rtype: int
         """
         return self._received_at
 
@@ -88,7 +88,7 @@ class MessagePopRes(object):
 
 
         :param received_at: The received_at of this MessagePopRes.  # noqa: E501
-        :type: StdTimeDuration
+        :type: int
         """
         if received_at is None:
             raise ValueError("Invalid value for `received_at`, must not be `None`")  # noqa: E501

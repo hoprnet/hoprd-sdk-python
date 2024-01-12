@@ -45,7 +45,7 @@ class TestMessagesApi(unittest.TestCase):
     def test_peek_all(self):
         """Test case for peek_all
 
-        Peek the list of messages currently present in the nodes message inbox, filtered by tag,  # noqa: E501
+        Peek the list of messages currently present in the nodes message inbox.  # noqa: E501
         """
         pass
 
