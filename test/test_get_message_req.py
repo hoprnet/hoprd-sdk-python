@@ -15,29 +15,23 @@ from __future__ import absolute_import
 import unittest
 
 import hoprd_sdk
-from hoprd_sdk.api.channel_api import ChannelApi  # noqa: E501
+from hoprd_sdk.models.get_message_req import GetMessageReq  # noqa: E501
 from hoprd_sdk.rest import ApiException
 
 
-class TestChannelApi(unittest.TestCase):
-    """ChannelApi unit test stubs"""
+class TestGetMessageReq(unittest.TestCase):
+    """GetMessageReq unit test stubs"""
 
     def setUp(self):
-        self.api = ChannelApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_aggregate_tickets_in_channel(self):
-        """Test case for aggregate_tickets_in_channel
-
-        """
-        pass
-
-    def test_redeem_tickets_in_channel(self):
-        """Test case for redeem_tickets_in_channel
-
-        """
+    def testGetMessageReq(self):
+        """Test GetMessageReq"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = hoprd_sdk.models.get_message_req.GetMessageReq()  # noqa: E501
         pass
 
 

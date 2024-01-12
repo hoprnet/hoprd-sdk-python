@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_messages**](MessagesApi.md#delete_messages) | **DELETE** /api/v3/messages | Delete messages from nodes message inbox.
 [**peek**](MessagesApi.md#peek) | **POST** /api/v3/messages/peek | Peek the oldest message currently present in the nodes message inbox.
-[**peek_all**](MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox.
+[**peek_all**](MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox, filtered by tag,
 [**pop**](MessagesApi.md#pop) | **POST** /api/v3/messages/pop | Get the oldest message currently present in the nodes message inbox.
 [**pop_all**](MessagesApi.md#pop_all) | **POST** /api/v3/messages/pop-all | Get the list of messages currently present in the nodes message inbox.
 [**send_message**](MessagesApi.md#send_message) | **POST** /api/v3/messages | Send a message to another peer using a given path.
@@ -122,9 +122,9 @@ Name | Type | Description  | Notes
 # **peek_all**
 > InboxMessagesRes peek_all(body)
 
-Peek the list of messages currently present in the nodes message inbox.
+Peek the list of messages currently present in the nodes message inbox, filtered by tag,
 
-Peek the list of messages currently present in the nodes message inbox.  The messages are not removed from the inbox.
+Peek the list of messages currently present in the nodes message inbox, filtered by tag, and optionally by timestamp (epoch in milliseconds). The messages are not removed from the inbox.
 
 ### Example
 ```python
@@ -142,10 +142,10 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.TagQuery() # TagQuery | Tag of message queue to peek from
+body = hoprd_sdk.GetMessageReq() # GetMessageReq | Tag of message queue and optionally a timestamp since from to peek from
 
 try:
-    # Peek the list of messages currently present in the nodes message inbox.
+    # Peek the list of messages currently present in the nodes message inbox, filtered by tag,
     api_response = api_instance.peek_all(body)
     pprint(api_response)
 except ApiException as e:
@@ -156,7 +156,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TagQuery**](TagQuery.md)| Tag of message queue to peek from | 
+ **body** | [**GetMessageReq**](GetMessageReq.md)| Tag of message queue and optionally a timestamp since from to peek from | 
 
 ### Return type
 

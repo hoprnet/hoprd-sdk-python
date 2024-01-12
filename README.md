@@ -127,7 +127,7 @@ Class | Method | HTTP request | Description
 *ChecksApi* | [**startedz**](docs/ChecksApi.md#startedz) | **GET** /startedz | Check whether the node is started.
 *MessagesApi* | [**delete_messages**](docs/MessagesApi.md#delete_messages) | **DELETE** /api/v3/messages | Delete messages from nodes message inbox.
 *MessagesApi* | [**peek**](docs/MessagesApi.md#peek) | **POST** /api/v3/messages/peek | Peek the oldest message currently present in the nodes message inbox.
-*MessagesApi* | [**peek_all**](docs/MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox.
+*MessagesApi* | [**peek_all**](docs/MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox, filtered by tag,
 *MessagesApi* | [**pop**](docs/MessagesApi.md#pop) | **POST** /api/v3/messages/pop | Get the oldest message currently present in the nodes message inbox.
 *MessagesApi* | [**pop_all**](docs/MessagesApi.md#pop_all) | **POST** /api/v3/messages/pop-all | Get the list of messages currently present in the nodes message inbox.
 *MessagesApi* | [**send_message**](docs/MessagesApi.md#send_message) | **POST** /api/v3/messages | Send a message to another peer using a given path.
@@ -155,6 +155,7 @@ Class | Method | HTTP request | Description
  - [CloseChannelReceipt](docs/CloseChannelReceipt.md)
  - [EntryNode](docs/EntryNode.md)
  - [FundRequest](docs/FundRequest.md)
+ - [GetMessageReq](docs/GetMessageReq.md)
  - [HeartbeatInfo](docs/HeartbeatInfo.md)
  - [InboxMessagesRes](docs/InboxMessagesRes.md)
  - [MessagePopRes](docs/MessagePopRes.md)
