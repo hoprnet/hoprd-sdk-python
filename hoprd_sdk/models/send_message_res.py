@@ -29,7 +29,7 @@ class SendMessageRes(object):
     """
     swagger_types = {
         'challenge': 'str',
-        'timestamp': 'int'
+        'timestamp': 'Duration'
     }
 
     attribute_map = {
@@ -74,7 +74,7 @@ class SendMessageRes(object):
 
 
         :return: The timestamp of this SendMessageRes.  # noqa: E501
-        :rtype: int
+        :rtype: Duration
         """
         return self._timestamp
 
@@ -84,7 +84,7 @@ class SendMessageRes(object):
 
 
         :param timestamp: The timestamp of this SendMessageRes.  # noqa: E501
-        :type: int
+        :type: Duration
         """
         if timestamp is None:
             raise ValueError("Invalid value for `timestamp`, must not be `None`")  # noqa: E501

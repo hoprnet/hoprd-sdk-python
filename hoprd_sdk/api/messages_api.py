@@ -222,45 +222,43 @@ class MessagesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def peek_all(self, body, **kwargs):  # noqa: E501
+    def peek_all(self, **kwargs):  # noqa: E501
         """Peek the list of messages currently present in the nodes message inbox, filtered by tag,  # noqa: E501
 
         Peek the list of messages currently present in the nodes message inbox, filtered by tag, and optionally by timestamp (epoch in milliseconds). The messages are not removed from the inbox.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.peek_all(body, async_req=True)
+        >>> thread = api.peek_all(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetMessageReq body: Tag of message queue and optionally a timestamp since from to peek from (required)
         :return: InboxMessagesRes
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.peek_all_with_http_info(body, **kwargs)  # noqa: E501
+            return self.peek_all_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.peek_all_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.peek_all_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def peek_all_with_http_info(self, body, **kwargs):  # noqa: E501
+    def peek_all_with_http_info(self, **kwargs):  # noqa: E501
         """Peek the list of messages currently present in the nodes message inbox, filtered by tag,  # noqa: E501
 
         Peek the list of messages currently present in the nodes message inbox, filtered by tag, and optionally by timestamp (epoch in milliseconds). The messages are not removed from the inbox.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.peek_all_with_http_info(body, async_req=True)
+        >>> thread = api.peek_all_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetMessageReq body: Tag of message queue and optionally a timestamp since from to peek from (required)
         :return: InboxMessagesRes
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -275,10 +273,6 @@ class MessagesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `peek_all`")  # noqa: E501
 
         collection_formats = {}
 
@@ -292,8 +286,6 @@ class MessagesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
