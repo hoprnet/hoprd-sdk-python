@@ -28,18 +28,22 @@ class SendMessageRes(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'challenge': 'str'
+        'challenge': 'str',
+        'timestamp': 'Duration'
     }
 
     attribute_map = {
-        'challenge': 'challenge'
+        'challenge': 'challenge',
+        'timestamp': 'timestamp'
     }
 
-    def __init__(self, challenge=None):  # noqa: E501
+    def __init__(self, challenge=None, timestamp=None):  # noqa: E501
         """SendMessageRes - a model defined in Swagger"""  # noqa: E501
         self._challenge = None
+        self._timestamp = None
         self.discriminator = None
         self.challenge = challenge
+        self.timestamp = timestamp
 
     @property
     def challenge(self):
@@ -63,6 +67,29 @@ class SendMessageRes(object):
             raise ValueError("Invalid value for `challenge`, must not be `None`")  # noqa: E501
 
         self._challenge = challenge
+
+    @property
+    def timestamp(self):
+        """Gets the timestamp of this SendMessageRes.  # noqa: E501
+
+
+        :return: The timestamp of this SendMessageRes.  # noqa: E501
+        :rtype: Duration
+        """
+        return self._timestamp
+
+    @timestamp.setter
+    def timestamp(self, timestamp):
+        """Sets the timestamp of this SendMessageRes.
+
+
+        :param timestamp: The timestamp of this SendMessageRes.  # noqa: E501
+        :type: Duration
+        """
+        if timestamp is None:
+            raise ValueError("Invalid value for `timestamp`, must not be `None`")  # noqa: E501
+
+        self._timestamp = timestamp
 
     def to_dict(self):
         """Returns the model properties as a dict"""
