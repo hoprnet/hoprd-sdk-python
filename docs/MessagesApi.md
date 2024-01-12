@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **peek_all**
-> InboxMessagesRes peek_all()
+> InboxMessagesRes peek_all(body)
 
 Peek the list of messages currently present in the nodes message inbox, filtered by tag,
 
@@ -142,17 +142,21 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.GetMessageReq() # GetMessageReq | Tag of message queue and optionally a timestamp since from to peek from
 
 try:
     # Peek the list of messages currently present in the nodes message inbox, filtered by tag,
-    api_response = api_instance.peek_all()
+    api_response = api_instance.peek_all(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessagesApi->peek_all: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetMessageReq**](GetMessageReq.md)| Tag of message queue and optionally a timestamp since from to peek from | 
 
 ### Return type
 

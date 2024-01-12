@@ -23,6 +23,7 @@ from hoprd_sdk.models.channels_query import ChannelsQuery
 from hoprd_sdk.models.close_channel_receipt import CloseChannelReceipt
 from hoprd_sdk.models.entry_node import EntryNode
 from hoprd_sdk.models.fund_request import FundRequest
+from hoprd_sdk.models.get_message_req import GetMessageReq
 from hoprd_sdk.models.heartbeat_info import HeartbeatInfo
 from hoprd_sdk.models.inbox_messages_res import InboxMessagesRes
 from hoprd_sdk.models.message_pop_res import MessagePopRes

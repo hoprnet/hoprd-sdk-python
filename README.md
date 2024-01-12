@@ -155,6 +155,7 @@ Class | Method | HTTP request | Description
  - [CloseChannelReceipt](docs/CloseChannelReceipt.md)
  - [EntryNode](docs/EntryNode.md)
  - [FundRequest](docs/FundRequest.md)
+ - [GetMessageReq](docs/GetMessageReq.md)
  - [HeartbeatInfo](docs/HeartbeatInfo.md)
  - [InboxMessagesRes](docs/InboxMessagesRes.md)
  - [MessagePopRes](docs/MessagePopRes.md)
