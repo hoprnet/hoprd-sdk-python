@@ -1,73 +1,21 @@
 # hoprd_sdk.NodeApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**node_get_entry_nodes**](NodeApi.md#node_get_entry_nodes) | **GET** /node/entryNodes | 
-[**node_get_info**](NodeApi.md#node_get_info) | **GET** /node/info | 
-[**node_get_metrics**](NodeApi.md#node_get_metrics) | **GET** /node/metrics | 
-[**node_get_peers**](NodeApi.md#node_get_peers) | **GET** /node/peers | 
-[**node_get_version**](NodeApi.md#node_get_version) | **GET** /node/version | 
+[**entry_nodes**](NodeApi.md#entry_nodes) | **GET** /api/v3/node/entryNodes | List all known entry nodes with multiaddrs and eligibility.
+[**info**](NodeApi.md#info) | **GET** /api/v3/node/info | Get information about this HOPR Node.
+[**metrics**](NodeApi.md#metrics) | **GET** /api/v3/node/metrics | Retrieve Prometheus metrics from the running node.
+[**peers**](NodeApi.md#peers) | **GET** /api/v3/node/peers | Lists information for &#x60;connected peers&#x60; and &#x60;announced peers&#x60;.
+[**version**](NodeApi.md#version) | **GET** /api/v3/node/version | Get release version of the running node.
 
-# **node_get_entry_nodes**
-> dict(str, InlineResponseMap200) node_get_entry_nodes()
+# **entry_nodes**
+> dict(str, EntryNode) entry_nodes()
 
+List all known entry nodes with multiaddrs and eligibility.
 
-
-List all known entry nodes and their multiaddrs and their eligibility state
-
-### Example
-```python
-from __future__ import print_function
-import time
-import hoprd_sdk
-from hoprd_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = hoprd_sdk.NodeApi(hoprd_sdk.ApiClient(configuration))
-
-try:
-    api_response = api_instance.node_get_entry_nodes()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NodeApi->node_get_entry_nodes: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**dict(str, InlineResponseMap200)**](InlineResponseMap200.md)
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **node_get_info**
-> InlineResponse2003 node_get_info()
-
-
-
-Information about the HOPR Node, including any options it started with. See the schema of the response to get more information on each field.
+List all known entry nodes with multiaddrs and eligibility.
 
 ### Example
 ```python
@@ -77,23 +25,21 @@ import hoprd_sdk
 from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: keyScheme
+# Configure API key authorization: api_token
 configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.NodeApi(hoprd_sdk.ApiClient(configuration))
 
 try:
-    api_response = api_instance.node_get_info()
+    # List all known entry nodes with multiaddrs and eligibility.
+    api_response = api_instance.entry_nodes()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling NodeApi->node_get_info: %s\n" % e)
+    print("Exception when calling NodeApi->entry_nodes: %s\n" % e)
 ```
 
 ### Parameters
@@ -101,11 +47,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**dict(str, EntryNode)**](EntryNode.md)
 
 ### Authorization
 
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -114,10 +60,60 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **node_get_metrics**
-> str node_get_metrics()
+# **info**
+> NodeInfoRes info()
 
+Get information about this HOPR Node.
 
+Get information about this HOPR Node.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_token
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.NodeApi(hoprd_sdk.ApiClient(configuration))
+
+try:
+    # Get information about this HOPR Node.
+    api_response = api_instance.info()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling NodeApi->info: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**NodeInfoRes**](NodeInfoRes.md)
+
+### Authorization
+
+[api_token](../README.md#api_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **metrics**
+> str metrics()
+
+Retrieve Prometheus metrics from the running node.
 
 Retrieve Prometheus metrics from the running node.
 
@@ -129,23 +125,21 @@ import hoprd_sdk
 from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: keyScheme
+# Configure API key authorization: api_token
 configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.NodeApi(hoprd_sdk.ApiClient(configuration))
 
 try:
-    api_response = api_instance.node_get_metrics()
+    # Retrieve Prometheus metrics from the running node.
+    api_response = api_instance.metrics()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling NodeApi->node_get_metrics: %s\n" % e)
+    print("Exception when calling NodeApi->metrics: %s\n" % e)
 ```
 
 ### Parameters
@@ -157,21 +151,21 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain; version=0.0.4, application/json
+ - **Accept**: text/plain, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **node_get_peers**
-> InlineResponse2002 node_get_peers(quality=quality)
+# **peers**
+> NodePeersRes peers(quality=quality)
 
+Lists information for `connected peers` and `announced peers`.
 
-
-Lists information for `connected peers` and `announced peers`. Connected peers are nodes which are connected to the node while announced peers are nodes which have announced to the network. Optionally, you can pass `quality` parameter which would filter out peers with lower quality to the one specified.
+Lists information for `connected peers` and `announced peers`.  Connected peers are nodes which are connected to the node while announced peers are nodes which have announced to the network.  Optionally pass `quality` parameter to get only peers with higher or equal quality to the specified value.
 
 ### Example
 ```python
@@ -181,39 +175,37 @@ import hoprd_sdk
 from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: keyScheme
+# Configure API key authorization: api_token
 configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.NodeApi(hoprd_sdk.ApiClient(configuration))
-quality = 1.2 # float | When quality is passed, the response will only include peers with higher or equal quality to the one specified. (optional)
+quality = 1.2 # float |  (optional)
 
 try:
-    api_response = api_instance.node_get_peers(quality=quality)
+    # Lists information for `connected peers` and `announced peers`.
+    api_response = api_instance.peers(quality=quality)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling NodeApi->node_get_peers: %s\n" % e)
+    print("Exception when calling NodeApi->peers: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **quality** | **float**| When quality is passed, the response will only include peers with higher or equal quality to the one specified. | [optional] 
+ **quality** | **float**|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**NodePeersRes**](NodePeersRes.md)
 
 ### Authorization
 
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -222,10 +214,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **node_get_version**
-> str node_get_version()
+# **version**
+> NodeVersion version()
 
-
+Get release version of the running node.
 
 Get release version of the running node.
 
@@ -237,23 +229,21 @@ import hoprd_sdk
 from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: keyScheme
+# Configure API key authorization: api_token
 configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.NodeApi(hoprd_sdk.ApiClient(configuration))
 
 try:
-    api_response = api_instance.node_get_version()
+    # Get release version of the running node.
+    api_response = api_instance.version()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling NodeApi->node_get_version: %s\n" % e)
+    print("Exception when calling NodeApi->version: %s\n" % e)
 ```
 
 ### Parameters
@@ -261,11 +251,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**str**
+[**NodeVersion**](NodeVersion.md)
 
 ### Authorization
 
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
