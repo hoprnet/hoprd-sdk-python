@@ -1,20 +1,17 @@
 # hoprd_sdk.TicketsApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**tickets_get_statistics**](TicketsApi.md#tickets_get_statistics) | **GET** /tickets/statistics | 
-[**tickets_get_ticket_price**](TicketsApi.md#tickets_get_ticket_price) | **GET** /tickets/price | 
-[**tickets_get_tickets**](TicketsApi.md#tickets_get_tickets) | **GET** /tickets/ | 
-[**tickets_redeem_tickets**](TicketsApi.md#tickets_redeem_tickets) | **POST** /tickets/redeem | 
+[**redeem_all_tickets**](TicketsApi.md#redeem_all_tickets) | **POST** /api/v3/tickets/redeem | 
+[**show_all_tickets**](TicketsApi.md#show_all_tickets) | **GET** /api/v3/tickets | 
+[**show_ticket_statistics**](TicketsApi.md#show_ticket_statistics) | **GET** /api/v3/tickets/statistics | 
 
-# **tickets_get_statistics**
-> InlineResponse200 tickets_get_statistics()
-
+# **redeem_all_tickets**
+> redeem_all_tickets()
 
 
-Get statistics regarding all your tickets. Node gets a ticket everytime it relays data packet in channel.
 
 ### Example
 ```python
@@ -24,178 +21,19 @@ import hoprd_sdk
 from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: keyScheme
+# Configure API key authorization: api_token
 configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.TicketsApi(hoprd_sdk.ApiClient(configuration))
 
 try:
-    api_response = api_instance.tickets_get_statistics()
-    pprint(api_response)
+    api_instance.redeem_all_tickets()
 except ApiException as e:
-    print("Exception when calling TicketsApi->tickets_get_statistics: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**InlineResponse200**](InlineResponse200.md)
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **tickets_get_ticket_price**
-> InlineResponse2001 tickets_get_ticket_price()
-
-
-
-Get the latest ticket price in wei
-
-### Example
-```python
-from __future__ import print_function
-import time
-import hoprd_sdk
-from hoprd_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = hoprd_sdk.TicketsApi(hoprd_sdk.ApiClient(configuration))
-
-try:
-    api_response = api_instance.tickets_get_ticket_price()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TicketsApi->tickets_get_ticket_price: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**InlineResponse2001**](InlineResponse2001.md)
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **tickets_get_tickets**
-> list[Ticket] tickets_get_tickets()
-
-
-
-Get all tickets earned by relaying data packets by your node from every channel.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import hoprd_sdk
-from hoprd_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = hoprd_sdk.TicketsApi(hoprd_sdk.ApiClient(configuration))
-
-try:
-    api_response = api_instance.tickets_get_tickets()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TicketsApi->tickets_get_tickets: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**list[Ticket]**](Ticket.md)
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **tickets_redeem_tickets**
-> tickets_redeem_tickets()
-
-
-
-Redeems all tickets from all the channels and exchanges them for Hopr tokens. Every ticket have a chance to be winning one, rewarding you with Hopr tokens.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import hoprd_sdk
-from hoprd_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = hoprd_sdk.TicketsApi(hoprd_sdk.ApiClient(configuration))
-
-try:
-    api_instance.tickets_redeem_tickets()
-except ApiException as e:
-    print("Exception when calling TicketsApi->tickets_redeem_tickets: %s\n" % e)
+    print("Exception when calling TicketsApi->redeem_all_tickets: %s\n" % e)
 ```
 
 ### Parameters
@@ -207,7 +45,101 @@ void (empty response body)
 
 ### Authorization
 
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+[api_token](../README.md#api_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **show_all_tickets**
+> list[ChannelTicket] show_all_tickets()
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_token
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.TicketsApi(hoprd_sdk.ApiClient(configuration))
+
+try:
+    api_response = api_instance.show_all_tickets()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TicketsApi->show_all_tickets: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[ChannelTicket]**](ChannelTicket.md)
+
+### Authorization
+
+[api_token](../README.md#api_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **show_ticket_statistics**
+> NodeTicketStatistics show_ticket_statistics()
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_token
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.TicketsApi(hoprd_sdk.ApiClient(configuration))
+
+try:
+    api_response = api_instance.show_ticket_statistics()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TicketsApi->show_ticket_statistics: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**NodeTicketStatistics**](NodeTicketStatistics.md)
+
+### Authorization
+
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
