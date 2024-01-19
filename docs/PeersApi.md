@@ -1,17 +1,16 @@
 # hoprd_sdk.PeersApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**peers_ping_peer**](PeersApi.md#peers_ping_peer) | **POST** /peers/{peerid}/ping | 
+[**ping_peer**](PeersApi.md#ping_peer) | **POST** /api/v3/peers/{peerId}/ping | 
+[**show_peer_info**](PeersApi.md#show_peer_info) | **GET** /api/v3/peers/{peerId} | 
 
-# **peers_ping_peer**
-> InlineResponse20011 peers_ping_peer(peerid)
+# **ping_peer**
+> PingInfo ping_peer(peer_id)
 
 
-
-Pings another node to check its availability.
 
 ### Example
 ```python
@@ -21,39 +20,87 @@ import hoprd_sdk
 from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: keyScheme
+# Configure API key authorization: api_token
 configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.PeersApi(hoprd_sdk.ApiClient(configuration))
-peerid = 'peerid_example' # str | Peer id that should be pinged
+peer_id = 'peer_id_example' # str | PeerID of the requested peer
 
 try:
-    api_response = api_instance.peers_ping_peer(peerid)
+    api_response = api_instance.ping_peer(peer_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PeersApi->peers_ping_peer: %s\n" % e)
+    print("Exception when calling PeersApi->ping_peer: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **peerid** | **str**| Peer id that should be pinged | 
+ **peer_id** | **str**| PeerID of the requested peer | 
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**PingInfo**](PingInfo.md)
 
 ### Authorization
 
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+[api_token](../README.md#api_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **show_peer_info**
+> NodePeerInfo show_peer_info(peer_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_token
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.PeersApi(hoprd_sdk.ApiClient(configuration))
+peer_id = 'peer_id_example' # str | PeerID of the requested peer
+
+try:
+    api_response = api_instance.show_peer_info(peer_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PeersApi->show_peer_info: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **peer_id** | **str**| PeerID of the requested peer | 
+
+### Return type
+
+[**NodePeerInfo**](NodePeerInfo.md)
+
+### Authorization
+
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
