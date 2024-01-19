@@ -67,6 +67,7 @@ class ApiClient(object):
             configuration = Configuration()
         self.configuration = configuration
 
+        # self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
         if header_name is not None:
@@ -459,7 +460,7 @@ class ApiClient(object):
             for k, v in six.iteritems(files):
                 if not v:
                     continue
-                file_names = v if isinstance(v, list) else [v]
+                file_names = v if type(v) is list else [v]
                 for n in file_names:
                     with open(n, 'rb') as f:
                         filename = os.path.basename(f.name)
