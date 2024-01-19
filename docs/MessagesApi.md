@@ -1,24 +1,23 @@
 # hoprd_sdk.MessagesApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**messages_delete_messages**](MessagesApi.md#messages_delete_messages) | **DELETE** /messages/ | 
-[**messages_get_size**](MessagesApi.md#messages_get_size) | **GET** /messages/size | 
-[**messages_peek_all_message**](MessagesApi.md#messages_peek_all_message) | **POST** /messages/peek-all | 
-[**messages_peek_message**](MessagesApi.md#messages_peek_message) | **POST** /messages/peek | 
-[**messages_pop_all_message**](MessagesApi.md#messages_pop_all_message) | **POST** /messages/pop-all | 
-[**messages_pop_message**](MessagesApi.md#messages_pop_message) | **POST** /messages/pop | 
-[**messages_send_message**](MessagesApi.md#messages_send_message) | **POST** /messages/ | 
-[**messages_websocket**](MessagesApi.md#messages_websocket) | **GET** /messages/websocket | 
+[**delete_messages**](MessagesApi.md#delete_messages) | **DELETE** /api/v3/messages | Delete messages from nodes message inbox.
+[**peek**](MessagesApi.md#peek) | **POST** /api/v3/messages/peek | Peek the oldest message currently present in the nodes message inbox.
+[**peek_all**](MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox, filtered by tag,
+[**pop**](MessagesApi.md#pop) | **POST** /api/v3/messages/pop | Get the oldest message currently present in the nodes message inbox.
+[**pop_all**](MessagesApi.md#pop_all) | **POST** /api/v3/messages/pop-all | Get the list of messages currently present in the nodes message inbox.
+[**send_message**](MessagesApi.md#send_message) | **POST** /api/v3/messages | Send a message to another peer using a given path.
+[**size**](MessagesApi.md#size) | **GET** /api/v3/messages/size | Get size of filtered message inbox for a specific tag
 
-# **messages_delete_messages**
-> messages_delete_messages(tag)
+# **delete_messages**
+> delete_messages(tag=tag)
 
+Delete messages from nodes message inbox.
 
-
-Delete messages from nodes message inbox. Does not return any data.
+Delete messages from nodes message inbox.
 
 ### Example
 ```python
@@ -28,30 +27,28 @@ import hoprd_sdk
 from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: keyScheme
+# Configure API key authorization: api_token
 configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-tag = hoprd_sdk.MessageTag() # MessageTag | Tag used to filter target messages.
+tag = 56 # int |  (optional)
 
 try:
-    api_instance.messages_delete_messages(tag)
+    # Delete messages from nodes message inbox.
+    api_instance.delete_messages(tag=tag)
 except ApiException as e:
-    print("Exception when calling MessagesApi->messages_delete_messages: %s\n" % e)
+    print("Exception when calling MessagesApi->delete_messages: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | [**MessageTag**](.md)| Tag used to filter target messages. | 
+ **tag** | **int**|  | [optional] 
 
 ### Return type
 
@@ -59,7 +56,7 @@ void (empty response body)
 
 ### Authorization
 
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
@@ -68,12 +65,12 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **messages_get_size**
-> InlineResponse2004 messages_get_size(tag)
+# **peek**
+> MessagePopRes peek(body)
 
+Peek the oldest message currently present in the nodes message inbox.
 
-
-Get size of filtered message inbox.
+Peek the oldest message currently present in the nodes message inbox.  The message is not removed from the inbox.
 
 ### Example
 ```python
@@ -83,376 +80,312 @@ import hoprd_sdk
 from hoprd_sdk.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: keyScheme
+# Configure API key authorization: api_token
 configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-tag = hoprd_sdk.MessageTag() # MessageTag | Tag used to filter target messages.
+body = hoprd_sdk.TagQuery() # TagQuery | Tag of message queue to peek from
 
 try:
-    api_response = api_instance.messages_get_size(tag)
+    # Peek the oldest message currently present in the nodes message inbox.
+    api_response = api_instance.peek(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling MessagesApi->messages_get_size: %s\n" % e)
+    print("Exception when calling MessagesApi->peek: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | [**MessageTag**](.md)| Tag used to filter target messages. | 
+ **body** | [**TagQuery**](TagQuery.md)| Tag of message queue to peek from | 
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**MessagePopRes**](MessagePopRes.md)
 
 ### Authorization
 
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
+[api_token](../README.md#api_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **peek_all**
+> InboxMessagesRes peek_all(body)
+
+Peek the list of messages currently present in the nodes message inbox, filtered by tag,
+
+Peek the list of messages currently present in the nodes message inbox, filtered by tag, and optionally by timestamp (epoch in milliseconds). The messages are not removed from the inbox.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_token
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.GetMessageReq() # GetMessageReq | Tag of message queue and optionally a timestamp since from to start peeking
+
+try:
+    # Peek the list of messages currently present in the nodes message inbox, filtered by tag,
+    api_response = api_instance.peek_all(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessagesApi->peek_all: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetMessageReq**](GetMessageReq.md)| Tag of message queue and optionally a timestamp since from to start peeking | 
+
+### Return type
+
+[**InboxMessagesRes**](InboxMessagesRes.md)
+
+### Authorization
+
+[api_token](../README.md#api_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pop**
+> MessagePopRes pop(body)
+
+Get the oldest message currently present in the nodes message inbox.
+
+Get the oldest message currently present in the nodes message inbox.  The message is removed from the inbox.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_token
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.TagQuery() # TagQuery | Tag of message queue to pop from
+
+try:
+    # Get the oldest message currently present in the nodes message inbox.
+    api_response = api_instance.pop(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessagesApi->pop: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TagQuery**](TagQuery.md)| Tag of message queue to pop from | 
+
+### Return type
+
+[**MessagePopRes**](MessagePopRes.md)
+
+### Authorization
+
+[api_token](../README.md#api_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pop_all**
+> InboxMessagesRes pop_all(body)
+
+Get the list of messages currently present in the nodes message inbox.
+
+Get the list of messages currently present in the nodes message inbox.  The messages are removed from the inbox.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_token
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.TagQuery() # TagQuery | Tag of message queue to pop from
+
+try:
+    # Get the list of messages currently present in the nodes message inbox.
+    api_response = api_instance.pop_all(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessagesApi->pop_all: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TagQuery**](TagQuery.md)| Tag of message queue to pop from | 
+
+### Return type
+
+[**InboxMessagesRes**](InboxMessagesRes.md)
+
+### Authorization
+
+[api_token](../README.md#api_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **send_message**
+> SendMessageRes send_message(body)
+
+Send a message to another peer using a given path.
+
+Send a message to another peer using a given path.  The message can be sent either over a specified path or using a specified number of HOPS, if no path is given.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_token
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+body = hoprd_sdk.SendMessageReq() # SendMessageReq | Body of a message to send
+
+try:
+    # Send a message to another peer using a given path.
+    api_response = api_instance.send_message(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessagesApi->send_message: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SendMessageReq**](SendMessageReq.md)| Body of a message to send | 
+
+### Return type
+
+[**SendMessageRes**](SendMessageRes.md)
+
+### Authorization
+
+[api_token](../README.md#api_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **size**
+> Size size(tag=tag)
+
+Get size of filtered message inbox for a specific tag
+
+Get size of filtered message inbox for a specific tag
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hoprd_sdk
+from hoprd_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_token
+configuration = hoprd_sdk.Configuration()
+configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
+tag = 56 # int |  (optional)
+
+try:
+    # Get size of filtered message inbox for a specific tag
+    api_response = api_instance.size(tag=tag)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessagesApi->size: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tag** | **int**|  | [optional] 
+
+### Return type
+
+[**Size**](Size.md)
+
+### Authorization
+
+[api_token](../README.md#api_token)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **messages_peek_all_message**
-> InlineResponse2005 messages_peek_all_message(body=body)
-
-
-
-Get list of messages currently present in the nodes message inbox.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import hoprd_sdk
-from hoprd_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.MessagesPeekallBody() # MessagesPeekallBody |  (optional)
-
-try:
-    api_response = api_instance.messages_peek_all_message(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MessagesApi->messages_peek_all_message: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**MessagesPeekallBody**](MessagesPeekallBody.md)|  | [optional] 
-
-### Return type
-
-[**InlineResponse2005**](InlineResponse2005.md)
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **messages_peek_message**
-> ReceivedMessage messages_peek_message(body=body)
-
-
-
-Get oldest message currently present in the nodes message inbox.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import hoprd_sdk
-from hoprd_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.MessagesPeekBody() # MessagesPeekBody |  (optional)
-
-try:
-    api_response = api_instance.messages_peek_message(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MessagesApi->messages_peek_message: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**MessagesPeekBody**](MessagesPeekBody.md)|  | [optional] 
-
-### Return type
-
-[**ReceivedMessage**](ReceivedMessage.md)
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **messages_pop_all_message**
-> InlineResponse2005 messages_pop_all_message(body=body)
-
-
-
-Get list of messages currently present in the nodes message inbox. The messages are removed from the inbox.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import hoprd_sdk
-from hoprd_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.MessagesPopallBody() # MessagesPopallBody |  (optional)
-
-try:
-    api_response = api_instance.messages_pop_all_message(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MessagesApi->messages_pop_all_message: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**MessagesPopallBody**](MessagesPopallBody.md)|  | [optional] 
-
-### Return type
-
-[**InlineResponse2005**](InlineResponse2005.md)
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **messages_pop_message**
-> ReceivedMessage messages_pop_message(body=body)
-
-
-
-Get oldest message currently present in the nodes message inbox. The message is removed from the inbox.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import hoprd_sdk
-from hoprd_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.MessagesPopBody() # MessagesPopBody |  (optional)
-
-try:
-    api_response = api_instance.messages_pop_message(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MessagesApi->messages_pop_message: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**MessagesPopBody**](MessagesPopBody.md)|  | [optional] 
-
-### Return type
-
-[**ReceivedMessage**](ReceivedMessage.md)
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **messages_send_message**
-> str messages_send_message(body=body)
-
-
-
-Send a message to another peer using a given path (list of node addresses that should relay our message through network). If no path is given, HOPR will attempt to find a path.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import hoprd_sdk
-from hoprd_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.MessagesBody() # MessagesBody |  (optional)
-
-try:
-    api_response = api_instance.messages_send_message(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MessagesApi->messages_send_message: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**MessagesBody**](MessagesBody.md)|  | [optional] 
-
-### Return type
-
-**str**
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **messages_websocket**
-> str messages_websocket()
-
-
-
-This is a websocket endpoint which exposes a subset of message functions. Incoming messages from other nodes are sent to the websocket client. A client may also send message by sending the following data:   { cmd: \"sendmsg\", args: { peerId: \"SOME_PEER_ID\", path: [], hops: 1} } The command arguments follow the same semantics as in the dedicated API endpoint for sending messages.  The following messages may be sent by the server over the Websocket connection:    {     type: \"message\",     tag: 12,     body: \"my example message\"   }    {     type: \"message-ack\",     id: \"some challenge id\"   }    {     type: \"message-ack-challenge\",     id: \"some challenge id\"   }  Authentication (if enabled) is done via either passing an `apiToken` parameter in the url or cookie `X-Auth-Token`. Connect to the endpoint by using a WS client. No preview available. Example: `ws://127.0.0.1:3001/api/v2/messages/websocket/?apiToken=myApiToken`
-
-### Example
-```python
-from __future__ import print_function
-import time
-import hoprd_sdk
-from hoprd_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: keyScheme
-configuration = hoprd_sdk.Configuration()
-configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-auth-token'] = 'Bearer'# Configure HTTP basic authorization: passwordScheme
-configuration = hoprd_sdk.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-
-try:
-    api_response = api_instance.messages_websocket()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MessagesApi->messages_websocket: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**str**
-
-### Authorization
-
-[keyScheme](../README.md#keyScheme), [passwordScheme](../README.md#passwordScheme)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/text, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
