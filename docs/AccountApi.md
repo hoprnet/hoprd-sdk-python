@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**withdraw**](AccountApi.md#withdraw) | **POST** /api/v3/account/withdraw | Withdraw funds from this node to the ethereum wallet address.
 
 # **addresses**
-> AccountAddresses addresses()
+> AccountAddressesResponse addresses()
 
 Get node's HOPR and native addresses.
 
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AccountAddresses**](AccountAddresses.md)
+[**AccountAddressesResponse**](AccountAddressesResponse.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **balances**
-> AccountBalances balances()
+> AccountBalancesResponse balances()
 
 Get node's and associated Safe's HOPR and native balances as the allowance for HOPR
 
@@ -95,7 +95,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AccountBalances**](AccountBalances.md)
+[**AccountBalancesResponse**](AccountBalancesResponse.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **withdraw**
-> AccountBalances withdraw(body)
+> AccountBalancesResponse withdraw(body)
 
 Withdraw funds from this node to the ethereum wallet address.
 
@@ -131,7 +131,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.AccountApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.WithdrawRequest() # WithdrawRequest | 
+body = hoprd_sdk.WithdrawBodyRequest() # WithdrawBodyRequest | 
 
 try:
     # Withdraw funds from this node to the ethereum wallet address.
@@ -145,11 +145,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawRequest**](WithdrawRequest.md)|  | 
+ **body** | [**WithdrawBodyRequest**](WithdrawBodyRequest.md)|  | 
 
 ### Return type
 
-[**AccountBalances**](AccountBalances.md)
+[**AccountBalancesResponse**](AccountBalancesResponse.md)
 
 ### Authorization
 

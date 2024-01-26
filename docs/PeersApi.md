@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**show_peer_info**](PeersApi.md#show_peer_info) | **GET** /api/v3/peers/{peerId} | 
 
 # **ping_peer**
-> PingInfo ping_peer(peer_id)
+> PingResponse ping_peer(peer_id)
 
 
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PingInfo**](PingInfo.md)
+[**PingResponse**](PingResponse.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **show_peer_info**
-> NodePeerInfo show_peer_info(peer_id)
+> NodePeerInfoResponse show_peer_info(peer_id)
 
 
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NodePeerInfo**](NodePeerInfo.md)
+[**NodePeerInfoResponse**](NodePeerInfoResponse.md)
 
 ### Authorization
 

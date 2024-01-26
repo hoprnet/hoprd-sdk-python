@@ -66,7 +66,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **peek**
-> MessagePopRes peek(body)
+> MessagePopResponse peek(body)
 
 Peek the oldest message currently present in the nodes message inbox.
 
@@ -88,7 +88,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.TagQuery() # TagQuery | Tag of message queue to peek from
+body = hoprd_sdk.TagQueryRequest() # TagQueryRequest | Tag of message queue to peek from
 
 try:
     # Peek the oldest message currently present in the nodes message inbox.
@@ -102,11 +102,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TagQuery**](TagQuery.md)| Tag of message queue to peek from | 
+ **body** | [**TagQueryRequest**](TagQueryRequest.md)| Tag of message queue to peek from | 
 
 ### Return type
 
-[**MessagePopRes**](MessagePopRes.md)
+[**MessagePopResponse**](MessagePopResponse.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **peek_all**
-> InboxMessagesRes peek_all(body)
+> MessagePopAllResponse peek_all(body)
 
 Peek the list of messages currently present in the nodes message inbox, filtered by tag,
 
@@ -142,7 +142,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.GetMessageReq() # GetMessageReq | Tag of message queue and optionally a timestamp since from to start peeking
+body = hoprd_sdk.GetMessageBodyRequest() # GetMessageBodyRequest | Tag of message queue and optionally a timestamp since from to start peeking
 
 try:
     # Peek the list of messages currently present in the nodes message inbox, filtered by tag,
@@ -156,11 +156,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetMessageReq**](GetMessageReq.md)| Tag of message queue and optionally a timestamp since from to start peeking | 
+ **body** | [**GetMessageBodyRequest**](GetMessageBodyRequest.md)| Tag of message queue and optionally a timestamp since from to start peeking | 
 
 ### Return type
 
-[**InboxMessagesRes**](InboxMessagesRes.md)
+[**MessagePopAllResponse**](MessagePopAllResponse.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pop**
-> MessagePopRes pop(body)
+> MessagePopResponse pop(body)
 
 Get the oldest message currently present in the nodes message inbox.
 
@@ -196,7 +196,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.TagQuery() # TagQuery | Tag of message queue to pop from
+body = hoprd_sdk.TagQueryRequest() # TagQueryRequest | Tag of message queue to pop from
 
 try:
     # Get the oldest message currently present in the nodes message inbox.
@@ -210,11 +210,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TagQuery**](TagQuery.md)| Tag of message queue to pop from | 
+ **body** | [**TagQueryRequest**](TagQueryRequest.md)| Tag of message queue to pop from | 
 
 ### Return type
 
-[**MessagePopRes**](MessagePopRes.md)
+[**MessagePopResponse**](MessagePopResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pop_all**
-> InboxMessagesRes pop_all(body)
+> MessagePopAllResponse pop_all(body)
 
 Get the list of messages currently present in the nodes message inbox.
 
@@ -250,7 +250,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.TagQuery() # TagQuery | Tag of message queue to pop from
+body = hoprd_sdk.TagQueryRequest() # TagQueryRequest | Tag of message queue to pop from
 
 try:
     # Get the list of messages currently present in the nodes message inbox.
@@ -264,11 +264,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TagQuery**](TagQuery.md)| Tag of message queue to pop from | 
+ **body** | [**TagQueryRequest**](TagQueryRequest.md)| Tag of message queue to pop from | 
 
 ### Return type
 
-[**InboxMessagesRes**](InboxMessagesRes.md)
+[**MessagePopAllResponse**](MessagePopAllResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_message**
-> SendMessageRes send_message(body)
+> SendMessageResponse send_message(body)
 
 Send a message to another peer using a given path.
 
@@ -304,7 +304,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.SendMessageReq() # SendMessageReq | Body of a message to send
+body = hoprd_sdk.SendMessageBodyRequest() # SendMessageBodyRequest | Body of a message to send
 
 try:
     # Send a message to another peer using a given path.
@@ -318,11 +318,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SendMessageReq**](SendMessageReq.md)| Body of a message to send | 
+ **body** | [**SendMessageBodyRequest**](SendMessageBodyRequest.md)| Body of a message to send | 
 
 ### Return type
 
-[**SendMessageRes**](SendMessageRes.md)
+[**SendMessageResponse**](SendMessageResponse.md)
 
 ### Authorization
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **size**
-> Size size(tag=tag)
+> SizeResponse size(tag=tag)
 
 Get size of filtered message inbox for a specific tag
 
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Size**](Size.md)
+[**SizeResponse**](SizeResponse.md)
 
 ### Authorization
 

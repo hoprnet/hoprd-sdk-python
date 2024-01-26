@@ -133,8 +133,8 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TagQuery body: Tag of message queue to peek from (required)
-        :return: MessagePopRes
+        :param TagQueryRequest body: Tag of message queue to peek from (required)
+        :return: MessagePopResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -155,8 +155,8 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TagQuery body: Tag of message queue to peek from (required)
-        :return: MessagePopRes
+        :param TagQueryRequest body: Tag of message queue to peek from (required)
+        :return: MessagePopResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -214,7 +214,7 @@ class MessagesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='MessagePopRes',  # noqa: E501
+            response_type='MessagePopResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -232,8 +232,8 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetMessageReq body: Tag of message queue and optionally a timestamp since from to start peeking (required)
-        :return: InboxMessagesRes
+        :param GetMessageBodyRequest body: Tag of message queue and optionally a timestamp since from to start peeking (required)
+        :return: MessagePopAllResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -254,8 +254,8 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetMessageReq body: Tag of message queue and optionally a timestamp since from to start peeking (required)
-        :return: InboxMessagesRes
+        :param GetMessageBodyRequest body: Tag of message queue and optionally a timestamp since from to start peeking (required)
+        :return: MessagePopAllResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -313,7 +313,7 @@ class MessagesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InboxMessagesRes',  # noqa: E501
+            response_type='MessagePopAllResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -331,8 +331,8 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TagQuery body: Tag of message queue to pop from (required)
-        :return: MessagePopRes
+        :param TagQueryRequest body: Tag of message queue to pop from (required)
+        :return: MessagePopResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -353,8 +353,8 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TagQuery body: Tag of message queue to pop from (required)
-        :return: MessagePopRes
+        :param TagQueryRequest body: Tag of message queue to pop from (required)
+        :return: MessagePopResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -412,7 +412,7 @@ class MessagesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='MessagePopRes',  # noqa: E501
+            response_type='MessagePopResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -430,8 +430,8 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TagQuery body: Tag of message queue to pop from (required)
-        :return: InboxMessagesRes
+        :param TagQueryRequest body: Tag of message queue to pop from (required)
+        :return: MessagePopAllResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -452,8 +452,8 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TagQuery body: Tag of message queue to pop from (required)
-        :return: InboxMessagesRes
+        :param TagQueryRequest body: Tag of message queue to pop from (required)
+        :return: MessagePopAllResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -511,7 +511,7 @@ class MessagesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InboxMessagesRes',  # noqa: E501
+            response_type='MessagePopAllResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -529,8 +529,8 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param SendMessageReq body: Body of a message to send (required)
-        :return: SendMessageRes
+        :param SendMessageBodyRequest body: Body of a message to send (required)
+        :return: SendMessageResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -551,8 +551,8 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param SendMessageReq body: Body of a message to send (required)
-        :return: SendMessageRes
+        :param SendMessageBodyRequest body: Body of a message to send (required)
+        :return: SendMessageResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -610,7 +610,7 @@ class MessagesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SendMessageRes',  # noqa: E501
+            response_type='SendMessageResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -629,7 +629,7 @@ class MessagesApi(object):
 
         :param async_req bool
         :param int tag:
-        :return: Size
+        :return: SizeResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -651,7 +651,7 @@ class MessagesApi(object):
 
         :param async_req bool
         :param int tag:
-        :return: Size
+        :return: SizeResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -701,7 +701,7 @@ class MessagesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Size',  # noqa: E501
+            response_type='SizeResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

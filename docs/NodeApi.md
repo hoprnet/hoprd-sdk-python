@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **info**
-> NodeInfoRes info()
+> NodeInfoResponse info()
 
 Get information about this HOPR Node.
 
@@ -97,7 +97,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**NodeInfoRes**](NodeInfoRes.md)
+[**NodeInfoResponse**](NodeInfoResponse.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **peers**
-> NodePeersRes peers(quality=quality)
+> NodePeersResponse peers(quality=quality)
 
 Lists information for `connected peers` and `announced peers`.
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NodePeersRes**](NodePeersRes.md)
+[**NodePeersResponse**](NodePeersResponse.md)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **version**
-> NodeVersion version()
+> NodeVersionResponse version()
 
 Get release version of the running node.
 
@@ -251,7 +251,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**NodeVersion**](NodeVersion.md)
+[**NodeVersionResponse**](NodeVersionResponse.md)
 
 ### Authorization
 

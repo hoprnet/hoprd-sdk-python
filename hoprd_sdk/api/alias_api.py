@@ -225,7 +225,7 @@ class AliasApi(object):
 
         :param async_req bool
         :param str alias: Alias to be shown (required)
-        :return: PeerIdArg
+        :return: PeerIdResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -247,7 +247,7 @@ class AliasApi(object):
 
         :param async_req bool
         :param str alias: Alias to be shown (required)
-        :return: PeerIdArg
+        :return: PeerIdResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -301,7 +301,7 @@ class AliasApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PeerIdArg',  # noqa: E501
+            response_type='PeerIdResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -319,8 +319,8 @@ class AliasApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AliasPeerId body: Alias name along with the PeerId to be aliased (required)
-        :return: PeerIdArg
+        :param AliasPeerIdBodyRequest body: Alias name along with the PeerId to be aliased (required)
+        :return: PeerIdResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -341,8 +341,8 @@ class AliasApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AliasPeerId body: Alias name along with the PeerId to be aliased (required)
-        :return: PeerIdArg
+        :param AliasPeerIdBodyRequest body: Alias name along with the PeerId to be aliased (required)
+        :return: PeerIdResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -400,7 +400,7 @@ class AliasApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PeerIdArg',  # noqa: E501
+            response_type='PeerIdResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

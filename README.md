@@ -91,7 +91,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.AccountApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.WithdrawRequest() # WithdrawRequest | 
+body = hoprd_sdk.WithdrawBodyRequest() # WithdrawBodyRequest | 
 
 try:
     # Withdraw funds from this node to the ethereum wallet address.
@@ -146,39 +146,39 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AccountAddresses](docs/AccountAddresses.md)
- - [AccountBalances](docs/AccountBalances.md)
- - [AliasPeerId](docs/AliasPeerId.md)
+ - [AccountAddressesResponse](docs/AccountAddressesResponse.md)
+ - [AccountBalancesResponse](docs/AccountBalancesResponse.md)
+ - [AliasPeerIdBodyRequest](docs/AliasPeerIdBodyRequest.md)
  - [ApiError](docs/ApiError.md)
+ - [ChannelInfoResponse](docs/ChannelInfoResponse.md)
  - [ChannelTicket](docs/ChannelTicket.md)
- - [ChannelsQuery](docs/ChannelsQuery.md)
- - [CloseChannelReceipt](docs/CloseChannelReceipt.md)
+ - [ChannelsQueryRequest](docs/ChannelsQueryRequest.md)
+ - [CloseChannelResponse](docs/CloseChannelResponse.md)
  - [EntryNode](docs/EntryNode.md)
- - [FundRequest](docs/FundRequest.md)
- - [GetMessageReq](docs/GetMessageReq.md)
+ - [FundBodyRequest](docs/FundBodyRequest.md)
+ - [GetMessageBodyRequest](docs/GetMessageBodyRequest.md)
  - [HeartbeatInfo](docs/HeartbeatInfo.md)
- - [InboxMessagesRes](docs/InboxMessagesRes.md)
- - [MessagePopRes](docs/MessagePopRes.md)
+ - [MessagePopAllResponse](docs/MessagePopAllResponse.md)
+ - [MessagePopResponse](docs/MessagePopResponse.md)
  - [NodeChannel](docs/NodeChannel.md)
- - [NodeChannels](docs/NodeChannels.md)
- - [NodeInfoRes](docs/NodeInfoRes.md)
- - [NodePeerInfo](docs/NodePeerInfo.md)
- - [NodePeersReqQuery](docs/NodePeersReqQuery.md)
- - [NodePeersRes](docs/NodePeersRes.md)
- - [NodeTicketStatistics](docs/NodeTicketStatistics.md)
- - [NodeTopologyChannel](docs/NodeTopologyChannel.md)
- - [NodeVersion](docs/NodeVersion.md)
- - [OpenChannelReceipt](docs/OpenChannelReceipt.md)
- - [OpenChannelRequest](docs/OpenChannelRequest.md)
- - [PeerIdArg](docs/PeerIdArg.md)
+ - [NodeChannelsResponse](docs/NodeChannelsResponse.md)
+ - [NodeInfoResponse](docs/NodeInfoResponse.md)
+ - [NodePeerInfoResponse](docs/NodePeerInfoResponse.md)
+ - [NodePeersQueryRequest](docs/NodePeersQueryRequest.md)
+ - [NodePeersResponse](docs/NodePeersResponse.md)
+ - [NodeTicketStatisticsResponse](docs/NodeTicketStatisticsResponse.md)
+ - [NodeVersionResponse](docs/NodeVersionResponse.md)
+ - [OpenChannelBodyRequest](docs/OpenChannelBodyRequest.md)
+ - [OpenChannelResponse](docs/OpenChannelResponse.md)
+ - [PeerIdResponse](docs/PeerIdResponse.md)
  - [PeerInfo](docs/PeerInfo.md)
- - [PingInfo](docs/PingInfo.md)
- - [SendMessageReq](docs/SendMessageReq.md)
- - [SendMessageRes](docs/SendMessageRes.md)
- - [Size](docs/Size.md)
- - [TagQuery](docs/TagQuery.md)
+ - [PingResponse](docs/PingResponse.md)
+ - [SendMessageBodyRequest](docs/SendMessageBodyRequest.md)
+ - [SendMessageResponse](docs/SendMessageResponse.md)
+ - [SizeResponse](docs/SizeResponse.md)
+ - [TagQueryRequest](docs/TagQueryRequest.md)
  - [TicketPriceResponse](docs/TicketPriceResponse.md)
- - [WithdrawRequest](docs/WithdrawRequest.md)
+ - [WithdrawBodyRequest](docs/WithdrawBodyRequest.md)
 
 ## Documentation For Authorization
 

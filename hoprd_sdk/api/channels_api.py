@@ -135,7 +135,7 @@ class ChannelsApi(object):
 
         :param async_req bool
         :param str channel_id: ID of the channel. (required)
-        :return: CloseChannelReceipt
+        :return: CloseChannelResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -156,7 +156,7 @@ class ChannelsApi(object):
 
         :param async_req bool
         :param str channel_id: ID of the channel. (required)
-        :return: CloseChannelReceipt
+        :return: CloseChannelResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -210,7 +210,7 @@ class ChannelsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CloseChannelReceipt',  # noqa: E501
+            response_type='CloseChannelResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -227,7 +227,7 @@ class ChannelsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FundRequest body: Amount of HOPR to fund the channel (required)
+        :param FundBodyRequest body: Amount of HOPR to fund the channel (required)
         :param str channel_id: ID of the channel. (required)
         :return: str
                  If the method is called asynchronously,
@@ -249,7 +249,7 @@ class ChannelsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FundRequest body: Amount of HOPR to fund the channel (required)
+        :param FundBodyRequest body: Amount of HOPR to fund the channel (required)
         :param str channel_id: ID of the channel. (required)
         :return: str
                  If the method is called asynchronously,
@@ -334,7 +334,7 @@ class ChannelsApi(object):
         :param async_req bool
         :param bool including_closed:
         :param bool full_topology:
-        :return: NodeChannels
+        :return: NodeChannelsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -356,7 +356,7 @@ class ChannelsApi(object):
         :param async_req bool
         :param bool including_closed:
         :param bool full_topology:
-        :return: NodeChannels
+        :return: NodeChannelsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -408,7 +408,7 @@ class ChannelsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='NodeChannels',  # noqa: E501
+            response_type='NodeChannelsResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -425,8 +425,8 @@ class ChannelsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param OpenChannelRequest body: Open channel request specification (required)
-        :return: OpenChannelReceipt
+        :param OpenChannelBodyRequest body: Open channel request specification (required)
+        :return: OpenChannelResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -446,8 +446,8 @@ class ChannelsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param OpenChannelRequest body: Open channel request specification (required)
-        :return: OpenChannelReceipt
+        :param OpenChannelBodyRequest body: Open channel request specification (required)
+        :return: OpenChannelResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -505,7 +505,7 @@ class ChannelsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='OpenChannelReceipt',  # noqa: E501
+            response_type='OpenChannelResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -616,7 +616,7 @@ class ChannelsApi(object):
 
         :param async_req bool
         :param str channel_id: ID of the channel. (required)
-        :return: NodeTopologyChannel
+        :return: ChannelInfoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -637,7 +637,7 @@ class ChannelsApi(object):
 
         :param async_req bool
         :param str channel_id: ID of the channel. (required)
-        :return: NodeTopologyChannel
+        :return: ChannelInfoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -691,7 +691,7 @@ class ChannelsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='NodeTopologyChannel',  # noqa: E501
+            response_type='ChannelInfoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

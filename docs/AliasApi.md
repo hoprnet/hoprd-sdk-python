@@ -113,7 +113,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_alias**
-> PeerIdArg get_alias(alias)
+> PeerIdResponse get_alias(alias)
 
 Get alias for the PeerId (Hopr address) that have this alias assigned to it.
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PeerIdArg**](PeerIdArg.md)
+[**PeerIdResponse**](PeerIdResponse.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_alias**
-> PeerIdArg set_alias(body)
+> PeerIdResponse set_alias(body)
 
 Set alias for a peer with a specific PeerId.
 
@@ -189,7 +189,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.AliasApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.AliasPeerId() # AliasPeerId | Alias name along with the PeerId to be aliased
+body = hoprd_sdk.AliasPeerIdBodyRequest() # AliasPeerIdBodyRequest | Alias name along with the PeerId to be aliased
 
 try:
     # Set alias for a peer with a specific PeerId.
@@ -203,11 +203,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AliasPeerId**](AliasPeerId.md)| Alias name along with the PeerId to be aliased | 
+ **body** | [**AliasPeerIdBodyRequest**](AliasPeerIdBodyRequest.md)| Alias name along with the PeerId to be aliased | 
 
 ### Return type
 
-[**PeerIdArg**](PeerIdArg.md)
+[**PeerIdResponse**](PeerIdResponse.md)
 
 ### Authorization
 

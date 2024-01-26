@@ -211,7 +211,7 @@ class TicketsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: NodeTicketStatistics
+        :return: NodeTicketStatisticsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -231,7 +231,7 @@ class TicketsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: NodeTicketStatistics
+        :return: NodeTicketStatisticsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -279,7 +279,7 @@ class TicketsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='NodeTicketStatistics',  # noqa: E501
+            response_type='NodeTicketStatisticsResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -42,7 +42,7 @@ class PeersApi(object):
 
         :param async_req bool
         :param str peer_id: PeerID of the requested peer (required)
-        :return: PingInfo
+        :return: PingResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -63,7 +63,7 @@ class PeersApi(object):
 
         :param async_req bool
         :param str peer_id: PeerID of the requested peer (required)
-        :return: PingInfo
+        :return: PingResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -117,7 +117,7 @@ class PeersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PingInfo',  # noqa: E501
+            response_type='PingResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -135,7 +135,7 @@ class PeersApi(object):
 
         :param async_req bool
         :param str peer_id: PeerID of the requested peer (required)
-        :return: NodePeerInfo
+        :return: NodePeerInfoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -156,7 +156,7 @@ class PeersApi(object):
 
         :param async_req bool
         :param str peer_id: PeerID of the requested peer (required)
-        :return: NodePeerInfo
+        :return: NodePeerInfoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -210,7 +210,7 @@ class PeersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='NodePeerInfo',  # noqa: E501
+            response_type='NodePeerInfoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -64,7 +64,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **close_channel**
-> CloseChannelReceipt close_channel(channel_id)
+> CloseChannelResponse close_channel(channel_id)
 
 
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CloseChannelReceipt**](CloseChannelReceipt.md)
+[**CloseChannelResponse**](CloseChannelResponse.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.FundRequest() # FundRequest | Amount of HOPR to fund the channel
+body = hoprd_sdk.FundBodyRequest() # FundBodyRequest | Amount of HOPR to fund the channel
 channel_id = 'channel_id_example' # str | ID of the channel.
 
 try:
@@ -149,7 +149,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**FundRequest**](FundRequest.md)| Amount of HOPR to fund the channel | 
+ **body** | [**FundBodyRequest**](FundBodyRequest.md)| Amount of HOPR to fund the channel | 
  **channel_id** | **str**| ID of the channel. | 
 
 ### Return type
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_channels**
-> NodeChannels list_channels(including_closed=including_closed, full_topology=full_topology)
+> NodeChannelsResponse list_channels(including_closed=including_closed, full_topology=full_topology)
 
 
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NodeChannels**](NodeChannels.md)
+[**NodeChannelsResponse**](NodeChannelsResponse.md)
 
 ### Authorization
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **open_channel**
-> OpenChannelReceipt open_channel(body)
+> OpenChannelResponse open_channel(body)
 
 
 
@@ -241,7 +241,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.OpenChannelRequest() # OpenChannelRequest | Open channel request specification
+body = hoprd_sdk.OpenChannelBodyRequest() # OpenChannelBodyRequest | Open channel request specification
 
 try:
     api_response = api_instance.open_channel(body)
@@ -254,11 +254,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OpenChannelRequest**](OpenChannelRequest.md)| Open channel request specification | 
+ **body** | [**OpenChannelBodyRequest**](OpenChannelBodyRequest.md)| Open channel request specification | 
 
 ### Return type
 
-[**OpenChannelReceipt**](OpenChannelReceipt.md)
+[**OpenChannelResponse**](OpenChannelResponse.md)
 
 ### Authorization
 
@@ -322,7 +322,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **show_channel**
-> NodeTopologyChannel show_channel(channel_id)
+> ChannelInfoResponse show_channel(channel_id)
 
 
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NodeTopologyChannel**](NodeTopologyChannel.md)
+[**ChannelInfoResponse**](ChannelInfoResponse.md)
 
 ### Authorization
 

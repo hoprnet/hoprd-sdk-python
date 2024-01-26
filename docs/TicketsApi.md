@@ -102,7 +102,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **show_ticket_statistics**
-> NodeTicketStatistics show_ticket_statistics()
+> NodeTicketStatisticsResponse show_ticket_statistics()
 
 
 
@@ -135,7 +135,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**NodeTicketStatistics**](NodeTicketStatistics.md)
+[**NodeTicketStatisticsResponse**](NodeTicketStatisticsResponse.md)
 
 ### Authorization
 
