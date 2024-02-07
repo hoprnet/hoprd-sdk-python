@@ -28,45 +28,45 @@ class EntryNode(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'is_elligible': 'bool',
+        'is_eligible': 'bool',
         'multiaddrs': 'list[str]'
     }
 
     attribute_map = {
-        'is_elligible': 'isElligible',
+        'is_eligible': 'isEligible',
         'multiaddrs': 'multiaddrs'
     }
 
-    def __init__(self, is_elligible=None, multiaddrs=None):  # noqa: E501
+    def __init__(self, is_eligible=None, multiaddrs=None):  # noqa: E501
         """EntryNode - a model defined in Swagger"""  # noqa: E501
-        self._is_elligible = None
+        self._is_eligible = None
         self._multiaddrs = None
         self.discriminator = None
-        self.is_elligible = is_elligible
+        self.is_eligible = is_eligible
         self.multiaddrs = multiaddrs
 
     @property
-    def is_elligible(self):
-        """Gets the is_elligible of this EntryNode.  # noqa: E501
+    def is_eligible(self):
+        """Gets the is_eligible of this EntryNode.  # noqa: E501
 
 
-        :return: The is_elligible of this EntryNode.  # noqa: E501
+        :return: The is_eligible of this EntryNode.  # noqa: E501
         :rtype: bool
         """
-        return self._is_elligible
+        return self._is_eligible
 
-    @is_elligible.setter
-    def is_elligible(self, is_elligible):
-        """Sets the is_elligible of this EntryNode.
+    @is_eligible.setter
+    def is_eligible(self, is_eligible):
+        """Sets the is_eligible of this EntryNode.
 
 
-        :param is_elligible: The is_elligible of this EntryNode.  # noqa: E501
+        :param is_eligible: The is_eligible of this EntryNode.  # noqa: E501
         :type: bool
         """
-        if is_elligible is None:
-            raise ValueError("Invalid value for `is_elligible`, must not be `None`")  # noqa: E501
+        if is_eligible is None:
+            raise ValueError("Invalid value for `is_eligible`, must not be `None`")  # noqa: E501
 
-        self._is_elligible = is_elligible
+        self._is_eligible = is_eligible
 
     @property
     def multiaddrs(self):

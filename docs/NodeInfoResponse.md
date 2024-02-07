@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **hopr_management_module** | **str** |  | 
 **hopr_network_registry** | **str** |  | 
 **hopr_node_safe** | **str** |  | 
-**hopr_node_sage_registry** | **str** |  | 
+**hopr_node_safe_registry** | **str** |  | 
 **hopr_token** | **str** |  | 
 **is_eligible** | **bool** |  | 
 **listening_address** | **list[str]** |  | 
