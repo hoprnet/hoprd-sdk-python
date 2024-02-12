@@ -36,7 +36,7 @@ class NodeInfoResponse(object):
         'hopr_management_module': 'str',
         'hopr_network_registry': 'str',
         'hopr_node_safe': 'str',
-        'hopr_node_safe_registry': 'str',
+        'hopr_node_sage_registry': 'str',
         'hopr_token': 'str',
         'is_eligible': 'bool',
         'listening_address': 'list[str]',
@@ -52,14 +52,14 @@ class NodeInfoResponse(object):
         'hopr_management_module': 'hoprManagementModule',
         'hopr_network_registry': 'hoprNetworkRegistry',
         'hopr_node_safe': 'hoprNodeSafe',
-        'hopr_node_safe_registry': 'hoprNodeSafeRegistry',
+        'hopr_node_sage_registry': 'hoprNodeSageRegistry',
         'hopr_token': 'hoprToken',
         'is_eligible': 'isEligible',
         'listening_address': 'listeningAddress',
         'network': 'network'
     }
 
-    def __init__(self, announced_address=None, chain=None, channel_closure_period=None, connectivity_status=None, hopr_channels=None, hopr_management_module=None, hopr_network_registry=None, hopr_node_safe=None, hopr_node_safe_registry=None, hopr_token=None, is_eligible=None, listening_address=None, network=None):  # noqa: E501
+    def __init__(self, announced_address=None, chain=None, channel_closure_period=None, connectivity_status=None, hopr_channels=None, hopr_management_module=None, hopr_network_registry=None, hopr_node_safe=None, hopr_node_sage_registry=None, hopr_token=None, is_eligible=None, listening_address=None, network=None):  # noqa: E501
         """NodeInfoResponse - a model defined in Swagger"""  # noqa: E501
         self._announced_address = None
         self._chain = None
@@ -69,7 +69,7 @@ class NodeInfoResponse(object):
         self._hopr_management_module = None
         self._hopr_network_registry = None
         self._hopr_node_safe = None
-        self._hopr_node_safe_registry = None
+        self._hopr_node_sage_registry = None
         self._hopr_token = None
         self._is_eligible = None
         self._listening_address = None
@@ -83,7 +83,7 @@ class NodeInfoResponse(object):
         self.hopr_management_module = hopr_management_module
         self.hopr_network_registry = hopr_network_registry
         self.hopr_node_safe = hopr_node_safe
-        self.hopr_node_safe_registry = hopr_node_safe_registry
+        self.hopr_node_sage_registry = hopr_node_sage_registry
         self.hopr_token = hopr_token
         self.is_eligible = is_eligible
         self.listening_address = listening_address
@@ -276,27 +276,27 @@ class NodeInfoResponse(object):
         self._hopr_node_safe = hopr_node_safe
 
     @property
-    def hopr_node_safe_registry(self):
-        """Gets the hopr_node_safe_registry of this NodeInfoResponse.  # noqa: E501
+    def hopr_node_sage_registry(self):
+        """Gets the hopr_node_sage_registry of this NodeInfoResponse.  # noqa: E501
 
 
-        :return: The hopr_node_safe_registry of this NodeInfoResponse.  # noqa: E501
+        :return: The hopr_node_sage_registry of this NodeInfoResponse.  # noqa: E501
         :rtype: str
         """
-        return self._hopr_node_safe_registry
+        return self._hopr_node_sage_registry
 
-    @hopr_node_safe_registry.setter
-    def hopr_node_safe_registry(self, hopr_node_safe_registry):
-        """Sets the hopr_node_safe_registry of this NodeInfoResponse.
+    @hopr_node_sage_registry.setter
+    def hopr_node_sage_registry(self, hopr_node_sage_registry):
+        """Sets the hopr_node_sage_registry of this NodeInfoResponse.
 
 
-        :param hopr_node_safe_registry: The hopr_node_safe_registry of this NodeInfoResponse.  # noqa: E501
+        :param hopr_node_sage_registry: The hopr_node_sage_registry of this NodeInfoResponse.  # noqa: E501
         :type: str
         """
-        if hopr_node_safe_registry is None:
-            raise ValueError("Invalid value for `hopr_node_safe_registry`, must not be `None`")  # noqa: E501
+        if hopr_node_sage_registry is None:
+            raise ValueError("Invalid value for `hopr_node_sage_registry`, must not be `None`")  # noqa: E501
 
-        self._hopr_node_safe_registry = hopr_node_safe_registry
+        self._hopr_node_sage_registry = hopr_node_sage_registry
 
     @property
     def hopr_token(self):
