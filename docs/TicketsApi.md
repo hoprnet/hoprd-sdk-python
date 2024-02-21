@@ -4,14 +4,16 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**redeem_all_tickets**](TicketsApi.md#redeem_all_tickets) | **POST** /api/v3/tickets/redeem | 
-[**show_all_tickets**](TicketsApi.md#show_all_tickets) | **GET** /api/v3/tickets | 
-[**show_ticket_statistics**](TicketsApi.md#show_ticket_statistics) | **GET** /api/v3/tickets/statistics | 
+[**redeem_all_tickets**](TicketsApi.md#redeem_all_tickets) | **POST** /api/v3/tickets/redeem | Starts redeeming of all tickets in all channels.
+[**show_all_tickets**](TicketsApi.md#show_all_tickets) | **GET** /api/v3/tickets | Returns all the tickets in all the channels.
+[**show_ticket_statistics**](TicketsApi.md#show_ticket_statistics) | **GET** /api/v3/tickets/statistics | Returns current complete statistics on tickets.
 
 # **redeem_all_tickets**
 > redeem_all_tickets()
 
+Starts redeeming of all tickets in all channels.
 
+Starts redeeming of all tickets in all channels.  **WARNING:** this should almost **never** be used as it can issue a large number of on-chain transactions. The tickets should almost always be aggregated first.
 
 ### Example
 ```python
@@ -31,6 +33,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 api_instance = hoprd_sdk.TicketsApi(hoprd_sdk.ApiClient(configuration))
 
 try:
+    # Starts redeeming of all tickets in all channels.
     api_instance.redeem_all_tickets()
 except ApiException as e:
     print("Exception when calling TicketsApi->redeem_all_tickets: %s\n" % e)
@@ -45,7 +48,7 @@ void (empty response body)
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -57,7 +60,9 @@ void (empty response body)
 # **show_all_tickets**
 > list[ChannelTicket] show_all_tickets()
 
+Returns all the tickets in all the channels.
 
+Returns all the tickets in all the channels.
 
 ### Example
 ```python
@@ -77,6 +82,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 api_instance = hoprd_sdk.TicketsApi(hoprd_sdk.ApiClient(configuration))
 
 try:
+    # Returns all the tickets in all the channels.
     api_response = api_instance.show_all_tickets()
     pprint(api_response)
 except ApiException as e:
@@ -92,7 +98,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -104,7 +110,9 @@ This endpoint does not need any parameter.
 # **show_ticket_statistics**
 > NodeTicketStatisticsResponse show_ticket_statistics()
 
+Returns current complete statistics on tickets.
 
+Returns current complete statistics on tickets.
 
 ### Example
 ```python
@@ -124,6 +132,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 api_instance = hoprd_sdk.TicketsApi(hoprd_sdk.ApiClient(configuration))
 
 try:
+    # Returns current complete statistics on tickets.
     api_response = api_instance.show_ticket_statistics()
     pprint(api_response)
 except ApiException as e:
@@ -139,7 +148,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 

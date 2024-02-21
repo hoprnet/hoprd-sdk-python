@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**peek_all**](MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox, filtered by tag,
 [**pop**](MessagesApi.md#pop) | **POST** /api/v3/messages/pop | Get the oldest message currently present in the nodes message inbox.
 [**pop_all**](MessagesApi.md#pop_all) | **POST** /api/v3/messages/pop-all | Get the list of messages currently present in the nodes message inbox.
-[**send_message**](MessagesApi.md#send_message) | **POST** /api/v3/messages | Send a message to another peer using a given path.
+[**send_message**](MessagesApi.md#send_message) | **POST** /api/v3/messages | Send a message to another peer using the given path.
 [**size**](MessagesApi.md#size) | **GET** /api/v3/messages/size | Get size of filtered message inbox for a specific tag
 
 # **delete_messages**
@@ -56,7 +56,7 @@ void (empty response body)
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -284,9 +284,9 @@ Name | Type | Description  | Notes
 # **send_message**
 > SendMessageResponse send_message(body)
 
-Send a message to another peer using a given path.
+Send a message to another peer using the given path.
 
-Send a message to another peer using a given path.  The message can be sent either over a specified path or using a specified number of HOPS, if no path is given.
+Send a message to another peer using the given path.  The message can be sent either over a specified path or using a specified number of HOPS, if no path is given.
 
 ### Example
 ```python
@@ -307,7 +307,7 @@ api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
 body = hoprd_sdk.SendMessageBodyRequest() # SendMessageBodyRequest | Body of a message to send
 
 try:
-    # Send a message to another peer using a given path.
+    # Send a message to another peer using the given path.
     api_response = api_instance.send_message(body)
     pprint(api_response)
 except ApiException as e:
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 

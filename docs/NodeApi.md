@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -101,7 +101,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -255,7 +255,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 

@@ -4,13 +4,15 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ping_peer**](PeersApi.md#ping_peer) | **POST** /api/v3/peers/{peerId}/ping | 
-[**show_peer_info**](PeersApi.md#show_peer_info) | **GET** /api/v3/peers/{peerId} | 
+[**ping_peer**](PeersApi.md#ping_peer) | **POST** /api/v3/peers/{peerId}/ping | Directly pings the given peer.
+[**show_peer_info**](PeersApi.md#show_peer_info) | **GET** /api/v3/peers/{peerId} | Returns transport-related information about the given peer.
 
 # **ping_peer**
 > PingResponse ping_peer(peer_id)
 
+Directly pings the given peer.
 
+Directly pings the given peer.
 
 ### Example
 ```python
@@ -31,6 +33,7 @@ api_instance = hoprd_sdk.PeersApi(hoprd_sdk.ApiClient(configuration))
 peer_id = 'peer_id_example' # str | PeerID of the requested peer
 
 try:
+    # Directly pings the given peer.
     api_response = api_instance.ping_peer(peer_id)
     pprint(api_response)
 except ApiException as e:
@@ -49,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -61,7 +64,9 @@ Name | Type | Description  | Notes
 # **show_peer_info**
 > NodePeerInfoResponse show_peer_info(peer_id)
 
+Returns transport-related information about the given peer.
 
+Returns transport-related information about the given peer.  This includes the peer ids that the given peer has `announced` on-chain and peer ids that are actually `observed` by the transport layer.
 
 ### Example
 ```python
@@ -82,6 +87,7 @@ api_instance = hoprd_sdk.PeersApi(hoprd_sdk.ApiClient(configuration))
 peer_id = 'peer_id_example' # str | PeerID of the requested peer
 
 try:
+    # Returns transport-related information about the given peer.
     api_response = api_instance.show_peer_info(peer_id)
     pprint(api_response)
 except ApiException as e:
@@ -100,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 

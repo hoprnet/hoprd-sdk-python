@@ -4,12 +4,14 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**price**](NetworkApi.md#price) | **GET** /api/v3/network/price | 
+[**price**](NetworkApi.md#price) | **GET** /api/v3/network/price | Obtains the current ticket price.
 
 # **price**
 > TicketPriceResponse price()
 
+Obtains the current ticket price.
 
+Obtains the current ticket price.
 
 ### Example
 ```python
@@ -29,6 +31,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 api_instance = hoprd_sdk.NetworkApi(hoprd_sdk.ApiClient(configuration))
 
 try:
+    # Obtains the current ticket price.
     api_response = api_instance.price()
     pprint(api_response)
 except ApiException as e:
@@ -44,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 

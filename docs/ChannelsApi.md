@@ -4,19 +4,21 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**aggregate_tickets_in_channel**](ChannelsApi.md#aggregate_tickets_in_channel) | **POST** /api/v3/channels/{channelId}/tickets/aggregate | 
-[**close_channel**](ChannelsApi.md#close_channel) | **DELETE** /api/v3/channels/{channelId} | 
-[**fund_channel**](ChannelsApi.md#fund_channel) | **POST** /api/v3/channels/{channelId}/fund | 
-[**list_channels**](ChannelsApi.md#list_channels) | **GET** /api/v3/channels | 
-[**open_channel**](ChannelsApi.md#open_channel) | **POST** /api/v3/channels | 
-[**redeem_tickets_in_channel**](ChannelsApi.md#redeem_tickets_in_channel) | **POST** /api/v3/channels/{channelId}/tickets/redeem | 
-[**show_channel**](ChannelsApi.md#show_channel) | **GET** /api/v3/channels/{channelId} | 
-[**show_channel_tickets**](ChannelsApi.md#show_channel_tickets) | **GET** /api/v3/channels/{channelId}/tickets | 
+[**aggregate_tickets_in_channel**](ChannelsApi.md#aggregate_tickets_in_channel) | **POST** /api/v3/channels/{channelId}/tickets/aggregate | Starts aggregation of tickets in the given channel.
+[**close_channel**](ChannelsApi.md#close_channel) | **DELETE** /api/v3/channels/{channelId} | Closes the given channel.
+[**fund_channel**](ChannelsApi.md#fund_channel) | **POST** /api/v3/channels/{channelId}/fund | Funds the given channel with the given amount of HOPR tokens.
+[**list_channels**](ChannelsApi.md#list_channels) | **GET** /api/v3/channels | Lists channels opened to/from this node. Alternatively, it can print all
+[**open_channel**](ChannelsApi.md#open_channel) | **POST** /api/v3/channels | Opens a channel to the given on-chain address with the given initial stake of HOPR tokens.
+[**redeem_tickets_in_channel**](ChannelsApi.md#redeem_tickets_in_channel) | **POST** /api/v3/channels/{channelId}/tickets/redeem | Starts redeeming all tickets in the given channel.
+[**show_channel**](ChannelsApi.md#show_channel) | **GET** /api/v3/channels/{channelId} | Returns information about the given channel.
+[**show_channel_tickets**](ChannelsApi.md#show_channel_tickets) | **GET** /api/v3/channels/{channelId}/tickets | Lists all tickets for the given channel  ID.
 
 # **aggregate_tickets_in_channel**
 > aggregate_tickets_in_channel(channel_id)
 
+Starts aggregation of tickets in the given channel.
 
+Starts aggregation of tickets in the given channel.
 
 ### Example
 ```python
@@ -37,6 +39,7 @@ api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
 channel_id = 'channel_id_example' # str | ID of the channel.
 
 try:
+    # Starts aggregation of tickets in the given channel.
     api_instance.aggregate_tickets_in_channel(channel_id)
 except ApiException as e:
     print("Exception when calling ChannelsApi->aggregate_tickets_in_channel: %s\n" % e)
@@ -54,7 +57,7 @@ void (empty response body)
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -66,7 +69,9 @@ void (empty response body)
 # **close_channel**
 > CloseChannelResponse close_channel(channel_id)
 
+Closes the given channel.
 
+Closes the given channel.  If the channel is currently `Open`, it will transition it to `PendingToClose`. If the channels is in `PendingToClose` and the channel closure period has elapsed, it will transition it to `Closed`.
 
 ### Example
 ```python
@@ -87,6 +92,7 @@ api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
 channel_id = 'channel_id_example' # str | ID of the channel.
 
 try:
+    # Closes the given channel.
     api_response = api_instance.close_channel(channel_id)
     pprint(api_response)
 except ApiException as e:
@@ -105,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -117,7 +123,9 @@ Name | Type | Description  | Notes
 # **fund_channel**
 > str fund_channel(body, channel_id)
 
+Funds the given channel with the given amount of HOPR tokens.
 
+Funds the given channel with the given amount of HOPR tokens.
 
 ### Example
 ```python
@@ -135,10 +143,11 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.FundBodyRequest() # FundBodyRequest | Amount of HOPR to fund the channel
+body = hoprd_sdk.FundBodyRequest() # FundBodyRequest | Specifies the amount of HOPR tokens to fund a channel with.
 channel_id = 'channel_id_example' # str | ID of the channel.
 
 try:
+    # Funds the given channel with the given amount of HOPR tokens.
     api_response = api_instance.fund_channel(body, channel_id)
     pprint(api_response)
 except ApiException as e:
@@ -149,7 +158,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**FundBodyRequest**](FundBodyRequest.md)| Amount of HOPR to fund the channel | 
+ **body** | [**FundBodyRequest**](FundBodyRequest.md)| Specifies the amount of HOPR tokens to fund a channel with. | 
  **channel_id** | **str**| ID of the channel. | 
 
 ### Return type
@@ -158,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -170,7 +179,9 @@ Name | Type | Description  | Notes
 # **list_channels**
 > NodeChannelsResponse list_channels(including_closed=including_closed, full_topology=full_topology)
 
+Lists channels opened to/from this node. Alternatively, it can print all
 
+Lists channels opened to/from this node. Alternatively, it can print all the channels in the network as this node sees them.
 
 ### Example
 ```python
@@ -188,10 +199,11 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
-including_closed = true # bool |  (optional)
-full_topology = true # bool |  (optional)
+including_closed = true # bool | Should be the closed channels included? (optional)
+full_topology = true # bool | Should all channels (not only the ones concerning this node) be enumerated? (optional)
 
 try:
+    # Lists channels opened to/from this node. Alternatively, it can print all
     api_response = api_instance.list_channels(including_closed=including_closed, full_topology=full_topology)
     pprint(api_response)
 except ApiException as e:
@@ -202,8 +214,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **including_closed** | **bool**|  | [optional] 
- **full_topology** | **bool**|  | [optional] 
+ **including_closed** | **bool**| Should be the closed channels included? | [optional] 
+ **full_topology** | **bool**| Should all channels (not only the ones concerning this node) be enumerated? | [optional] 
 
 ### Return type
 
@@ -211,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -223,7 +235,9 @@ Name | Type | Description  | Notes
 # **open_channel**
 > OpenChannelResponse open_channel(body)
 
+Opens a channel to the given on-chain address with the given initial stake of HOPR tokens.
 
+Opens a channel to the given on-chain address with the given initial stake of HOPR tokens.
 
 ### Example
 ```python
@@ -241,9 +255,10 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.OpenChannelBodyRequest() # OpenChannelBodyRequest | Open channel request specification
+body = hoprd_sdk.OpenChannelBodyRequest() # OpenChannelBodyRequest | Open channel request specification: on-chain address of the counterparty and the initial HOPR token stake.
 
 try:
+    # Opens a channel to the given on-chain address with the given initial stake of HOPR tokens.
     api_response = api_instance.open_channel(body)
     pprint(api_response)
 except ApiException as e:
@@ -254,7 +269,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OpenChannelBodyRequest**](OpenChannelBodyRequest.md)| Open channel request specification | 
+ **body** | [**OpenChannelBodyRequest**](OpenChannelBodyRequest.md)| Open channel request specification: on-chain address of the counterparty and the initial HOPR token stake. | 
 
 ### Return type
 
@@ -262,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -274,7 +289,9 @@ Name | Type | Description  | Notes
 # **redeem_tickets_in_channel**
 > redeem_tickets_in_channel(channel_id)
 
+Starts redeeming all tickets in the given channel.
 
+Starts redeeming all tickets in the given channel.  **WARNING:** this should almost **never** be used as it can issue a large number of on-chain transactions. The tickets should almost always be aggregated first.
 
 ### Example
 ```python
@@ -295,6 +312,7 @@ api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
 channel_id = 'channel_id_example' # str | ID of the channel.
 
 try:
+    # Starts redeeming all tickets in the given channel.
     api_instance.redeem_tickets_in_channel(channel_id)
 except ApiException as e:
     print("Exception when calling ChannelsApi->redeem_tickets_in_channel: %s\n" % e)
@@ -312,7 +330,7 @@ void (empty response body)
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -324,7 +342,9 @@ void (empty response body)
 # **show_channel**
 > ChannelInfoResponse show_channel(channel_id)
 
+Returns information about the given channel.
 
+Returns information about the given channel.
 
 ### Example
 ```python
@@ -345,6 +365,7 @@ api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
 channel_id = 'channel_id_example' # str | ID of the channel.
 
 try:
+    # Returns information about the given channel.
     api_response = api_instance.show_channel(channel_id)
     pprint(api_response)
 except ApiException as e:
@@ -363,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
@@ -375,7 +396,9 @@ Name | Type | Description  | Notes
 # **show_channel_tickets**
 > list[ChannelTicket] show_channel_tickets(channel_id)
 
+Lists all tickets for the given channel  ID.
 
+Lists all tickets for the given channel  ID.
 
 ### Example
 ```python
@@ -396,6 +419,7 @@ api_instance = hoprd_sdk.ChannelsApi(hoprd_sdk.ApiClient(configuration))
 channel_id = 'channel_id_example' # str | ID of the channel.
 
 try:
+    # Lists all tickets for the given channel  ID.
     api_response = api_instance.show_channel_tickets(channel_id)
     pprint(api_response)
 except ApiException as e:
@@ -414,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_token](../README.md#api_token)
+[api_token](../README.md#api_token), [bearer_token](../README.md#bearer_token)
 
 ### HTTP request headers
 
