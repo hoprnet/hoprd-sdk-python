@@ -31,6 +31,7 @@ from hoprd_sdk.configuration import Configuration
 from hoprd_sdk.models.account_addresses_response import AccountAddressesResponse
 from hoprd_sdk.models.account_balances_response import AccountBalancesResponse
 from hoprd_sdk.models.alias_peer_id_body_request import AliasPeerIdBodyRequest
+from hoprd_sdk.models.announced_peer import AnnouncedPeer
 from hoprd_sdk.models.api_error import ApiError
 from hoprd_sdk.models.channel_info_response import ChannelInfoResponse
 from hoprd_sdk.models.channel_ticket import ChannelTicket

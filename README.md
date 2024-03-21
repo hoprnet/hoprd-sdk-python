@@ -149,6 +149,7 @@ Class | Method | HTTP request | Description
  - [AccountAddressesResponse](docs/AccountAddressesResponse.md)
  - [AccountBalancesResponse](docs/AccountBalancesResponse.md)
  - [AliasPeerIdBodyRequest](docs/AliasPeerIdBodyRequest.md)
+ - [AnnouncedPeer](docs/AnnouncedPeer.md)
  - [ApiError](docs/ApiError.md)
  - [ChannelInfoResponse](docs/ChannelInfoResponse.md)
  - [ChannelTicket](docs/ChannelTicket.md)
