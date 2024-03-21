@@ -142,7 +142,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.GetMessageBodyRequest() # GetMessageBodyRequest | Tag of message queue and optionally a timestamp since from to start peeking
+body = hoprd_sdk.GetMessageBodyRequest() # GetMessageBodyRequest | Tag of message queue and optionally a timestamp since from to start peeking. When an empty object or an object with a `tag: 0` is provided, it fetches all the messages.
 
 try:
     # Peek the list of messages currently present in the nodes message inbox, filtered by tag,
@@ -156,7 +156,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetMessageBodyRequest**](GetMessageBodyRequest.md)| Tag of message queue and optionally a timestamp since from to start peeking | 
+ **body** | [**GetMessageBodyRequest**](GetMessageBodyRequest.md)| Tag of message queue and optionally a timestamp since from to start peeking. When an empty object or an object with a &#x60;tag: 0&#x60; is provided, it fetches all the messages. | 
 
 ### Return type
 
@@ -250,7 +250,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = hoprd_sdk.MessagesApi(hoprd_sdk.ApiClient(configuration))
-body = hoprd_sdk.TagQueryRequest() # TagQueryRequest | Tag of message queue to pop from
+body = hoprd_sdk.TagQueryRequest() # TagQueryRequest | Tag of message queue to pop from. When an empty object or an object with a `tag: 0` is provided, it lists and removes all the messages.
 
 try:
     # Get the list of messages currently present in the nodes message inbox.
@@ -264,7 +264,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TagQueryRequest**](TagQueryRequest.md)| Tag of message queue to pop from | 
+ **body** | [**TagQueryRequest**](TagQueryRequest.md)| Tag of message queue to pop from. When an empty object or an object with a &#x60;tag: 0&#x60; is provided, it lists and removes all the messages. | 
 
 ### Return type
 

@@ -28,7 +28,7 @@ class NodePeersResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'announced': 'list[PeerInfo]',
+        'announced': 'list[AnnouncedPeer]',
         'connected': 'list[PeerInfo]'
     }
 
@@ -51,7 +51,7 @@ class NodePeersResponse(object):
 
 
         :return: The announced of this NodePeersResponse.  # noqa: E501
-        :rtype: list[PeerInfo]
+        :rtype: list[AnnouncedPeer]
         """
         return self._announced
 
@@ -61,7 +61,7 @@ class NodePeersResponse(object):
 
 
         :param announced: The announced of this NodePeersResponse.  # noqa: E501
-        :type: list[PeerInfo]
+        :type: list[AnnouncedPeer]
         """
         if announced is None:
             raise ValueError("Invalid value for `announced`, must not be `None`")  # noqa: E501
