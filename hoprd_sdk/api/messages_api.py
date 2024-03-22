@@ -232,7 +232,7 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetMessageBodyRequest body: Tag of message queue and optionally a timestamp since from to start peeking (required)
+        :param GetMessageBodyRequest body: Tag of message queue and optionally a timestamp since from to start peeking. When an empty object or an object with a `tag: 0` is provided, it fetches all the messages. (required)
         :return: MessagePopAllResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -254,7 +254,7 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetMessageBodyRequest body: Tag of message queue and optionally a timestamp since from to start peeking (required)
+        :param GetMessageBodyRequest body: Tag of message queue and optionally a timestamp since from to start peeking. When an empty object or an object with a `tag: 0` is provided, it fetches all the messages. (required)
         :return: MessagePopAllResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -430,7 +430,7 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TagQueryRequest body: Tag of message queue to pop from (required)
+        :param TagQueryRequest body: Tag of message queue to pop from. When an empty object or an object with a `tag: 0` is provided, it lists and removes all the messages. (required)
         :return: MessagePopAllResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -452,7 +452,7 @@ class MessagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TagQueryRequest body: Tag of message queue to pop from (required)
+        :param TagQueryRequest body: Tag of message queue to pop from. When an empty object or an object with a `tag: 0` is provided, it lists and removes all the messages. (required)
         :return: MessagePopAllResponse
                  If the method is called asynchronously,
                  returns the request thread.
