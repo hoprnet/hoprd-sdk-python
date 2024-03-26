@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
 *ChecksApi* | [**healthyz**](docs/ChecksApi.md#healthyz) | **GET** /healthyz | Check whether the node is healthy
 *ChecksApi* | [**readyz**](docs/ChecksApi.md#readyz) | **GET** /readyz | Check whether the node is ready to accept connections.
 *ChecksApi* | [**startedz**](docs/ChecksApi.md#startedz) | **GET** /startedz | Check whether the node is started.
+*ConfigurationApi* | [**configuration**](docs/ConfigurationApi.md#configuration) | **GET** /node/configuration | Get the configuration of the running node.
 *MessagesApi* | [**delete_messages**](docs/MessagesApi.md#delete_messages) | **DELETE** /api/v3/messages | Delete messages from nodes message inbox.
 *MessagesApi* | [**peek**](docs/MessagesApi.md#peek) | **POST** /api/v3/messages/peek | Peek the oldest message currently present in the nodes message inbox.
 *MessagesApi* | [**peek_all**](docs/MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox, filtered by tag,
