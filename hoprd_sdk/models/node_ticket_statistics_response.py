@@ -28,100 +28,34 @@ class NodeTicketStatisticsResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'losing_tickets': 'int',
-        'neglected': 'int',
         'neglected_value': 'str',
-        'redeemed': 'int',
         'redeemed_value': 'str',
-        'rejected': 'int',
         'rejected_value': 'str',
-        'unredeemed': 'int',
         'unredeemed_value': 'str',
-        'win_proportion': 'float'
+        'winning_count': 'int'
     }
 
     attribute_map = {
-        'losing_tickets': 'losingTickets',
-        'neglected': 'neglected',
         'neglected_value': 'neglectedValue',
-        'redeemed': 'redeemed',
         'redeemed_value': 'redeemedValue',
-        'rejected': 'rejected',
         'rejected_value': 'rejectedValue',
-        'unredeemed': 'unredeemed',
         'unredeemed_value': 'unredeemedValue',
-        'win_proportion': 'winProportion'
+        'winning_count': 'winningCount'
     }
 
-    def __init__(self, losing_tickets=None, neglected=None, neglected_value=None, redeemed=None, redeemed_value=None, rejected=None, rejected_value=None, unredeemed=None, unredeemed_value=None, win_proportion=None):  # noqa: E501
+    def __init__(self, neglected_value=None, redeemed_value=None, rejected_value=None, unredeemed_value=None, winning_count=None):  # noqa: E501
         """NodeTicketStatisticsResponse - a model defined in Swagger"""  # noqa: E501
-        self._losing_tickets = None
-        self._neglected = None
         self._neglected_value = None
-        self._redeemed = None
         self._redeemed_value = None
-        self._rejected = None
         self._rejected_value = None
-        self._unredeemed = None
         self._unredeemed_value = None
-        self._win_proportion = None
+        self._winning_count = None
         self.discriminator = None
-        self.losing_tickets = losing_tickets
-        self.neglected = neglected
         self.neglected_value = neglected_value
-        self.redeemed = redeemed
         self.redeemed_value = redeemed_value
-        self.rejected = rejected
         self.rejected_value = rejected_value
-        self.unredeemed = unredeemed
         self.unredeemed_value = unredeemed_value
-        self.win_proportion = win_proportion
-
-    @property
-    def losing_tickets(self):
-        """Gets the losing_tickets of this NodeTicketStatisticsResponse.  # noqa: E501
-
-
-        :return: The losing_tickets of this NodeTicketStatisticsResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._losing_tickets
-
-    @losing_tickets.setter
-    def losing_tickets(self, losing_tickets):
-        """Sets the losing_tickets of this NodeTicketStatisticsResponse.
-
-
-        :param losing_tickets: The losing_tickets of this NodeTicketStatisticsResponse.  # noqa: E501
-        :type: int
-        """
-        if losing_tickets is None:
-            raise ValueError("Invalid value for `losing_tickets`, must not be `None`")  # noqa: E501
-
-        self._losing_tickets = losing_tickets
-
-    @property
-    def neglected(self):
-        """Gets the neglected of this NodeTicketStatisticsResponse.  # noqa: E501
-
-
-        :return: The neglected of this NodeTicketStatisticsResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._neglected
-
-    @neglected.setter
-    def neglected(self, neglected):
-        """Sets the neglected of this NodeTicketStatisticsResponse.
-
-
-        :param neglected: The neglected of this NodeTicketStatisticsResponse.  # noqa: E501
-        :type: int
-        """
-        if neglected is None:
-            raise ValueError("Invalid value for `neglected`, must not be `None`")  # noqa: E501
-
-        self._neglected = neglected
+        self.winning_count = winning_count
 
     @property
     def neglected_value(self):
@@ -147,29 +81,6 @@ class NodeTicketStatisticsResponse(object):
         self._neglected_value = neglected_value
 
     @property
-    def redeemed(self):
-        """Gets the redeemed of this NodeTicketStatisticsResponse.  # noqa: E501
-
-
-        :return: The redeemed of this NodeTicketStatisticsResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._redeemed
-
-    @redeemed.setter
-    def redeemed(self, redeemed):
-        """Sets the redeemed of this NodeTicketStatisticsResponse.
-
-
-        :param redeemed: The redeemed of this NodeTicketStatisticsResponse.  # noqa: E501
-        :type: int
-        """
-        if redeemed is None:
-            raise ValueError("Invalid value for `redeemed`, must not be `None`")  # noqa: E501
-
-        self._redeemed = redeemed
-
-    @property
     def redeemed_value(self):
         """Gets the redeemed_value of this NodeTicketStatisticsResponse.  # noqa: E501
 
@@ -191,29 +102,6 @@ class NodeTicketStatisticsResponse(object):
             raise ValueError("Invalid value for `redeemed_value`, must not be `None`")  # noqa: E501
 
         self._redeemed_value = redeemed_value
-
-    @property
-    def rejected(self):
-        """Gets the rejected of this NodeTicketStatisticsResponse.  # noqa: E501
-
-
-        :return: The rejected of this NodeTicketStatisticsResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._rejected
-
-    @rejected.setter
-    def rejected(self, rejected):
-        """Sets the rejected of this NodeTicketStatisticsResponse.
-
-
-        :param rejected: The rejected of this NodeTicketStatisticsResponse.  # noqa: E501
-        :type: int
-        """
-        if rejected is None:
-            raise ValueError("Invalid value for `rejected`, must not be `None`")  # noqa: E501
-
-        self._rejected = rejected
 
     @property
     def rejected_value(self):
@@ -239,29 +127,6 @@ class NodeTicketStatisticsResponse(object):
         self._rejected_value = rejected_value
 
     @property
-    def unredeemed(self):
-        """Gets the unredeemed of this NodeTicketStatisticsResponse.  # noqa: E501
-
-
-        :return: The unredeemed of this NodeTicketStatisticsResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._unredeemed
-
-    @unredeemed.setter
-    def unredeemed(self, unredeemed):
-        """Sets the unredeemed of this NodeTicketStatisticsResponse.
-
-
-        :param unredeemed: The unredeemed of this NodeTicketStatisticsResponse.  # noqa: E501
-        :type: int
-        """
-        if unredeemed is None:
-            raise ValueError("Invalid value for `unredeemed`, must not be `None`")  # noqa: E501
-
-        self._unredeemed = unredeemed
-
-    @property
     def unredeemed_value(self):
         """Gets the unredeemed_value of this NodeTicketStatisticsResponse.  # noqa: E501
 
@@ -285,27 +150,27 @@ class NodeTicketStatisticsResponse(object):
         self._unredeemed_value = unredeemed_value
 
     @property
-    def win_proportion(self):
-        """Gets the win_proportion of this NodeTicketStatisticsResponse.  # noqa: E501
+    def winning_count(self):
+        """Gets the winning_count of this NodeTicketStatisticsResponse.  # noqa: E501
 
 
-        :return: The win_proportion of this NodeTicketStatisticsResponse.  # noqa: E501
-        :rtype: float
+        :return: The winning_count of this NodeTicketStatisticsResponse.  # noqa: E501
+        :rtype: int
         """
-        return self._win_proportion
+        return self._winning_count
 
-    @win_proportion.setter
-    def win_proportion(self, win_proportion):
-        """Sets the win_proportion of this NodeTicketStatisticsResponse.
+    @winning_count.setter
+    def winning_count(self, winning_count):
+        """Sets the winning_count of this NodeTicketStatisticsResponse.
 
 
-        :param win_proportion: The win_proportion of this NodeTicketStatisticsResponse.  # noqa: E501
-        :type: float
+        :param winning_count: The winning_count of this NodeTicketStatisticsResponse.  # noqa: E501
+        :type: int
         """
-        if win_proportion is None:
-            raise ValueError("Invalid value for `win_proportion`, must not be `None`")  # noqa: E501
+        if winning_count is None:
+            raise ValueError("Invalid value for `winning_count`, must not be `None`")  # noqa: E501
 
-        self._win_proportion = win_proportion
+        self._winning_count = winning_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""
