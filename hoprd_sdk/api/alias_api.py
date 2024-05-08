@@ -33,9 +33,9 @@ class AliasApi(object):
         self.api_client = api_client
 
     def aliases(self, **kwargs):  # noqa: E501
-        """Get each previously set alias and its corresponding PeerId  # noqa: E501
+        """Get each previously set alias and its corresponding PeerId.  # noqa: E501
 
-        Get each previously set alias and its corresponding PeerId  # noqa: E501
+        Get each previously set alias and its corresponding PeerId.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.aliases(async_req=True)
@@ -54,9 +54,9 @@ class AliasApi(object):
             return data
 
     def aliases_with_http_info(self, **kwargs):  # noqa: E501
-        """Get each previously set alias and its corresponding PeerId  # noqa: E501
+        """Get each previously set alias and its corresponding PeerId.  # noqa: E501
 
-        Get each previously set alias and its corresponding PeerId  # noqa: E501
+        Get each previously set alias and its corresponding PeerId.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.aliases_with_http_info(async_req=True)

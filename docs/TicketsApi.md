@@ -5,7 +5,7 @@ All URIs are relative to */*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**redeem_all_tickets**](TicketsApi.md#redeem_all_tickets) | **POST** /api/v3/tickets/redeem | Starts redeeming of all tickets in all channels.
-[**show_all_tickets**](TicketsApi.md#show_all_tickets) | **GET** /api/v3/tickets | Returns all the tickets in all the channels.
+[**show_all_tickets**](TicketsApi.md#show_all_tickets) | **GET** /api/v3/tickets | Endpoint is deprecated and will be removed in the future. Returns an empty array.
 [**show_ticket_statistics**](TicketsApi.md#show_ticket_statistics) | **GET** /api/v3/tickets/statistics | Returns current complete statistics on tickets.
 
 # **redeem_all_tickets**
@@ -60,9 +60,9 @@ void (empty response body)
 # **show_all_tickets**
 > list[ChannelTicket] show_all_tickets()
 
-Returns all the tickets in all the channels.
+Endpoint is deprecated and will be removed in the future. Returns an empty array.
 
-Returns all the tickets in all the channels.
+Endpoint is deprecated and will be removed in the future. Returns an empty array.
 
 ### Example
 ```python
@@ -82,7 +82,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 api_instance = hoprd_sdk.TicketsApi(hoprd_sdk.ApiClient(configuration))
 
 try:
-    # Returns all the tickets in all the channels.
+    # Endpoint is deprecated and will be removed in the future. Returns an empty array.
     api_response = api_instance.show_all_tickets()
     pprint(api_response)
 except ApiException as e:

@@ -120,9 +120,9 @@ class TicketsApi(object):
             collection_formats=collection_formats)
 
     def show_all_tickets(self, **kwargs):  # noqa: E501
-        """Returns all the tickets in all the channels.  # noqa: E501
+        """Endpoint is deprecated and will be removed in the future. Returns an empty array.  # noqa: E501
 
-        Returns all the tickets in all the channels.  # noqa: E501
+        Endpoint is deprecated and will be removed in the future. Returns an empty array.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.show_all_tickets(async_req=True)
@@ -141,9 +141,9 @@ class TicketsApi(object):
             return data
 
     def show_all_tickets_with_http_info(self, **kwargs):  # noqa: E501
-        """Returns all the tickets in all the channels.  # noqa: E501
+        """Endpoint is deprecated and will be removed in the future. Returns an empty array.  # noqa: E501
 
-        Returns all the tickets in all the channels.  # noqa: E501
+        Endpoint is deprecated and will be removed in the future. Returns an empty array.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.show_all_tickets_with_http_info(async_req=True)

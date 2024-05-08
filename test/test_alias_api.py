@@ -31,7 +31,7 @@ class TestAliasApi(unittest.TestCase):
     def test_aliases(self):
         """Test case for aliases
 
-        Get each previously set alias and its corresponding PeerId  # noqa: E501
+        Get each previously set alias and its corresponding PeerId.  # noqa: E501
         """
         pass
 
