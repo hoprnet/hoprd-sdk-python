@@ -4,7 +4,7 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**aliases**](AliasApi.md#aliases) | **GET** /api/v3/aliases | Get each previously set alias and its corresponding PeerId
+[**aliases**](AliasApi.md#aliases) | **GET** /api/v3/aliases | Get each previously set alias and its corresponding PeerId.
 [**delete_alias**](AliasApi.md#delete_alias) | **DELETE** /api/v3/aliases/{alias} | Delete an alias.
 [**get_alias**](AliasApi.md#get_alias) | **GET** /api/v3/aliases/{alias} | Get alias for the PeerId (Hopr address) that have this alias assigned to it.
 [**set_alias**](AliasApi.md#set_alias) | **POST** /api/v3/aliases | Set alias for a peer with a specific PeerId.
@@ -12,9 +12,9 @@ Method | HTTP request | Description
 # **aliases**
 > dict(str, str) aliases()
 
-Get each previously set alias and its corresponding PeerId
+Get each previously set alias and its corresponding PeerId.
 
-Get each previously set alias and its corresponding PeerId
+Get each previously set alias and its corresponding PeerId.
 
 ### Example
 ```python
@@ -34,7 +34,7 @@ configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
 api_instance = hoprd_sdk.AliasApi(hoprd_sdk.ApiClient(configuration))
 
 try:
-    # Get each previously set alias and its corresponding PeerId
+    # Get each previously set alias and its corresponding PeerId.
     api_response = api_instance.aliases()
     pprint(api_response)
 except ApiException as e:

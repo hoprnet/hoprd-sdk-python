@@ -38,7 +38,7 @@ class TestTicketsApi(unittest.TestCase):
     def test_show_all_tickets(self):
         """Test case for show_all_tickets
 
-        Returns all the tickets in all the channels.  # noqa: E501
+        Endpoint is deprecated and will be removed in the future. Returns an empty array.  # noqa: E501
         """
         pass
 

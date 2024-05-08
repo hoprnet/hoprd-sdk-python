@@ -4,16 +4,16 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**healthyz**](ChecksApi.md#healthyz) | **GET** /healthyz | Check whether the node is healthy
+[**healthyz**](ChecksApi.md#healthyz) | **GET** /healthyz | Check whether the node is healthy.
 [**readyz**](ChecksApi.md#readyz) | **GET** /readyz | Check whether the node is ready to accept connections.
 [**startedz**](ChecksApi.md#startedz) | **GET** /startedz | Check whether the node is started.
 
 # **healthyz**
 > healthyz()
 
-Check whether the node is healthy
+Check whether the node is healthy.
 
-Check whether the node is healthy
+Check whether the node is healthy.
 
 ### Example
 ```python
@@ -27,7 +27,7 @@ from pprint import pprint
 api_instance = hoprd_sdk.ChecksApi()
 
 try:
-    # Check whether the node is healthy
+    # Check whether the node is healthy.
     api_instance.healthyz()
 except ApiException as e:
     print("Exception when calling ChecksApi->healthyz: %s\n" % e)

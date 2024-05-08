@@ -33,9 +33,9 @@ class ChecksApi(object):
         self.api_client = api_client
 
     def healthyz(self, **kwargs):  # noqa: E501
-        """Check whether the node is healthy  # noqa: E501
+        """Check whether the node is healthy.  # noqa: E501
 
-        Check whether the node is healthy  # noqa: E501
+        Check whether the node is healthy.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.healthyz(async_req=True)
@@ -54,9 +54,9 @@ class ChecksApi(object):
             return data
 
     def healthyz_with_http_info(self, **kwargs):  # noqa: E501
-        """Check whether the node is healthy  # noqa: E501
+        """Check whether the node is healthy.  # noqa: E501
 
-        Check whether the node is healthy  # noqa: E501
+        Check whether the node is healthy.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.healthyz_with_http_info(async_req=True)

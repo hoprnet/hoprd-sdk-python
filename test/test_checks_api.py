@@ -31,7 +31,7 @@ class TestChecksApi(unittest.TestCase):
     def test_healthyz(self):
         """Test case for healthyz
 
-        Check whether the node is healthy  # noqa: E501
+        Check whether the node is healthy.  # noqa: E501
         """
         pass
 
