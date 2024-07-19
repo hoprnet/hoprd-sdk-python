@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import hoprd_sdk
-from hoprd_sdk.models.api_error import ApiError  # noqa: E501
+from hoprd_sdk.models.session_client_request import SessionClientRequest  # noqa: E501
 from hoprd_sdk.rest import ApiException
 
 
-class TestApiError(unittest.TestCase):
-    """ApiError unit test stubs"""
+class TestSessionClientRequest(unittest.TestCase):
+    """SessionClientRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestApiError(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testApiError(self):
-        """Test ApiError"""
+    def testSessionClientRequest(self):
+        """Test SessionClientRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = hoprd_sdk.models.api_error.ApiError()  # noqa: E501
+        # model = hoprd_sdk.models.session_client_request.SessionClientRequest()  # noqa: E501
         pass
 
 

@@ -11,8 +11,6 @@ Method | HTTP request | Description
 
 Get the configuration of the running node.
 
-Get the configuration of the running node.
-
 ### Example
 ```python
 from __future__ import print_function

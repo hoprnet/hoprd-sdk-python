@@ -11,8 +11,6 @@ Method | HTTP request | Description
 
 Obtains the current ticket price.
 
-Obtains the current ticket price.
-
 ### Example
 ```python
 from __future__ import print_function

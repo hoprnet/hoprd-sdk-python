@@ -12,8 +12,6 @@ Method | HTTP request | Description
 
 Directly pings the given peer.
 
-Directly pings the given peer.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -66,7 +64,7 @@ Name | Type | Description  | Notes
 
 Returns transport-related information about the given peer.
 
-Returns transport-related information about the given peer.  This includes the peer ids that the given peer has `announced` on-chain and peer ids that are actually `observed` by the transport layer.
+This includes the peer ids that the given peer has `announced` on-chain and peer ids that are actually `observed` by the transport layer.
 
 ### Example
 ```python

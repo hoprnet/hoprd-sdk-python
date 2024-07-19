@@ -14,8 +14,6 @@ Method | HTTP request | Description
 
 Get each previously set alias and its corresponding PeerId.
 
-Get each previously set alias and its corresponding PeerId.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -61,8 +59,6 @@ This endpoint does not need any parameter.
 
 # **delete_alias**
 > delete_alias(alias)
-
-Delete an alias.
 
 Delete an alias.
 
@@ -117,8 +113,6 @@ void (empty response body)
 
 Get alias for the PeerId (Hopr address) that have this alias assigned to it.
 
-Get alias for the PeerId (Hopr address) that have this alias assigned to it.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -168,8 +162,6 @@ Name | Type | Description  | Notes
 
 # **set_alias**
 > PeerIdResponse set_alias(body)
-
-Set alias for a peer with a specific PeerId.
 
 Set alias for a peer with a specific PeerId.
 
