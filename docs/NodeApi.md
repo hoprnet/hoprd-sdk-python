@@ -15,8 +15,6 @@ Method | HTTP request | Description
 
 List all known entry nodes with multiaddrs and eligibility.
 
-List all known entry nodes with multiaddrs and eligibility.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -62,8 +60,6 @@ This endpoint does not need any parameter.
 
 # **info**
 > NodeInfoResponse info()
-
-Get information about this HOPR Node.
 
 Get information about this HOPR Node.
 
@@ -115,8 +111,6 @@ This endpoint does not need any parameter.
 
 Retrieve Prometheus metrics from the running node.
 
-Retrieve Prometheus metrics from the running node.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -165,7 +159,7 @@ This endpoint does not need any parameter.
 
 Lists information for `connected peers` and `announced peers`.
 
-Lists information for `connected peers` and `announced peers`.  Connected peers are nodes which are connected to the node while announced peers are nodes which have announced to the network.  Optionally pass `quality` parameter to get only peers with higher or equal quality to the specified value.
+Connected peers are nodes which are connected to the node while announced peers are nodes which have announced to the network.  Optionally pass `quality` parameter to get only peers with higher or equal quality to the specified value.
 
 ### Example
 ```python
@@ -216,8 +210,6 @@ Name | Type | Description  | Notes
 
 # **version**
 > NodeVersionResponse version()
-
-Get release version of the running node.
 
 Get release version of the running node.
 
