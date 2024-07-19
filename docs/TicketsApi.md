@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Starts redeeming of all tickets in all channels.
 
-Starts redeeming of all tickets in all channels.  **WARNING:** this should almost **never** be used as it can issue a large number of on-chain transactions. The tickets should almost always be aggregated first.
+**WARNING:** this should almost **never** be used as it can issue a large number of on-chain transactions. The tickets should almost always be aggregated first.
 
 ### Example
 ```python
@@ -62,8 +62,6 @@ void (empty response body)
 
 Endpoint is deprecated and will be removed in the future. Returns an empty array.
 
-Endpoint is deprecated and will be removed in the future. Returns an empty array.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -109,8 +107,6 @@ This endpoint does not need any parameter.
 
 # **show_ticket_statistics**
 > NodeTicketStatisticsResponse show_ticket_statistics()
-
-Returns current complete statistics on tickets.
 
 Returns current complete statistics on tickets.
 

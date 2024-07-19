@@ -13,8 +13,6 @@ Method | HTTP request | Description
 
 Check whether the node is healthy.
 
-Check whether the node is healthy.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -56,8 +54,6 @@ No authorization required
 
 Check whether the node is ready to accept connections.
 
-Check whether the node is ready to accept connections.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -96,8 +92,6 @@ No authorization required
 
 # **startedz**
 > startedz()
-
-Check whether the node is started.
 
 Check whether the node is started.
 

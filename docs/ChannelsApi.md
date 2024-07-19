@@ -18,8 +18,6 @@ Method | HTTP request | Description
 
 Starts aggregation of tickets in the given channel.
 
-Starts aggregation of tickets in the given channel.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -71,7 +69,7 @@ void (empty response body)
 
 Closes the given channel.
 
-Closes the given channel.  If the channel is currently `Open`, it will transition it to `PendingToClose`. If the channels is in `PendingToClose` and the channel closure period has elapsed, it will transition it to `Closed`.
+If the channel is currently `Open`, it will transition it to `PendingToClose`. If the channels is in `PendingToClose` and the channel closure period has elapsed, it will transition it to `Closed`.
 
 ### Example
 ```python
@@ -122,8 +120,6 @@ Name | Type | Description  | Notes
 
 # **fund_channel**
 > str fund_channel(body, channel_id)
-
-Funds the given channel with the given amount of HOPR tokens.
 
 Funds the given channel with the given amount of HOPR tokens.
 
@@ -181,7 +177,7 @@ Name | Type | Description  | Notes
 
 Lists channels opened to/from this node. Alternatively, it can print all
 
-Lists channels opened to/from this node. Alternatively, it can print all the channels in the network as this node sees them.
+the channels in the network as this node sees them.
 
 ### Example
 ```python
@@ -237,8 +233,6 @@ Name | Type | Description  | Notes
 
 Opens a channel to the given on-chain address with the given initial stake of HOPR tokens.
 
-Opens a channel to the given on-chain address with the given initial stake of HOPR tokens.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -291,7 +285,7 @@ Name | Type | Description  | Notes
 
 Starts redeeming all tickets in the given channel.
 
-Starts redeeming all tickets in the given channel.  **WARNING:** this should almost **never** be used as it can issue a large number of on-chain transactions. The tickets should almost always be aggregated first.
+**WARNING:** this should almost **never** be used as it can issue a large number of on-chain transactions. The tickets should almost always be aggregated first.
 
 ### Example
 ```python
@@ -344,8 +338,6 @@ void (empty response body)
 
 Returns information about the given channel.
 
-Returns information about the given channel.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -395,8 +387,6 @@ Name | Type | Description  | Notes
 
 # **show_channel_tickets**
 > list[ChannelTicket] show_channel_tickets(channel_id)
-
-Lists all tickets for the given channel  ID.
 
 Lists all tickets for the given channel  ID.
 
