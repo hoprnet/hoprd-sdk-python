@@ -126,7 +126,6 @@ Class | Method | HTTP request | Description
 *ChecksApi* | [**readyz**](docs/ChecksApi.md#readyz) | **GET** /readyz | Check whether the node is ready to accept connections.
 *ChecksApi* | [**startedz**](docs/ChecksApi.md#startedz) | **GET** /startedz | Check whether the node is started.
 *ConfigurationApi* | [**configuration**](docs/ConfigurationApi.md#configuration) | **GET** /api/v3/node/configuration | Get the configuration of the running node.
-*MessagesApi* | [**create_client**](docs/MessagesApi.md#create_client) | **POST** /api/v3/session | Creates a new client session returing a dedicated session listening port.
 *MessagesApi* | [**delete_messages**](docs/MessagesApi.md#delete_messages) | **DELETE** /api/v3/messages | Delete messages from nodes message inbox.
 *MessagesApi* | [**peek**](docs/MessagesApi.md#peek) | **POST** /api/v3/messages/peek | Peek the oldest message currently present in the nodes message inbox.
 *MessagesApi* | [**peek_all**](docs/MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox, filtered by tag,
@@ -142,6 +141,7 @@ Class | Method | HTTP request | Description
 *NodeApi* | [**version**](docs/NodeApi.md#version) | **GET** /api/v3/node/version | Get release version of the running node.
 *PeersApi* | [**ping_peer**](docs/PeersApi.md#ping_peer) | **POST** /api/v3/peers/{peerId}/ping | Directly pings the given peer.
 *PeersApi* | [**show_peer_info**](docs/PeersApi.md#show_peer_info) | **GET** /api/v3/peers/{peerId} | Returns transport-related information about the given peer.
+*SessionApi* | [**create_client**](docs/SessionApi.md#create_client) | **POST** /api/v3/session | Creates a new client session returing a dedicated session listening port.
 *TicketsApi* | [**redeem_all_tickets**](docs/TicketsApi.md#redeem_all_tickets) | **POST** /api/v3/tickets/redeem | Starts redeeming of all tickets in all channels.
 *TicketsApi* | [**show_all_tickets**](docs/TicketsApi.md#show_all_tickets) | **GET** /api/v3/tickets | Endpoint is deprecated and will be removed in the future. Returns an empty array.
 *TicketsApi* | [**show_ticket_statistics**](docs/TicketsApi.md#show_ticket_statistics) | **GET** /api/v3/tickets/statistics | Returns current complete statistics on tickets.
