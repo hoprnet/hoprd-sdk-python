@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "hoprd-sdk"
-VERSION = "2.1.2"
+VERSION = "2.1.3"
 # To install the library, run the following
 #
 # python setup.py install
