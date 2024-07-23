@@ -38,6 +38,8 @@ class NodeInfoResponse(object):
         'hopr_node_safe': 'str',
         'hopr_node_safe_registry': 'str',
         'hopr_token': 'str',
+        'indexer_block': 'int',
+        'indexer_checksum': 'str',
         'is_eligible': 'bool',
         'listening_address': 'list[str]',
         'network': 'str'
@@ -54,12 +56,14 @@ class NodeInfoResponse(object):
         'hopr_node_safe': 'hoprNodeSafe',
         'hopr_node_safe_registry': 'hoprNodeSafeRegistry',
         'hopr_token': 'hoprToken',
+        'indexer_block': 'indexerBlock',
+        'indexer_checksum': 'indexerChecksum',
         'is_eligible': 'isEligible',
         'listening_address': 'listeningAddress',
         'network': 'network'
     }
 
-    def __init__(self, announced_address=None, chain=None, channel_closure_period=None, connectivity_status=None, hopr_channels=None, hopr_management_module=None, hopr_network_registry=None, hopr_node_safe=None, hopr_node_safe_registry=None, hopr_token=None, is_eligible=None, listening_address=None, network=None):  # noqa: E501
+    def __init__(self, announced_address=None, chain=None, channel_closure_period=None, connectivity_status=None, hopr_channels=None, hopr_management_module=None, hopr_network_registry=None, hopr_node_safe=None, hopr_node_safe_registry=None, hopr_token=None, indexer_block=None, indexer_checksum=None, is_eligible=None, listening_address=None, network=None):  # noqa: E501
         """NodeInfoResponse - a model defined in Swagger"""  # noqa: E501
         self._announced_address = None
         self._chain = None
@@ -71,6 +75,8 @@ class NodeInfoResponse(object):
         self._hopr_node_safe = None
         self._hopr_node_safe_registry = None
         self._hopr_token = None
+        self._indexer_block = None
+        self._indexer_checksum = None
         self._is_eligible = None
         self._listening_address = None
         self._network = None
@@ -85,6 +91,8 @@ class NodeInfoResponse(object):
         self.hopr_node_safe = hopr_node_safe
         self.hopr_node_safe_registry = hopr_node_safe_registry
         self.hopr_token = hopr_token
+        self.indexer_block = indexer_block
+        self.indexer_checksum = indexer_checksum
         self.is_eligible = is_eligible
         self.listening_address = listening_address
         self.network = network
@@ -320,6 +328,52 @@ class NodeInfoResponse(object):
             raise ValueError("Invalid value for `hopr_token`, must not be `None`")  # noqa: E501
 
         self._hopr_token = hopr_token
+
+    @property
+    def indexer_block(self):
+        """Gets the indexer_block of this NodeInfoResponse.  # noqa: E501
+
+
+        :return: The indexer_block of this NodeInfoResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._indexer_block
+
+    @indexer_block.setter
+    def indexer_block(self, indexer_block):
+        """Sets the indexer_block of this NodeInfoResponse.
+
+
+        :param indexer_block: The indexer_block of this NodeInfoResponse.  # noqa: E501
+        :type: int
+        """
+        if indexer_block is None:
+            raise ValueError("Invalid value for `indexer_block`, must not be `None`")  # noqa: E501
+
+        self._indexer_block = indexer_block
+
+    @property
+    def indexer_checksum(self):
+        """Gets the indexer_checksum of this NodeInfoResponse.  # noqa: E501
+
+
+        :return: The indexer_checksum of this NodeInfoResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._indexer_checksum
+
+    @indexer_checksum.setter
+    def indexer_checksum(self, indexer_checksum):
+        """Sets the indexer_checksum of this NodeInfoResponse.
+
+
+        :param indexer_checksum: The indexer_checksum of this NodeInfoResponse.  # noqa: E501
+        :type: str
+        """
+        if indexer_checksum is None:
+            raise ValueError("Invalid value for `indexer_checksum`, must not be `None`")  # noqa: E501
+
+        self._indexer_checksum = indexer_checksum
 
     @property
     def is_eligible(self):

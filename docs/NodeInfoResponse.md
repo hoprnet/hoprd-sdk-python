@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **hopr_node_safe** | **str** |  | 
 **hopr_node_safe_registry** | **str** |  | 
 **hopr_token** | **str** |  | 
+**indexer_block** | **int** |  | 
+**indexer_checksum** | **str** |  | 
 **is_eligible** | **bool** |  | 
 **listening_address** | **list[str]** |  | 
 **network** | **str** |  | 
