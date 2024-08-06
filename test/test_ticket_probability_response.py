@@ -15,31 +15,23 @@ from __future__ import absolute_import
 import unittest
 
 import hoprd_sdk
-from hoprd_sdk.api.network_api import NetworkApi  # noqa: E501
+from hoprd_sdk.models.ticket_probability_response import TicketProbabilityResponse  # noqa: E501
 from hoprd_sdk.rest import ApiException
 
 
-class TestNetworkApi(unittest.TestCase):
-    """NetworkApi unit test stubs"""
+class TestTicketProbabilityResponse(unittest.TestCase):
+    """TicketProbabilityResponse unit test stubs"""
 
     def setUp(self):
-        self.api = NetworkApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_price(self):
-        """Test case for price
-
-        Obtains the current ticket price.  # noqa: E501
-        """
-        pass
-
-    def test_probability(self):
-        """Test case for probability
-
-        Obtains the current ticket winning probability.  # noqa: E501
-        """
+    def testTicketProbabilityResponse(self):
+        """Test TicketProbabilityResponse"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = hoprd_sdk.models.ticket_probability_response.TicketProbabilityResponse()  # noqa: E501
         pass
 
 

@@ -28,13 +28,6 @@ class TestMessagesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_client(self):
-        """Test case for create_client
-
-        Creates a new client session returing a dedicated session listening port.  # noqa: E501
-        """
-        pass
-
     def test_delete_messages(self):
         """Test case for delete_messages
 

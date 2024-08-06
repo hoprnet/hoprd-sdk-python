@@ -24,6 +24,7 @@ from hoprd_sdk.api.messages_api import MessagesApi
 from hoprd_sdk.api.network_api import NetworkApi
 from hoprd_sdk.api.node_api import NodeApi
 from hoprd_sdk.api.peers_api import PeersApi
+from hoprd_sdk.api.session_api import SessionApi
 from hoprd_sdk.api.tickets_api import TicketsApi
 # import ApiClient
 from hoprd_sdk.api_client import ApiClient
@@ -64,5 +65,6 @@ from hoprd_sdk.models.session_client_response import SessionClientResponse
 from hoprd_sdk.models.size_response import SizeResponse
 from hoprd_sdk.models.tag_query_request import TagQueryRequest
 from hoprd_sdk.models.ticket_price_response import TicketPriceResponse
+from hoprd_sdk.models.ticket_probability_response import TicketProbabilityResponse
 from hoprd_sdk.models.withdraw_body_request import WithdrawBodyRequest
 from hoprd_sdk.models.withdraw_response import WithdrawResponse

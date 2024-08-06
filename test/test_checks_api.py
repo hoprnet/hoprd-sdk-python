@@ -28,6 +28,13 @@ class TestChecksApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_eligiblez(self):
+        """Test case for eligiblez
+
+        Check whether the node is eligible in the network.  # noqa: E501
+        """
+        pass
+
     def test_healthyz(self):
         """Test case for healthyz
 

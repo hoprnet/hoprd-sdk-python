@@ -15,30 +15,23 @@ from __future__ import absolute_import
 import unittest
 
 import hoprd_sdk
-from hoprd_sdk.api.network_api import NetworkApi  # noqa: E501
+from hoprd_sdk.api.session_api import SessionApi  # noqa: E501
 from hoprd_sdk.rest import ApiException
 
 
-class TestNetworkApi(unittest.TestCase):
-    """NetworkApi unit test stubs"""
+class TestSessionApi(unittest.TestCase):
+    """SessionApi unit test stubs"""
 
     def setUp(self):
-        self.api = NetworkApi()  # noqa: E501
+        self.api = SessionApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def test_price(self):
-        """Test case for price
+    def test_create_client(self):
+        """Test case for create_client
 
-        Obtains the current ticket price.  # noqa: E501
-        """
-        pass
-
-    def test_probability(self):
-        """Test case for probability
-
-        Obtains the current ticket winning probability.  # noqa: E501
+        Creates a new client session returing a dedicated session listening port.  # noqa: E501
         """
         pass
 

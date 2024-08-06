@@ -122,11 +122,11 @@ Class | Method | HTTP request | Description
 *ChannelsApi* | [**redeem_tickets_in_channel**](docs/ChannelsApi.md#redeem_tickets_in_channel) | **POST** /api/v3/channels/{channelId}/tickets/redeem | Starts redeeming all tickets in the given channel.
 *ChannelsApi* | [**show_channel**](docs/ChannelsApi.md#show_channel) | **GET** /api/v3/channels/{channelId} | Returns information about the given channel.
 *ChannelsApi* | [**show_channel_tickets**](docs/ChannelsApi.md#show_channel_tickets) | **GET** /api/v3/channels/{channelId}/tickets | Lists all tickets for the given channel  ID.
+*ChecksApi* | [**eligiblez**](docs/ChecksApi.md#eligiblez) | **GET** /eligiblez | Check whether the node is eligible in the network.
 *ChecksApi* | [**healthyz**](docs/ChecksApi.md#healthyz) | **GET** /healthyz | Check whether the node is healthy.
 *ChecksApi* | [**readyz**](docs/ChecksApi.md#readyz) | **GET** /readyz | Check whether the node is ready to accept connections.
 *ChecksApi* | [**startedz**](docs/ChecksApi.md#startedz) | **GET** /startedz | Check whether the node is started.
 *ConfigurationApi* | [**configuration**](docs/ConfigurationApi.md#configuration) | **GET** /api/v3/node/configuration | Get the configuration of the running node.
-*MessagesApi* | [**create_client**](docs/MessagesApi.md#create_client) | **POST** /api/v3/session | Creates a new client session returing a dedicated session listening port.
 *MessagesApi* | [**delete_messages**](docs/MessagesApi.md#delete_messages) | **DELETE** /api/v3/messages | Delete messages from nodes message inbox.
 *MessagesApi* | [**peek**](docs/MessagesApi.md#peek) | **POST** /api/v3/messages/peek | Peek the oldest message currently present in the nodes message inbox.
 *MessagesApi* | [**peek_all**](docs/MessagesApi.md#peek_all) | **POST** /api/v3/messages/peek-all | Peek the list of messages currently present in the nodes message inbox, filtered by tag,
@@ -135,6 +135,7 @@ Class | Method | HTTP request | Description
 *MessagesApi* | [**send_message**](docs/MessagesApi.md#send_message) | **POST** /api/v3/messages | Send a message to another peer using the given path.
 *MessagesApi* | [**size**](docs/MessagesApi.md#size) | **GET** /api/v3/messages/size | Get size of filtered message inbox for a specific tag
 *NetworkApi* | [**price**](docs/NetworkApi.md#price) | **GET** /api/v3/network/price | Obtains the current ticket price.
+*NetworkApi* | [**probability**](docs/NetworkApi.md#probability) | **GET** /api/v3/network/probability | Obtains the current ticket winning probability.
 *NodeApi* | [**entry_nodes**](docs/NodeApi.md#entry_nodes) | **GET** /api/v3/node/entryNodes | List all known entry nodes with multiaddrs and eligibility.
 *NodeApi* | [**info**](docs/NodeApi.md#info) | **GET** /api/v3/node/info | Get information about this HOPR Node.
 *NodeApi* | [**metrics**](docs/NodeApi.md#metrics) | **GET** /api/v3/node/metrics | Retrieve Prometheus metrics from the running node.
@@ -142,6 +143,7 @@ Class | Method | HTTP request | Description
 *NodeApi* | [**version**](docs/NodeApi.md#version) | **GET** /api/v3/node/version | Get release version of the running node.
 *PeersApi* | [**ping_peer**](docs/PeersApi.md#ping_peer) | **POST** /api/v3/peers/{peerId}/ping | Directly pings the given peer.
 *PeersApi* | [**show_peer_info**](docs/PeersApi.md#show_peer_info) | **GET** /api/v3/peers/{peerId} | Returns transport-related information about the given peer.
+*SessionApi* | [**create_client**](docs/SessionApi.md#create_client) | **POST** /api/v3/session | Creates a new client session returing a dedicated session listening port.
 *TicketsApi* | [**redeem_all_tickets**](docs/TicketsApi.md#redeem_all_tickets) | **POST** /api/v3/tickets/redeem | Starts redeeming of all tickets in all channels.
 *TicketsApi* | [**show_all_tickets**](docs/TicketsApi.md#show_all_tickets) | **GET** /api/v3/tickets | Endpoint is deprecated and will be removed in the future. Returns an empty array.
 *TicketsApi* | [**show_ticket_statistics**](docs/TicketsApi.md#show_ticket_statistics) | **GET** /api/v3/tickets/statistics | Returns current complete statistics on tickets.
@@ -183,6 +185,7 @@ Class | Method | HTTP request | Description
  - [SizeResponse](docs/SizeResponse.md)
  - [TagQueryRequest](docs/TagQueryRequest.md)
  - [TicketPriceResponse](docs/TicketPriceResponse.md)
+ - [TicketProbabilityResponse](docs/TicketProbabilityResponse.md)
  - [WithdrawBodyRequest](docs/WithdrawBodyRequest.md)
  - [WithdrawResponse](docs/WithdrawResponse.md)
 

@@ -49,5 +49,6 @@ from hoprd_sdk.models.session_client_response import SessionClientResponse
 from hoprd_sdk.models.size_response import SizeResponse
 from hoprd_sdk.models.tag_query_request import TagQueryRequest
 from hoprd_sdk.models.ticket_price_response import TicketPriceResponse
+from hoprd_sdk.models.ticket_probability_response import TicketProbabilityResponse
 from hoprd_sdk.models.withdraw_body_request import WithdrawBodyRequest
 from hoprd_sdk.models.withdraw_response import WithdrawResponse
