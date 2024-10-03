@@ -109,7 +109,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **withdraw**
-> AccountBalancesResponse withdraw(body)
+> WithdrawResponse withdraw(body)
 
 Withdraw funds from this node to the ethereum wallet address.
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountBalancesResponse**](AccountBalancesResponse.md)
+[**WithdrawResponse**](WithdrawResponse.md)
 
 ### Authorization
 
