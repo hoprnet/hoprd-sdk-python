@@ -13,9 +13,15 @@ Name | Type | Description | Notes
 **hopr_node_safe** | **str** |  | 
 **hopr_node_safe_registry** | **str** |  | 
 **hopr_token** | **str** |  | 
+**index_block_prev_checksum** | **int** |  | 
+**indexer_block** | **int** |  | 
+**indexer_checksum** | **str** |  | 
+**indexer_last_log_block** | **int** |  | 
+**indexer_last_log_checksum** | **str** |  | 
 **is_eligible** | **bool** |  | 
 **listening_address** | **list[str]** |  | 
 **network** | **str** |  | 
+**provider** | **str** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,8 +17,6 @@ Method | HTTP request | Description
 
 Delete messages from nodes message inbox.
 
-Delete messages from nodes message inbox.
-
 ### Example
 ```python
 from __future__ import print_function
@@ -70,7 +68,7 @@ void (empty response body)
 
 Peek the oldest message currently present in the nodes message inbox.
 
-Peek the oldest message currently present in the nodes message inbox.  The message is not removed from the inbox.
+The message is not removed from the inbox.
 
 ### Example
 ```python
@@ -124,7 +122,7 @@ Name | Type | Description  | Notes
 
 Peek the list of messages currently present in the nodes message inbox, filtered by tag,
 
-Peek the list of messages currently present in the nodes message inbox, filtered by tag, and optionally by timestamp (epoch in milliseconds). The messages are not removed from the inbox.
+and optionally by timestamp (epoch in milliseconds). The messages are not removed from the inbox.
 
 ### Example
 ```python
@@ -178,7 +176,7 @@ Name | Type | Description  | Notes
 
 Get the oldest message currently present in the nodes message inbox.
 
-Get the oldest message currently present in the nodes message inbox.  The message is removed from the inbox.
+The message is removed from the inbox.
 
 ### Example
 ```python
@@ -232,7 +230,7 @@ Name | Type | Description  | Notes
 
 Get the list of messages currently present in the nodes message inbox.
 
-Get the list of messages currently present in the nodes message inbox.  The messages are removed from the inbox.
+The messages are removed from the inbox.
 
 ### Example
 ```python
@@ -286,7 +284,7 @@ Name | Type | Description  | Notes
 
 Send a message to another peer using the given path.
 
-Send a message to another peer using the given path.  The message can be sent either over a specified path or using a specified number of HOPS, if no path is given.
+The message can be sent either over a specified path or using a specified number of HOPS, if no path is given.
 
 ### Example
 ```python
@@ -337,8 +335,6 @@ Name | Type | Description  | Notes
 
 # **size**
 > SizeResponse size(tag=tag)
-
-Get size of filtered message inbox for a specific tag
 
 Get size of filtered message inbox for a specific tag
 
