@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Get node's HOPR and native addresses.
 
-Get node's HOPR and native addresses.  HOPR address is represented by the P2P PeerId and can be used by other node owner to interact with this node.
+HOPR address is represented by the P2P PeerId and can be used by other node owner to interact with this node.
 
 ### Example
 ```python
@@ -63,7 +63,7 @@ This endpoint does not need any parameter.
 
 Get node's and associated Safe's HOPR and native balances as the allowance for HOPR
 
-Get node's and associated Safe's HOPR and native balances as the allowance for HOPR tokens to be drawn by HoprChannels from Safe.  HOPR tokens from the Safe balance are used to fund the payment channels between this node and other nodes on the network. NATIVE balance of the Node is used to pay for the gas fees for the blockchain.
+tokens to be drawn by HoprChannels from Safe.  HOPR tokens from the Safe balance are used to fund the payment channels between this node and other nodes on the network. NATIVE balance of the Node is used to pay for the gas fees for the blockchain.
 
 ### Example
 ```python
@@ -109,11 +109,11 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **withdraw**
-> AccountBalancesResponse withdraw(body)
+> WithdrawResponse withdraw(body)
 
 Withdraw funds from this node to the ethereum wallet address.
 
-Withdraw funds from this node to the ethereum wallet address.  Both NATIVE or HOPR can be withdrawn using this method.
+Both Native or HOPR can be withdrawn using this method.
 
 ### Example
 ```python
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountBalancesResponse**](AccountBalancesResponse.md)
+[**WithdrawResponse**](WithdrawResponse.md)
 
 ### Authorization
 
